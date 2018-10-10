@@ -12,10 +12,10 @@ public interface ISpace {
 
     int getRoomCount();
 
-    void setRoomCount(int roomCount);
+    void setRoomCount(final int roomCount);
 
     double getSquare();
 
-    void setSquare(double square);
+    void setSquare(final double square);
 
 }

@@ -1,6 +1,6 @@
 package com.greffort.linkedList;
 
-public final class DoublyLinkedList<E> {
+public final class DoubleLinkedList<E> {
     class Node<E> {
         E data;
         Node<E> next;

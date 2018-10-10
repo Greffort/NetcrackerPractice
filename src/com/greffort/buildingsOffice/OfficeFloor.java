@@ -4,7 +4,7 @@ import com.greffort.exception.SpaceIndexOutOfBoundsException;
 import com.greffort.interfaces.IFloor;
 import com.greffort.interfaces.ISpace;
 import com.greffort.linkedList.SingleLinkedList;
-//import com.greffort.linkedList.DoublyLinkedList;
+//import com.greffort.linkedList.DoubleLinkedList;
 
 public final class OfficeFloor implements IFloor {
 
@@ -28,7 +28,7 @@ public final class OfficeFloor implements IFloor {
 //    + Создайте метод добавления нового офиса на этаже по будущему номеру офиса.
 //    + Создайте метод удаления офиса по его номеру на этаже.
 //    + Создайте метод getBestSpace() получения самого большого по площади офиса этажа.
-//private DoublyLinkedList<Office> officeSingleLinkedList = new DoublyLinkedList<>();
+//private DoubleLinkedList<Office> officeSingleLinkedList = new DoubleLinkedList<>();
 
     private SingleLinkedList<ISpace> officeSingleLinkedList;
 

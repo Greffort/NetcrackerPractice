@@ -1,33 +1,34 @@
 package com.greffort;
 
+import com.greffort.buildings.*;
 import com.greffort.buildingsOffice.*;
 import com.greffort.interfaces.ISpace;
 
 public class Main {
 
     public static void main(String[] args) {
-        //Dwelling[] dwellingArray = new Dwelling[{}]
-//        Flat[] flats1 = new Flat[]{new Flat(11, 1), new Flat(12, 2), new Flat(13, 3), new Flat(14, 3)};
-//        Flat[] flats2 = new Flat[]{new Flat(21, 1), new Flat(22, 2), new Flat(23, 3), new Flat(24, 3)};
-//        Flat[] flats3 = new Flat[]{new Flat(31, 1), new Flat(32, 2), new Flat(33, 3), new Flat(34, 3)};
-//
-//        DwellingFloor dwellingFloor1 = new DwellingFloor(flats1);
-//        DwellingFloor dwellingFloor2 = new DwellingFloor(flats2);
-//        DwellingFloor dwellingFloor3 = new DwellingFloor(flats3);
-//
-//        DwellingFloor[] dwellings = new DwellingFloor[]{dwellingFloor1, dwellingFloor2, dwellingFloor3};
-//
-//        Dwelling dwelling = new Dwelling(dwellings);
-//
-//
-//        dwelling.addSpace(1, new Flat(100500, 100500));
-//
-//        Flat[] flats = dwelling.getSortSpaces();
-//
-//        for (Flat f : flats
-//        ) {
-//            System.out.println(f.getSquare() + " " + f.getRoomCount());
-//        }
+        //Dwelling[] dwellingArray = new Dwelling[{}];
+        Flat[] flats1 = new Flat[]{new Flat(11, 1), new Flat(12, 2), new Flat(13, 3), new Flat(14, 3)};
+        Flat[] flats2 = new Flat[]{new Flat(21, 1), new Flat(22, 2), new Flat(23, 3), new Flat(24, 3)};
+        Flat[] flats3 = new Flat[]{new Flat(31, 1), new Flat(32, 2), new Flat(33, 3), new Flat(34, 3)};
+
+        DwellingFloor dwellingFloor1 = new DwellingFloor(flats1);
+        DwellingFloor dwellingFloor2 = new DwellingFloor(flats2);
+        DwellingFloor dwellingFloor3 = new DwellingFloor(flats3);
+
+        DwellingFloor[] dwellings = new DwellingFloor[]{dwellingFloor1, dwellingFloor2, dwellingFloor3};
+
+        Dwelling dwelling = new Dwelling(dwellings);
+
+
+        dwelling.addSpace(new Flat(100500, 100500),13);
+
+        ISpace[] flats = dwelling.getSortSpaces();
+
+        for (ISpace f : flats
+        ) {
+            System.out.println(f.getSquare() + " " + f.getRoomCount());
+        }
 //
 //
 //        System.out.println("\n");

@@ -32,17 +32,17 @@ public interface IBuilding {
 
     IFloor[] getFloors();
 
-    IFloor getFloor(int index);
+    IFloor getFloor(final int index);
 
-    void setFloor(IFloor iFloor, int index);
+    void setFloor(final IFloor iFloor, final int index);
 
-    ISpace getSpace(int index);
+    ISpace getSpace(final int index);
 
-    void setSpace(ISpace iSpace, int index);
+    void setSpace(final ISpace iSpace, final int index);
 
-    void addSpace(ISpace iSpace, int index);
+    void addSpace(final ISpace iSpace, final int index);
 
-    void removeSpace(int index);
+    void removeSpace(final int index);
 
     ISpace getBestSpace();
 

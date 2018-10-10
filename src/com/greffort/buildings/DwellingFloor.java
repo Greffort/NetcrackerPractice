@@ -76,16 +76,11 @@ public final class DwellingFloor implements IFloor {
     }
 
     public void addSpace(final ISpace iSpace, final int index) {
-        if (index < 0 || index > arrayFlat.length) {
+        if (index < 0 || index > arrayFlat.length + 1) {
             throw new SpaceIndexOutOfBoundsException();
         }
         ISpace[] newArrayFlat;
-
-        if (index < arrayFlat.length) {
-            newArrayFlat = new Flat[arrayFlat.length + 1];
-        } else {
-            newArrayFlat = new Flat[index + 1];
-        }
+        newArrayFlat = new Flat[arrayFlat.length + 1];
         for (int i = 0, j = 0; i < newArrayFlat.length; i++, j++) {
             if (j <= arrayFlat.length) {
                 if (j == index) {
@@ -106,18 +101,14 @@ public final class DwellingFloor implements IFloor {
         if (index < 0 || index > arrayFlat.length) {
             throw new SpaceIndexOutOfBoundsException();
         }
-        if (index >= 0 && index <= arrayFlat.length) {
-            ISpace[] newArrayFlat = new Flat[arrayFlat.length - 1];
-            for (int i = 0, j = 0; i < arrayFlat.length - 1; i++, j++) {
-                if (i == index) {
-                    j++;
-                }
-                newArrayFlat[i] = arrayFlat[j];
+        ISpace[] newArrayFlat = new Flat[arrayFlat.length - 1];
+        for (int i = 0, j = 0; i < arrayFlat.length - 1; i++, j++) {
+            if (i == index) {
+                j++;
             }
-            this.arrayFlat = newArrayFlat;
-        } else {
-            System.out.print("Неверный индекс");
+            newArrayFlat[i] = arrayFlat[j];
         }
+        this.arrayFlat = newArrayFlat;
     }
 
     public ISpace getBestSpace() {

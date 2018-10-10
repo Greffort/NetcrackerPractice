@@ -32,7 +32,7 @@ public final class Flat implements ISpace {
         this(square, DEFAULT_ROOM_COUNT);
     }
 
-    public Flat(final double square, int roomCount) {
+    public Flat(final double square, final int roomCount) {
         setSquare(square);
         setRoomCount(roomCount);
     }

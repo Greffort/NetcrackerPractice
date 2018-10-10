@@ -131,7 +131,7 @@ public final class Dwelling implements IBuilding {
     }
 
     public void addSpace(final ISpace flat, final int index) {
-        if (index < 0 || index > getNumberSpaces()) {
+        if (index < 0 || index > getNumberSpaces() + 1) {
             throw new SpaceIndexOutOfBoundsException();
         }
         int counter = 1;
