@@ -42,11 +42,11 @@ public final class Dwelling implements IBuilding {
         this.dwellingFloors = arrayDwellingFloor;
     }
 
-    public int getNumberFloors() {
+    public int getCountFloors() {
         return dwellingFloors.length;
     }
 
-    public int getNumberSpaces() {
+    public int getCountSpaces() {
         int totalFlatCount = 0;
         for (int i = 0; i < dwellingFloors.length; i++) {
             totalFlatCount += dwellingFloors[i].getCountSpace();
@@ -98,7 +98,7 @@ public final class Dwelling implements IBuilding {
     }
 
     public ISpace getSpace(final int index) {
-        if (index < 0 || index > getNumberSpaces()) {
+        if (index < 0 || index > getCountSpaces()) {
             throw new SpaceIndexOutOfBoundsException();
         }
         int counter = 0;
@@ -115,7 +115,7 @@ public final class Dwelling implements IBuilding {
     }
 
     public void setSpace(final ISpace flat, final int index) {
-        if (index < 0 || index > getNumberSpaces()) {
+        if (index < 0 || index > getCountSpaces()) {
             throw new SpaceIndexOutOfBoundsException();
         }
         int counter = 0;
@@ -131,7 +131,7 @@ public final class Dwelling implements IBuilding {
     }
 
     public void addSpace(final ISpace flat, final int index) {
-        if (index < 0 || index > getNumberSpaces() + 1) {
+        if (index < 0 || index > getCountSpaces() + 1) {
             throw new SpaceIndexOutOfBoundsException();
         }
         int counter = 1;
@@ -153,7 +153,7 @@ public final class Dwelling implements IBuilding {
     }
 
     public void removeSpace(final int index) {
-        if (index < 0 || index > getNumberSpaces()) {
+        if (index < 0 || index > getCountSpaces()) {
             throw new SpaceIndexOutOfBoundsException();
         }
         int counter = 1;

@@ -22,9 +22,9 @@ public interface IBuilding {
 //    Используйте методы, принимающие в качестве параметра массивы, как методы с аргументом переменной длины.
 
 
-    int getNumberFloors();
+    int getCountFloors();
 
-    int getNumberSpaces();
+    int getCountSpaces();
 
     double getTotalSquare();
 

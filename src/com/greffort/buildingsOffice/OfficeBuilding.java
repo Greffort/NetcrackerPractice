@@ -64,16 +64,16 @@ public final class OfficeBuilding implements IBuilding {
         if (false) throw new ArrayStoreException();
     }
 
-    public int getNumberFloors() {
+    public int getCountFloors() {
         return officeFloorDoubleLinkedList.getSize();
     }
 
-    public int getNumberSpaces() {
-        int sum = 0;
+    public int getCountSpaces() {
+        int countSpaces = 0;
         for (int i = 0; i < officeFloorDoubleLinkedList.getSize(); i++) {
-            sum += getNode(i).getArrayFloors().length;
+            countSpaces += getNode(i).getArrayFloors().length;
         }
-        return sum;
+        return countSpaces;
     }
 
     public double getTotalSquare() {
@@ -115,7 +115,7 @@ public final class OfficeBuilding implements IBuilding {
     }
 
     public ISpace getSpace(final int index) {
-        if (index < 0 || index > getNumberSpaces()) {
+        if (index < 0 || index > getCountSpaces()) {
             throw new SpaceIndexOutOfBoundsException();
         }
         int counter = 0;
@@ -132,7 +132,7 @@ public final class OfficeBuilding implements IBuilding {
     }
 
     public void setSpace(final ISpace office, final int index) {
-        if (index < 0 || index > getNumberSpaces()) {
+        if (index < 0 || index > getCountSpaces()) {
             throw new SpaceIndexOutOfBoundsException();
         }
         int counter = 0;
@@ -149,7 +149,7 @@ public final class OfficeBuilding implements IBuilding {
     }
 
     public void addSpace(final ISpace office, final int index) {
-        if (index < 0 || index > getNumberSpaces()) {
+        if (index < 0 || index > getCountSpaces()) {
             throw new SpaceIndexOutOfBoundsException();
         }
         int counter = 0;
@@ -166,7 +166,7 @@ public final class OfficeBuilding implements IBuilding {
     }
 
     public void removeSpace(final int index) {
-        if (index < 0 || index > getNumberSpaces()) {
+        if (index < 0 || index > getCountSpaces()) {
             throw new SpaceIndexOutOfBoundsException();
         }
         int counter = 0;
