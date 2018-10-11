@@ -31,14 +31,14 @@ public final class Dwelling implements Building {
 
     private Floor[] dwellingFloors;
 
-    public Dwelling(final int dwellingFloorCount,@NotNull final int[] arrayFlatCounts) {
+    public Dwelling(final int dwellingFloorCount, @NotNull final int[] arrayFlatCounts) {
         this.dwellingFloors = new DwellingFloor[dwellingFloorCount];
         for (int i = 0; i < arrayFlatCounts.length; i++) {
             new DwellingFloor(arrayFlatCounts[i]);
         }
     }
 
-    public Dwelling( final Floor[] arrayDwellingFloor) {
+    public Dwelling(final Floor[] arrayDwellingFloor) {
         this.dwellingFloors = arrayDwellingFloor;
     }
 

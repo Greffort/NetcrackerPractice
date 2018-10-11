@@ -224,6 +224,4 @@ public final class OfficeBuilding implements Building {
     }
 
 
-
-
 }
