@@ -1,6 +1,6 @@
 package com.greffort.interfaces;
 
-public interface ISpace {
+public interface Space {
 //    Создайте интерфейс c помещения здания.
 //    Интерфейс должен соответствовать общей функциональности Flat и Office и содержать следующие методы:
 //            •	получения  количества комнат,

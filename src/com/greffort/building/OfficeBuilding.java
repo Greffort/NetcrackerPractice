@@ -1,11 +1,12 @@
-package com.greffort.buildingsOffice;
+package com.greffort.building;
 
 import com.greffort.exception.*;
 import com.greffort.interfaces.*;
 import com.greffort.linkedList.DoubleLinkedList;
+import org.jetbrains.annotations.NotNull;
 
 
-public final class OfficeBuilding implements IBuilding {
+public final class OfficeBuilding implements Building {
 
 //    + Создайте класс OfficeBuilding офисного здания.
 //    + Работа класса должна быть основана на двусвязном циклическом списке этажей с выделенной головой.
@@ -31,31 +32,31 @@ public final class OfficeBuilding implements IBuilding {
 //    + Создайте метод getBestSpace() получения самого большого по площади офиса здания.
 //    + Создайте метод получения отсортированного по убыванию площадей массива офисов.
 
-    private DoubleLinkedList<IFloor> officeFloorDoubleLinkedList;
+    private DoubleLinkedList<Floor> officeFloorDoubleLinkedList;
 
     public OfficeBuilding(final int numberOfficeFloors, final int[] numberOfficeFloor) {
-        officeFloorDoubleLinkedList = new DoubleLinkedList<IFloor>();
+        officeFloorDoubleLinkedList = new DoubleLinkedList<Floor>();
         for (int i = 0; i < numberOfficeFloors; i++) {
             addNode(new OfficeFloor(numberOfficeFloor[i]), i);
         }
     }
 
-    public OfficeBuilding(final OfficeFloor[] officeFloors) {
-        officeFloorDoubleLinkedList = new DoubleLinkedList<IFloor>();
+    public OfficeBuilding(final Floor[] officeFloors) {
+        officeFloorDoubleLinkedList = new DoubleLinkedList<Floor>();
         for (int i = 0; i < officeFloors.length; i++) {
             addNode(officeFloors[i], i);
         }
     }
 
-    public OfficeBuilding(final DoubleLinkedList<IFloor> doubleLinkedList) {
+    public OfficeBuilding(final DoubleLinkedList<Floor> doubleLinkedList) {
         this.officeFloorDoubleLinkedList = doubleLinkedList;
     }
 
-    private IFloor getNode(final int index) {
+    private Floor getNode(final int index) {
         return officeFloorDoubleLinkedList.getNode(index);
     }
 
-    private void addNode(final OfficeFloor officeFloor, final int index) {
+    private void addNode(final Floor officeFloor, final int index) {
         officeFloorDoubleLinkedList.addNode(officeFloor, index);
     }
 
@@ -92,29 +93,29 @@ public final class OfficeBuilding implements IBuilding {
         return totalRoomCount;
     }
 
-    public IFloor[] getFloors() {
-        IFloor[] floors = new IFloor[officeFloorDoubleLinkedList.getSize()];
+    public Floor[] getFloors() {
+        Floor[] floors = new Floor[officeFloorDoubleLinkedList.getSize()];
         for (int i = 0; i < officeFloorDoubleLinkedList.getSize(); i++) {
             floors[i] = officeFloorDoubleLinkedList.getNode(i);
         }
         return floors;
     }
 
-    public IFloor getFloor(final int index) {
+    public Floor getFloor(final int index) {
         if (index < 0 || index > officeFloorDoubleLinkedList.getSize()) {
             throw new FloorIndexOutOfBoundsException();
         }
         return getNode(index);
     }
 
-    public void setFloor(final IFloor officeFloor, final int index) {
+    public void setFloor(final Floor officeFloor, final int index) {
         if (index < 0 || index > officeFloorDoubleLinkedList.getSize()) {
             throw new FloorIndexOutOfBoundsException();
         }
         officeFloorDoubleLinkedList.setNode(officeFloor, index);
     }
 
-    public ISpace getSpace(final int index) {
+    public Space getSpace(final int index) {
         if (index < 0 || index > getCountSpaces()) {
             throw new SpaceIndexOutOfBoundsException();
         }
@@ -131,7 +132,7 @@ public final class OfficeBuilding implements IBuilding {
         return null;
     }
 
-    public void setSpace(final ISpace office, final int index) {
+    public void setSpace(final Space office, final int index) {
         if (index < 0 || index > getCountSpaces()) {
             throw new SpaceIndexOutOfBoundsException();
         }
@@ -148,7 +149,7 @@ public final class OfficeBuilding implements IBuilding {
         }
     }
 
-    public void addSpace(final ISpace office, final int index) {
+    public void addSpace(final Space office, final int index) {
         if (index < 0 || index > getCountSpaces()) {
             throw new SpaceIndexOutOfBoundsException();
         }
@@ -182,10 +183,10 @@ public final class OfficeBuilding implements IBuilding {
         }
     }
 
-    public ISpace getBestSpace() {
+    public Space getBestSpace() {
         double bestSpace = 0;
         int index = 0;
-        ISpace office = null;
+        Space office = null;
 
         for (int i = 0; i < officeFloorDoubleLinkedList.getSize(); i++) {
             if (officeFloorDoubleLinkedList.getNode(i).getBestSpace().getSquare() > bestSpace) {
@@ -195,16 +196,16 @@ public final class OfficeBuilding implements IBuilding {
         return office;
     }
 
-    public ISpace[] getSortSpaces() {
+    public Space[] getSortSpaces() {
         int sumArrayLenght = 0;
-        ISpace[] allOffice;
+        Space[] allOffice;
         for (int i = 0; i < officeFloorDoubleLinkedList.getSize(); i++) {
             sumArrayLenght += officeFloorDoubleLinkedList.getNode(i).getCountSpace();
         }
         int index = 0;
-        allOffice = new ISpace[sumArrayLenght];
+        allOffice = new Space[sumArrayLenght];
         for (int i = 0; i < officeFloorDoubleLinkedList.getSize(); i++) {
-            ISpace[] offices = officeFloorDoubleLinkedList.getNode(i).getArrayFloors();
+            Space[] offices = officeFloorDoubleLinkedList.getNode(i).getArrayFloors();
             for (int j = 0; j < offices.length; j++) {
                 allOffice[index] = offices[j];
                 index++;
@@ -213,7 +214,7 @@ public final class OfficeBuilding implements IBuilding {
         for (int i = allOffice.length - 1; i > 0; i--) {
             for (int j = 0; j < i; j++) {
                 if (allOffice[j].getSquare() < allOffice[j + 1].getSquare()) {
-                    ISpace tmp = allOffice[j];
+                    Space tmp = allOffice[j];
                     allOffice[j] = allOffice[j + 1];
                     allOffice[j + 1] = tmp;
                 }

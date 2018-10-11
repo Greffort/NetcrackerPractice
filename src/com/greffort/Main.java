@@ -1,8 +1,8 @@
 package com.greffort;
 
-import com.greffort.buildings.*;
-import com.greffort.buildingsOffice.*;
-import com.greffort.interfaces.ISpace;
+import com.greffort.dwelling.*;
+import com.greffort.building.*;
+import com.greffort.interfaces.Space;
 
 public class Main {
 
@@ -23,9 +23,9 @@ public class Main {
 
         dwelling.addSpace(new Flat(100500, 100500),13);
 
-        ISpace[] flats = dwelling.getSortSpaces();
+        Space[] flats = dwelling.getSortSpaces();
 
-        for (ISpace f : flats
+        for (Space f : flats
         ) {
             System.out.println(f.getSquare() + " " + f.getRoomCount());
         }
@@ -84,26 +84,26 @@ public class Main {
         //OfficeFloor1.removeSpace(0);
         OfficeBuilding officeBuilding = new OfficeBuilding(new OfficeFloor[]{OfficeFloor1, OfficeFloor2, OfficeFloor3});
 
-//        Office o1 = officeBuilding.getSpace(6);
-//officeBuilding.setSpace(new Office(), 6);
-//        Office o2 = officeBuilding.getSpace(6);
-//
+        Space o1 = officeBuilding.getSpace(6);
+officeBuilding.setSpace(new Office(), 6);
+        Space o2 = officeBuilding.getSpace(6);
+
 
         officeBuilding.addSpace(new Office(100500, 900500), 1);
-       //ISpace o3 = officeBuilding.getSpace(9);
+       //Space o3 = officeBuilding.getSpace(9);
 
 
 //
 //        officeBuilding.removeSpace(6);
-        ISpace o4 = officeBuilding.getSpace(1);
+        Space o4 = officeBuilding.getSpace(1);
 //
         officeBuilding.addSpace(new Flat(),1);
 //
 //        Office o5 = officeBuilding.getBestSpace();
 
-        ISpace[] o6 = officeBuilding.getSortSpaces();
+        Space[] o6 = officeBuilding.getSortSpaces();
 
-        ISpace o7 = officeBuilding.getFloor(2).getSpace(0);
+        Space o7 = officeBuilding.getFloor(2).getSpace(0);
         officeFloor.getSpace(0);
         // write your code here
     }

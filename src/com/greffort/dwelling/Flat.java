@@ -1,10 +1,9 @@
-package com.greffort.buildings;
+package com.greffort.dwelling;
 
 import com.greffort.exception.InvalidRoomsCountException;
-import com.greffort.exception.InvalidSpaceAreaException;
-import com.greffort.interfaces.ISpace;
+import com.greffort.interfaces.Space;
 
-public final class Flat implements ISpace {
+public final class Flat implements Space {
 
 //    Задание 1
 //    + Создайте публичный класс Flat квартиры жилого дома.

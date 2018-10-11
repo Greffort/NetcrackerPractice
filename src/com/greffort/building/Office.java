@@ -1,9 +1,9 @@
-package com.greffort.buildingsOffice;
+package com.greffort.building;
 
 import com.greffort.exception.*;
-import com.greffort.interfaces.ISpace;
+import com.greffort.interfaces.Space;
 
-public final class Office implements ISpace {
+public final class Office implements Space {
     /*
     Создайте класс Office офиса офисного здания.
     Офис не хранит свой номер.
@@ -17,7 +17,7 @@ public final class Office implements ISpace {
     Создайте метод изменения количества комнат в офисе.
     Создайте метод получения площади офиса.
     Создайте метод изменения площади офиса.
-    **/
+    */
     private static final double DEFAULT_SQUARE = 250;
     private static final int DEFAULT_ROOM_COUNT = 1;
     private double square;

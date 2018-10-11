@@ -1,12 +1,13 @@
-package com.greffort.buildingsOffice;
+package com.greffort.building;
 
 import com.greffort.exception.SpaceIndexOutOfBoundsException;
-import com.greffort.interfaces.IFloor;
-import com.greffort.interfaces.ISpace;
+import com.greffort.interfaces.Floor;
+import com.greffort.interfaces.Space;
 import com.greffort.linkedList.SingleLinkedList;
+import org.jetbrains.annotations.NotNull;
 //import com.greffort.linkedList.DoubleLinkedList;
 
-public final class OfficeFloor implements IFloor {
+public final class OfficeFloor implements Floor {
 
 //    + Создайте класс OfficeFloor этажа офисного здания.
 //    + Работа класса должна быть основана на односвязном циклическом списке офисов с выделенной головой.
@@ -30,31 +31,31 @@ public final class OfficeFloor implements IFloor {
 //    + Создайте метод getBestSpace() получения самого большого по площади офиса этажа.
 //private DoubleLinkedList<Office> officeSingleLinkedList = new DoubleLinkedList<>();
 
-    private SingleLinkedList<ISpace> officeSingleLinkedList;
+    private SingleLinkedList<Space> officeSingleLinkedList;
 
     public OfficeFloor(final int numberOffices) {
-        officeSingleLinkedList = new SingleLinkedList<ISpace>();
+        officeSingleLinkedList = new SingleLinkedList<Space>();
         for (int i = 0; i < numberOffices; i++) {
             addNode(new Office(), i);
         }
     }
 
-    public OfficeFloor(final SingleLinkedList<ISpace> officeSingleLinkedList) {
+    public OfficeFloor(final SingleLinkedList<Space> officeSingleLinkedList) {
         this.officeSingleLinkedList = officeSingleLinkedList;
     }
 
-    public OfficeFloor(Office[] offices) {
-        this.officeSingleLinkedList = new SingleLinkedList<ISpace>();
+    public OfficeFloor(@NotNull final Space[] offices) {
+        this.officeSingleLinkedList = new SingleLinkedList<Space>();
         for (int i = 0; i < offices.length; i++) {
             addNode(offices[i], i);
         }
     }
 
-    private void addNode(final ISpace iSpace, final int index) {
+    private void addNode(final Space iSpace, final int index) {
         officeSingleLinkedList.addNode(iSpace, index);//Exception in thread "main" java.lang.NullPointerException
     }
 
-    private ISpace getNode(final int index) {
+    private Space getNode(final int index) {
         return officeSingleLinkedList.getNode(index);
     }
 
@@ -82,33 +83,33 @@ public final class OfficeFloor implements IFloor {
         return totalRoomCount;
     }
 
-    public ISpace[] getArrayFloors() {
-        ISpace[] offices = new ISpace[officeSingleLinkedList.getSize()];
+    public Space[] getArrayFloors() {
+        Space[] offices = new Space[officeSingleLinkedList.getSize()];
         for (int i = 0; i < officeSingleLinkedList.getSize(); i++) {
             offices[i] = officeSingleLinkedList.getNode(i);
         }
         return offices;
     }
 
-    public ISpace getSpace(final int index) {
+    public Space getSpace(final int index) {
         if (index < 0 || index > officeSingleLinkedList.getSize()) {
             throw new SpaceIndexOutOfBoundsException();
         }
         return getNode(index);
     }
 
-    public void setSpace(final ISpace iSpace, final int index) {
+    public void setSpace(final Space space, final int index) {
         if (index < 0 || index > officeSingleLinkedList.getSize()) {
             throw new SpaceIndexOutOfBoundsException();
         }
-        officeSingleLinkedList.setNode(iSpace, index);
+        officeSingleLinkedList.setNode(space, index);
     }
 
-    public void addSpace(final ISpace iSpace, final int index) {
+    public void addSpace(final Space space, final int index) {
         if (index < 0 || index > officeSingleLinkedList.getSize()) {
             throw new SpaceIndexOutOfBoundsException();
         }
-        addNode(iSpace, index);
+        addNode(space, index);
     }
 
     public void removeSpace(final int index) {
@@ -118,8 +119,8 @@ public final class OfficeFloor implements IFloor {
         removeNode(index);
     }
 
-    public ISpace getBestSpace() {
-        ISpace office = null;
+    public Space getBestSpace() {
+        Space office = null;
         double bestSpace = 0;
         int index = 0;
         for (int i = 0; i < officeSingleLinkedList.getSize(); i++) {

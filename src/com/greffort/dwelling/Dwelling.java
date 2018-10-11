@@ -1,9 +1,10 @@
-package com.greffort.buildings;
+package com.greffort.dwelling;
 
 import com.greffort.exception.*;
 import com.greffort.interfaces.*;
+import org.jetbrains.annotations.NotNull;
 
-public final class Dwelling implements IBuilding {
+public final class Dwelling implements Building {
 ////    +  Создайте публичный класс Dwelling жилого здания, основанный на массиве этажей здания.
 ////    + Номер квартиры явно не хранится.
 ////    + Нумерация квартир в доме сквозная и начинается с нуля.
@@ -24,21 +25,20 @@ public final class Dwelling implements IBuilding {
 ////    + Создайте метод getBestSpace() получения самой большой по площади квартиры дома.
 ////    Создайте метод получения отсортированного по убыванию площадей массива квартир.
 ////
-////    Объедините имеющиеся на данный момент типы в пакет com.greffort.buildings.
+////    Объедините имеющиеся на данный момент типы в пакет com.greffort.dwelling.
 ////    Проверьте работу классов, создав экземпляр многоэтажного жилого дома с различными произвольными
 ////    значениями количества квартир по этажам, а также площадей и количества комнат в квартирах.
 
-    private IFloor[] dwellingFloors;
+    private Floor[] dwellingFloors;
 
-    public Dwelling(final int dwellingFloorCount, final int[] arrayFlatCounts) {
+    public Dwelling(final int dwellingFloorCount,@NotNull final int[] arrayFlatCounts) {
         this.dwellingFloors = new DwellingFloor[dwellingFloorCount];
-        //массив количества квартир по этажам?
         for (int i = 0; i < arrayFlatCounts.length; i++) {
             new DwellingFloor(arrayFlatCounts[i]);
         }
     }
 
-    public Dwelling(final DwellingFloor[] arrayDwellingFloor) {
+    public Dwelling( final Floor[] arrayDwellingFloor) {
         this.dwellingFloors = arrayDwellingFloor;
     }
 
@@ -70,11 +70,11 @@ public final class Dwelling implements IBuilding {
         return totalRoomCount;
     }
 
-    public IFloor[] getFloors() {
+    public Floor[] getFloors() {
         return dwellingFloors;
     }
 
-    public IFloor getFloor(final int index) {
+    public Floor getFloor(final int index) {
         if (index < 0 || index > dwellingFloors.length) {
             throw new FloorIndexOutOfBoundsException();
         }
@@ -86,7 +86,7 @@ public final class Dwelling implements IBuilding {
         }
     }
 
-    public void setFloor(final IFloor dwellingFloor, final int index) {
+    public void setFloor(final Floor dwellingFloor, final int index) {
         if (index < 0 || index > dwellingFloors.length) {
             throw new FloorIndexOutOfBoundsException();
         }
@@ -97,7 +97,7 @@ public final class Dwelling implements IBuilding {
         }
     }
 
-    public ISpace getSpace(final int index) {
+    public Space getSpace(final int index) {
         if (index < 0 || index > getCountSpaces()) {
             throw new SpaceIndexOutOfBoundsException();
         }
@@ -114,7 +114,7 @@ public final class Dwelling implements IBuilding {
         return null;
     }
 
-    public void setSpace(final ISpace flat, final int index) {
+    public void setSpace(final Space flat, final int index) {
         if (index < 0 || index > getCountSpaces()) {
             throw new SpaceIndexOutOfBoundsException();
         }
@@ -130,7 +130,7 @@ public final class Dwelling implements IBuilding {
         }
     }
 
-    public void addSpace(final ISpace flat, final int index) {
+    public void addSpace(final Space flat, final int index) {
         if (index < 0 || index > getCountSpaces() + 1) {
             throw new SpaceIndexOutOfBoundsException();
         }
@@ -174,10 +174,10 @@ public final class Dwelling implements IBuilding {
         }
     }
 
-    public ISpace getBestSpace() {
+    public Space getBestSpace() {
         double bestSpace = 0;
         int index = 0;
-        ISpace flat = null;
+        Space flat = null;
 
         for (int i = 0; i < dwellingFloors.length; i++) {
             if (dwellingFloors[i].getBestSpace().getSquare() > bestSpace) {
@@ -187,16 +187,16 @@ public final class Dwelling implements IBuilding {
         return flat;
     }
 
-    public ISpace[] getSortSpaces() {
+    public Space[] getSortSpaces() {
         int sumArrayLenght = 0;
-        ISpace[] allFlats;
+        Space[] allFlats;
         for (int i = 0; i < dwellingFloors.length; i++) {
             sumArrayLenght += dwellingFloors[i].getArrayFloors().length;
         }
         int index = 0;
         allFlats = new Flat[sumArrayLenght];
         for (int i = 0; i < dwellingFloors.length; i++) {
-            ISpace[] flatsl = dwellingFloors[i].getArrayFloors();
+            Space[] flatsl = dwellingFloors[i].getArrayFloors();
             for (int j = 0; j < flatsl.length; j++) {
                 allFlats[index] = flatsl[j];
                 index++;
@@ -205,7 +205,7 @@ public final class Dwelling implements IBuilding {
         for (int i = allFlats.length - 1; i > 0; i--) {
             for (int j = 0; j < i; j++) {
                 if (allFlats[j].getSquare() < allFlats[j + 1].getSquare()) {
-                    ISpace tmp = allFlats[j];
+                    Space tmp = allFlats[j];
                     allFlats[j] = allFlats[j + 1];
                     allFlats[j + 1] = tmp;
                 }

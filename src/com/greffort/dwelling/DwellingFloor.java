@@ -1,10 +1,11 @@
-package com.greffort.buildings;
+package com.greffort.dwelling;
 
 import com.greffort.exception.SpaceIndexOutOfBoundsException;
-import com.greffort.interfaces.IFloor;
-import com.greffort.interfaces.ISpace;
+import com.greffort.interfaces.Floor;
+import com.greffort.interfaces.Space;
+import org.jetbrains.annotations.NotNull;
 
-public final class DwellingFloor implements IFloor {
+public final class DwellingFloor implements Floor {
 //
 //    + Создайте публичный класс DwellingFloor этажа жилого здания, основанный на массиве квартир.
 //    Номер квартиры явно не хранится.
@@ -24,7 +25,7 @@ public final class DwellingFloor implements IFloor {
 //    + Создайте метод удаления квартиры по ее номеру на этаже.
 //    + Создайте метод getBestSpace() получения самой большой по площади квартиры этажа.
 
-    private ISpace[] arrayFlat;
+    private Space[] arrayFlat;
 
     public DwellingFloor(final int countFlat) {
         this.arrayFlat = new Flat[countFlat];
@@ -33,7 +34,7 @@ public final class DwellingFloor implements IFloor {
         }
     }
 
-    public DwellingFloor(final Flat[] arrayFlat) {
+    public DwellingFloor(final Space[] arrayFlat) {
         this.arrayFlat = arrayFlat;
     }
 
@@ -43,7 +44,7 @@ public final class DwellingFloor implements IFloor {
 
     public double getTotalSquare() {
         double totalSquare = 0;
-        for (ISpace flat : arrayFlat) {
+        for (Space flat : arrayFlat) {
             totalSquare += flat.getSquare();
         }
         return totalSquare;
@@ -51,40 +52,40 @@ public final class DwellingFloor implements IFloor {
 
     public int getTotalRoomCount() {
         int RoomCount = 0;
-        for (ISpace flat : arrayFlat) {
+        for (Space flat : arrayFlat) {
             RoomCount += flat.getRoomCount();
         }
         return RoomCount;
     }
 
-    public ISpace[] getArrayFloors() {
+    public Space[] getArrayFloors() {
         return arrayFlat;
     }
 
-    public ISpace getSpace(final int index) {
+    public Space getSpace(final int index) {
         if (index < 0 || index > arrayFlat.length) {
             throw new SpaceIndexOutOfBoundsException();
         }
         return this.arrayFlat[index];
     }
 
-    public void setSpace(final ISpace iSpace, final int index) {
+    public void setSpace(final Space space, final int index) {
         if (index < 0 || index > arrayFlat.length) {
             throw new SpaceIndexOutOfBoundsException();
         }
-        this.arrayFlat[index] = iSpace;
+        this.arrayFlat[index] = space;
     }
 
-    public void addSpace(final ISpace iSpace, final int index) {
+    public void addSpace(final Space space, final int index) {
         if (index < 0 || index > arrayFlat.length + 1) {
             throw new SpaceIndexOutOfBoundsException();
         }
-        ISpace[] newArrayFlat;
+        Space[] newArrayFlat;
         newArrayFlat = new Flat[arrayFlat.length + 1];
         for (int i = 0, j = 0; i < newArrayFlat.length; i++, j++) {
             if (j <= arrayFlat.length) {
                 if (j == index) {
-                    newArrayFlat[i] = iSpace;
+                    newArrayFlat[i] = space;
                     i++;
                 } else {
                     newArrayFlat[i] = arrayFlat[j];
@@ -101,7 +102,7 @@ public final class DwellingFloor implements IFloor {
         if (index < 0 || index > arrayFlat.length) {
             throw new SpaceIndexOutOfBoundsException();
         }
-        ISpace[] newArrayFlat = new Flat[arrayFlat.length - 1];
+        Space[] newArrayFlat = new Flat[arrayFlat.length - 1];
         for (int i = 0, j = 0; i < arrayFlat.length - 1; i++, j++) {
             if (i == index) {
                 j++;
@@ -111,7 +112,7 @@ public final class DwellingFloor implements IFloor {
         this.arrayFlat = newArrayFlat;
     }
 
-    public ISpace getBestSpace() {
+    public Space getBestSpace() {
         double bestSpace = 0;
         int index = 0;
         for (int i = 0; i < arrayFlat.length; i++) {

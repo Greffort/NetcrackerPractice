@@ -1,6 +1,6 @@
 package com.greffort.interfaces;
 
-public interface IFloor {
+public interface Floor {
 
     //    Создайте интерфейс Floor этажа здания, работающий со ссылками типа Space.
 //    Интерфейс должен соответствовать общей функциональности DwellingFloor и OfficeFloor и должен содержать следующие  методы:
@@ -22,15 +22,15 @@ public interface IFloor {
 
     int getTotalRoomCount();
 
-    ISpace[] getArrayFloors();
+    Space[] getArrayFloors();
 
-    ISpace getSpace(final int index);
+    Space getSpace(final int index);
 
-    void setSpace(final ISpace iSpace, final int index);
+    void setSpace(final Space iSpace, final int index);
 
-    void addSpace(final ISpace iSpace, final int index);
+    void addSpace(final Space iSpace, final int index);
 
     void removeSpace(final int index);
 
-    ISpace getBestSpace();
+    Space getBestSpace();
 }

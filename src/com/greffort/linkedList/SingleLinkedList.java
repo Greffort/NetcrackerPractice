@@ -1,6 +1,6 @@
 package com.greffort.linkedList;
 
-import com.greffort.interfaces.ISpace;
+//import com.greffort.interfaces.Space;
 
 public final class SingleLinkedList<E> {
 
@@ -33,8 +33,8 @@ public final class SingleLinkedList<E> {
         return x.data;
     }
 
-    public void setNode(final ISpace e, final int index) {
-        Node<ISpace> x = first;
+    public void setNode(final E e, final int index) {
+        Node<E> x = first;
         if (first == null) {
             return;
         }
