@@ -115,7 +115,7 @@ public final class OfficeBuilding implements IBuilding {
     }
 
     public ISpace getSpace(final int index) {
-        if (index < 0 || index > getCountSpace()) {
+        if (index < 0 || index > getNumberSpaces()) {
             throw new SpaceIndexOutOfBoundsException();
         }
         int counter = 0;
@@ -132,7 +132,7 @@ public final class OfficeBuilding implements IBuilding {
     }
 
     public void setSpace(final ISpace office, final int index) {
-        if (index < 0 || index > getCountSpace()) {
+        if (index < 0 || index > getNumberSpaces()) {
             throw new SpaceIndexOutOfBoundsException();
         }
         int counter = 0;
@@ -149,7 +149,7 @@ public final class OfficeBuilding implements IBuilding {
     }
 
     public void addSpace(final ISpace office, final int index) {
-        if (index < 0 || index > getCountSpace()) {
+        if (index < 0 || index > getNumberSpaces()) {
             throw new SpaceIndexOutOfBoundsException();
         }
         int counter = 0;
@@ -166,7 +166,7 @@ public final class OfficeBuilding implements IBuilding {
     }
 
     public void removeSpace(final int index) {
-        if (index < 0 || index > getCountSpace()) {
+        if (index < 0 || index > getNumberSpaces()) {
             throw new SpaceIndexOutOfBoundsException();
         }
         int counter = 0;
@@ -202,7 +202,7 @@ public final class OfficeBuilding implements IBuilding {
             sumArrayLenght += officeFloorDoubleLinkedList.getNode(i).getCountSpace();
         }
         int index = 0;
-        allOffice = new Office[sumArrayLenght];
+        allOffice = new ISpace[sumArrayLenght];
         for (int i = 0; i < officeFloorDoubleLinkedList.getSize(); i++) {
             ISpace[] offices = officeFloorDoubleLinkedList.getNode(i).getArrayFloors();
             for (int j = 0; j < offices.length; j++) {
@@ -222,11 +222,7 @@ public final class OfficeBuilding implements IBuilding {
         return allOffice;
     }
 
-    private int getCountSpace() {
-        int countOffice = 0;
-        for (int i = 0; i < officeFloorDoubleLinkedList.getSize(); i++) {
-            countOffice += officeFloorDoubleLinkedList.getNode(i).getCountSpace();
-        }
-        return countOffice;
-    }
+
+
+
 }

@@ -97,6 +97,7 @@ public class Main {
 //        officeBuilding.removeSpace(6);
         ISpace o4 = officeBuilding.getSpace(1);
 //
+        officeBuilding.addSpace(new Flat(),1);
 //
 //        Office o5 = officeBuilding.getBestSpace();
 

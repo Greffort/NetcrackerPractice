@@ -83,7 +83,7 @@ public final class OfficeFloor implements IFloor {
     }
 
     public ISpace[] getArrayFloors() {
-        ISpace[] offices = new Office[officeSingleLinkedList.getSize()];
+        ISpace[] offices = new ISpace[officeSingleLinkedList.getSize()];
         for (int i = 0; i < officeSingleLinkedList.getSize(); i++) {
             offices[i] = officeSingleLinkedList.getNode(i);
         }
