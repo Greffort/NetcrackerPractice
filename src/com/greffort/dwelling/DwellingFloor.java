@@ -81,7 +81,7 @@ public final class DwellingFloor implements Floor {
             throw new SpaceIndexOutOfBoundsException();
         }
         Space[] newArrayFlat;
-        newArrayFlat = new Flat[arrayFlat.length + 1];
+        newArrayFlat = new Space[arrayFlat.length + 1];
         for (int i = 0, j = 0; i < newArrayFlat.length; i++, j++) {
             if (j <= arrayFlat.length) {
                 if (j == index) {

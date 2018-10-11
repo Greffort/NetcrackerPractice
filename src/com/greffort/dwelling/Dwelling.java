@@ -194,7 +194,7 @@ public final class Dwelling implements Building {
             sumArrayLenght += dwellingFloors[i].getArrayFloors().length;
         }
         int index = 0;
-        allFlats = new Flat[sumArrayLenght];
+        allFlats = new Space[sumArrayLenght];
         for (int i = 0; i < dwellingFloors.length; i++) {
             Space[] flatsl = dwellingFloors[i].getArrayFloors();
             for (int j = 0; j < flatsl.length; j++) {
