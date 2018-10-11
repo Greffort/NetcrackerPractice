@@ -7,7 +7,7 @@ import org.jetbrains.annotations.NotNull;
 
 
 public final class OfficeBuilding implements Building {
-
+//
 //    ????
 // + Создайте класс OfficeBuilding офисного здания.
 //    + Работа класса должна быть основана на двусвязном циклическом списке этажей с выделенной головой.
