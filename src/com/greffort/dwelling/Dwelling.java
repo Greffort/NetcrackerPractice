@@ -4,7 +4,10 @@ import com.greffort.exception.*;
 import com.greffort.interfaces.*;
 import org.jetbrains.annotations.NotNull;
 
-public final class Dwelling implements Building {
+import java.io.Serializable;
+import java.util.Arrays;
+
+public final class Dwelling implements Building, Serializable {
 ////    +  Создайте публичный класс Dwelling жилого здания, основанный на массиве этажей здания.
 ////    + Номер квартиры явно не хранится.
 ////    + Нумерация квартир в доме сквозная и начинается с нуля.

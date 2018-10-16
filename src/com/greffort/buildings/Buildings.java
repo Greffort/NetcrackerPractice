@@ -3,6 +3,9 @@ package com.greffort.buildings;
 import com.greffort.interfaces.Building;
 
 import java.io.*;
+import java.io.ObjectOutputStream;
+import java.io.FileOutputStream;
+
 
 public final class Buildings {
 
@@ -32,6 +35,18 @@ public final class Buildings {
 //      а также потоки System.in и System.out.
 
     public static void outputBuilding(Building building, OutputStream out) {
+
+        /*
+        Получили объект дома.
+        В поток пишем массив байт -> нужно перевести полученный объект в массив байт.
+        Как это лучше делать.
+         */
+        Buildings buildings = new Buildings();
+
+        //ObjectOutputStream objectOutputStream = new ObjectOutputStream();
+
+
+       // out.write(building.getClass().toString().getBytes());
 
     }
 

@@ -4,7 +4,9 @@ import com.greffort.exception.*;
 import com.greffort.interfaces.*;
 import com.greffort.linkedList.DoubleLinkedList;
 
-public final class OfficeBuilding implements Building {
+import java.io.Serializable;
+
+public final class OfficeBuilding implements Building, Serializable {
 
 // + Создайте класс OfficeBuilding офисного здания.
 //    + Работа класса должна быть основана на двусвязном циклическом списке этажей с выделенной головой.

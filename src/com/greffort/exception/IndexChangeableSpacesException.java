@@ -1,6 +1,6 @@
 package com.greffort.exception;
 
-/*
+/**
  *  несоответствия обменивающихся помещений (объявляемое)
  */
 public class IndexChangeableSpacesException extends Exception {

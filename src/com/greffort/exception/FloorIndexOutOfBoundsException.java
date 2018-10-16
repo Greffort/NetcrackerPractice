@@ -1,7 +1,10 @@
 package com.greffort.exception;
 
+/**
+ * Ошибка выхода за границы номеров этажей
+ */
 public final class FloorIndexOutOfBoundsException extends IndexOutOfBoundsException {
-    //Ошибка выхода за границы номеров этажей
+    //
     public FloorIndexOutOfBoundsException() {
         super("Ошибка выхода за границы номеров этажей");
     }
