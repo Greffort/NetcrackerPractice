@@ -3,9 +3,7 @@ package com.greffort.dwelling;
 import com.greffort.exception.*;
 import com.greffort.interfaces.*;
 import org.jetbrains.annotations.NotNull;
-
 import java.io.Serializable;
-import java.util.Arrays;
 
 public final class Dwelling implements Building, Serializable {
 ////    +  Создайте публичный класс Dwelling жилого здания, основанный на массиве этажей здания.
@@ -106,7 +104,7 @@ public final class Dwelling implements Building, Serializable {
         }
         int counter = 0;
         for (int i = 0; i < dwellingFloors.length; i++) {
-            for (int j = 0; j < dwellingFloors[i].getArrayFloors().length; j++) {
+            for (int j = 0; j < dwellingFloors[i].getSpaces().length; j++) {
                 if (index == counter) {
                     return dwellingFloors[i].getSpace(j);
                 } else {
@@ -123,7 +121,7 @@ public final class Dwelling implements Building, Serializable {
         }
         int counter = 0;
         for (int i = 0; i < dwellingFloors.length; i++) {
-            for (int j = 0; j < dwellingFloors[i].getArrayFloors().length; j++) {
+            for (int j = 0; j < dwellingFloors[i].getSpaces().length; j++) {
                 if (index == counter) {
                     dwellingFloors[i].setSpace(flat, index);
                 } else {
@@ -141,7 +139,7 @@ public final class Dwelling implements Building, Serializable {
         int sumArrayLenght = 0;
         outterLoop:
         for (int i = 0; i < dwellingFloors.length; i++) {
-            for (int j = 0; j < dwellingFloors[i].getArrayFloors().length; j++) {
+            for (int j = 0; j < dwellingFloors[i].getSpaces().length; j++) {
                 if (index == counter) {
                     dwellingFloors[i].addSpace(flat, index - sumArrayLenght);
                 }
@@ -163,7 +161,7 @@ public final class Dwelling implements Building, Serializable {
         int sumArrayLenght = 0;
         outterLoop:
         for (int i = 0; i < dwellingFloors.length; i++) {
-            for (int j = 0; j < dwellingFloors[i].getArrayFloors().length; j++) {
+            for (int j = 0; j < dwellingFloors[i].getSpaces().length; j++) {
                 if (index == counter) {
                     dwellingFloors[i].removeSpace(index - sumArrayLenght);
                 }
@@ -194,12 +192,12 @@ public final class Dwelling implements Building, Serializable {
         int sumArrayLenght = 0;
         Space[] allFlats;
         for (int i = 0; i < dwellingFloors.length; i++) {
-            sumArrayLenght += dwellingFloors[i].getArrayFloors().length;
+            sumArrayLenght += dwellingFloors[i].getSpaces().length;
         }
         int index = 0;
         allFlats = new Space[sumArrayLenght];
         for (int i = 0; i < dwellingFloors.length; i++) {
-            Space[] flatsl = dwellingFloors[i].getArrayFloors();
+            Space[] flatsl = dwellingFloors[i].getSpaces();
             for (int j = 0; j < flatsl.length; j++) {
                 allFlats[index] = flatsl[j];
                 index++;

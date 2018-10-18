@@ -1,34 +1,41 @@
 package com.greffort;
 
+import com.greffort.buildings.Buildings;
 import com.greffort.dwelling.*;
 import com.greffort.building.*;
+import com.greffort.factory.BuildingFactory;
+import com.greffort.factory.Factory;
+import com.greffort.interfaces.Floor;
 import com.greffort.interfaces.Space;
+import jdk.internal.util.xml.impl.ReaderUTF8;
+
+import java.io.*;
 
 public class Main {
 
     public static void main(String[] args) {
         //Dwelling[] dwellingArray = new Dwelling[{}];
-        Flat[] flats1 = new Flat[]{new Flat(11, 1), new Flat(12, 2), new Flat(13, 3), new Flat(14, 3)};
-        Flat[] flats2 = new Flat[]{new Flat(21, 1), new Flat(22, 2), new Flat(23, 3), new Flat(24, 3)};
-        Flat[] flats3 = new Flat[]{new Flat(31, 1), new Flat(32, 2), new Flat(33, 3), new Flat(34, 3)};
-
-        DwellingFloor dwellingFloor1 = new DwellingFloor(flats1);
-        DwellingFloor dwellingFloor2 = new DwellingFloor(flats2);
-        DwellingFloor dwellingFloor3 = new DwellingFloor(flats3);
-
-        DwellingFloor[] dwellings = new DwellingFloor[]{dwellingFloor1, dwellingFloor2, dwellingFloor3};
-
-        Dwelling dwelling = new Dwelling(dwellings);
-
-
-        dwelling.addSpace(new Flat(100500, 100500),13);
-
-        Space[] flats = dwelling.getSortSpaces();
-
-        for (Space f : flats
-        ) {
-            System.out.println(f.getSquare() + " " + f.getRoomCount());
-        }
+//        Flat[] flats1 = new Flat[]{new Flat(11, 1), new Flat(12, 2), new Flat(13, 3), new Flat(14, 3)};
+//        Flat[] flats2 = new Flat[]{new Flat(21, 1), new Flat(22, 2), new Flat(23, 3), new Flat(24, 3)};
+//        Flat[] flats3 = new Flat[]{new Flat(31, 1), new Flat(32, 2), new Flat(33, 3), new Flat(34, 3)};
+//
+//        DwellingFloor dwellingFloor1 = new DwellingFloor(flats1);
+//        DwellingFloor dwellingFloor2 = new DwellingFloor(flats2);
+//        DwellingFloor dwellingFloor3 = new DwellingFloor(flats3);
+//
+//        DwellingFloor[] dwellings = new DwellingFloor[]{dwellingFloor1, dwellingFloor2, dwellingFloor3};
+//
+//        Dwelling dwelling = new Dwelling(dwellings);
+//
+//
+//        dwelling.addSpace(new Flat(100500, 100500),13);
+//
+//        Space[] flats = dwelling.getSortSpaces();
+//
+//        for (Space f : flats
+//        ) {
+//            System.out.println(f.getSquare() + " " + f.getRoomCount());
+//        }
 //
 //
 //        System.out.println("\n");
@@ -45,7 +52,7 @@ public class Main {
 //        System.out.println(officeFloor.getTotalSquare());
 //        officeFloor.getTotalSquare();
 //        System.out.println(officeFloor.getTotalRoomCount());
-//        Office[] o = officeFloor.getArrayFloors();
+//        Office[] o = officeFloor.getSpaces();
 //        System.out.println(officeFloor.getTotalRoomCount());
 //
 //        Office offfffice = officeFloor.getSpace(0);
@@ -85,19 +92,19 @@ public class Main {
         OfficeBuilding officeBuilding = new OfficeBuilding(new OfficeFloor[]{OfficeFloor1, OfficeFloor2, OfficeFloor3});
 
         Space o1 = officeBuilding.getSpace(6);
-officeBuilding.setSpace(new Office(), 6);
+        officeBuilding.setSpace(new Office(), 6);
         Space o2 = officeBuilding.getSpace(6);
 
 
         officeBuilding.addSpace(new Office(100500, 900500), 1);
-       //Space o3 = officeBuilding.getSpace(9);
+        //Space o3 = officeBuilding.getSpace(9);
 
 
 //
 //        officeBuilding.removeSpace(6);
         Space o4 = officeBuilding.getSpace(1);
 //
-        officeBuilding.addSpace(new Flat(),1);
+        officeBuilding.addSpace(new Flat(), 1);
 //
 //        Office o5 = officeBuilding.getBestSpace();
 
@@ -105,6 +112,54 @@ officeBuilding.setSpace(new Office(), 6);
 
         Space o7 = officeBuilding.getFloor(2).getSpace(0);
         officeFloor.getSpace(0);
-        // write your code here
+//        try {
+//            BufferedReader in = new BufferedReader(new FileReader("in.txt")); //InputStreamReader(System.in));
+//            in.close();
+//        }
+//        catch(IOException e) {
+//            System.out.println("Some error occurred!111");
+//        }
+//        try {
+//            PrintWriter out = new PrintWriter(new BufferedWriter(new FileWriter("out.txt")));
+//
+//            out.close();
+//        }
+//        catch(IOException e) {
+//            System.out.println("Some error occurred!222");
+//        }
+
+//        try (BufferedReader in = new BufferedReader()){
+//            PrintWriter fileWriter =  new PrintWriter(new BufferedWriter(new FileWriter("txt.txt")));
+//            Buildings.writeBuilding(officeBuilding, fileWriter);
+//            Buildings.readBuilding(in);
+//
+//        } catch (FileNotFoundException e0) {
+//            System.out.println("error1");
+//        } catch (IOException e1) {
+//            System.out.println("error2");
+//        }
+
+        try {
+
+            FileReader in = new FileReader("work.txt");
+            FileWriter outputStream = new FileWriter("D:/work.txt");
+
+            //FileOutputStream fileOutputStream = new FileOutputStream("txt.txt");
+            //FileInputStream fileInputStream = new FileInputStream("txt1.txt");
+
+            //Buildings.outputBuilding(officeBuilding, fileOutputStream);
+            //Buildings.inputBuilding(fileInputStream);
+
+            //fileInputStream.close();
+            //fileOutputStream.close();
+           Buildings.writeBuilding(officeBuilding, outputStream);
+            Buildings.readBuilding(in);
+
+            in.close();
+            outputStream.close();
+
+        }catch (IOException e){
+            System.out.println("error1");
+        }
     }
 }

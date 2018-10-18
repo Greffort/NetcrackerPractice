@@ -2,8 +2,11 @@ package com.greffort.building;
 
 import com.greffort.exception.*;
 import com.greffort.interfaces.Space;
+import java.io.Serializable;
+import java.util.Objects;
 
 public final class Office implements Space {
+
     /*
     Создайте класс Office офиса офисного здания.
     Офис не хранит свой номер.
@@ -56,5 +59,18 @@ public final class Office implements Space {
             throw new InvalidSpaceAreaException();
         }
         this.square = square;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Office office = (Office) o;
+        return Double.compare(office.square, square) == 0 && roomCount == office.roomCount;
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(square, roomCount);
     }
 }

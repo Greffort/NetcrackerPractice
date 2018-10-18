@@ -4,6 +4,7 @@ import com.greffort.exception.SpaceIndexOutOfBoundsException;
 import com.greffort.interfaces.Floor;
 import com.greffort.interfaces.Space;
 import org.jetbrains.annotations.NotNull;
+import java.io.Serializable;
 
 public final class DwellingFloor implements Floor {
 //
@@ -58,7 +59,7 @@ public final class DwellingFloor implements Floor {
         return RoomCount;
     }
 
-    public Space[] getArrayFloors() {
+    public Space[] getSpaces() {
         return arrayFlat;
     }
 

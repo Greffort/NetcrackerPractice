@@ -24,7 +24,7 @@ public interface Floor {
 
     int getTotalRoomCount();
 
-    Space[] getArrayFloors();
+    Space[] getSpaces();
 
     Space getSpace(final int index);
 

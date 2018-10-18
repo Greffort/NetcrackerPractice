@@ -5,6 +5,7 @@ import com.greffort.interfaces.Floor;
 import com.greffort.interfaces.Space;
 import com.greffort.linkedList.SingleLinkedList;
 import org.jetbrains.annotations.NotNull;
+import java.io.Serializable;
 //import com.greffort.linkedList.DoubleLinkedList;
 
 public final class OfficeFloor implements Floor {
@@ -83,7 +84,7 @@ public final class OfficeFloor implements Floor {
         return totalRoomCount;
     }
 
-    public Space[] getArrayFloors() {
+    public Space[] getSpaces() {
         Space[] offices = new Space[officeSingleLinkedList.getSize()];
         for (int i = 0; i < officeSingleLinkedList.getSize(); i++) {
             offices[i] = officeSingleLinkedList.getNode(i);

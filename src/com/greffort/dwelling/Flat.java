@@ -2,6 +2,7 @@ package com.greffort.dwelling;
 
 import com.greffort.exception.InvalidRoomsCountException;
 import com.greffort.interfaces.Space;
+import java.io.Serializable;
 
 public final class Flat implements Space {
 

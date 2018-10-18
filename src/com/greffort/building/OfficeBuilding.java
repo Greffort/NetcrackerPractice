@@ -3,7 +3,6 @@ package com.greffort.building;
 import com.greffort.exception.*;
 import com.greffort.interfaces.*;
 import com.greffort.linkedList.DoubleLinkedList;
-
 import java.io.Serializable;
 
 public final class OfficeBuilding implements Building, Serializable {
@@ -72,7 +71,7 @@ public final class OfficeBuilding implements Building, Serializable {
     public int getCountSpaces() {
         int countSpaces = 0;
         for (int i = 0; i < officeFloorDoubleLinkedList.getSize(); i++) {
-            countSpaces += getNode(i).getArrayFloors().length;
+            countSpaces += getNode(i).getSpaces().length;
         }
         return countSpaces;
     }
@@ -205,7 +204,7 @@ public final class OfficeBuilding implements Building, Serializable {
         int index = 0;
         allOffice = new Space[sumArrayLenght];
         for (int i = 0; i < officeFloorDoubleLinkedList.getSize(); i++) {
-            Space[] offices = officeFloorDoubleLinkedList.getNode(i).getArrayFloors();
+            Space[] offices = officeFloorDoubleLinkedList.getNode(i).getSpaces();
             for (int j = 0; j < offices.length; j++) {
                 allOffice[index] = offices[j];
                 index++;
@@ -223,5 +222,8 @@ public final class OfficeBuilding implements Building, Serializable {
         return allOffice;
     }
 
-
+    @Override
+    public String toString() {
+        return "OfficeBuilding{" + "officeFloorDoubleLinkedList=" + officeFloorDoubleLinkedList + '}';
+    }
 }
