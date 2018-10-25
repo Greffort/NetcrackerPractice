@@ -3,7 +3,7 @@ package com.greffort.buildings;
 import com.greffort.buildings.office.Office;
 import com.greffort.buildings.office.OfficeBuilding;
 import com.greffort.buildings.office.OfficeFloor;
-import com.greffort.factory.BuildingFactory;
+import com.greffort.factory.OfficeFactory;
 import com.greffort.factory.Factory;
 import com.greffort.interfaces.Building;
 import com.greffort.interfaces.Floor;
@@ -53,7 +53,7 @@ public class Buildings implements Serializable {
      * Перегрузите метод текстового чтения зданий класса Buildings таким образом,
      * чтобы он использовал возможности форматированного ввода и вывода и имел аргумент типа Scanner.
      */
-    private static Factory factory = new BuildingFactory(); // сделать выбор фабрики
+    private static Factory factory = new OfficeFactory(); // сделать выбор фабрики
 
     public static void setFactory(Factory factory) {
         Buildings.factory = factory;
