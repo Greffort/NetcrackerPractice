@@ -2,7 +2,7 @@ package com.greffort.interfaces;
 
 public interface Floor {
     /**
-     *     //    Создайте интерфейс Floor этажа здания, работающий со ссылками типа Space.
+     * //    Создайте интерфейс Floor этажа здания, работающий со ссылками типа Space.
      * //    Интерфейс должен соответствовать общей функциональности DwellingFloor и OfficeFloor и должен содержать следующие  методы:
      * //            •	получения количества помещений на этаже,
      * //            •	получения общей площади помещений на этаже,
@@ -35,4 +35,6 @@ public interface Floor {
     void removeSpace(final int index);
 
     Space getBestSpace();
+
+    Object clone() throws CloneNotSupportedException;
 }

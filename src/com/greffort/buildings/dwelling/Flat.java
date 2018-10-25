@@ -102,7 +102,7 @@ public final class Flat implements Space, Serializable {
     }
 
     @Override
-    protected Object clone() throws CloneNotSupportedException {
-        return super.clone();
+    public Object clone() throws CloneNotSupportedException {
+        return new Flat(this.square, this.roomCount);
     }
 }

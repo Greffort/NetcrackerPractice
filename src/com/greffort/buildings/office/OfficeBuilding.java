@@ -3,6 +3,9 @@ package com.greffort.buildings.office;
 import com.greffort.exception.*;
 import com.greffort.interfaces.*;
 import com.greffort.linkedList.DoubleLinkedList;
+import org.jetbrains.annotations.Contract;
+import org.jetbrains.annotations.NotNull;
+
 import java.io.Serializable;
 
 public final class OfficeBuilding implements Building, Serializable {
@@ -225,11 +228,11 @@ public final class OfficeBuilding implements Building, Serializable {
     @Override
     public String toString() {
         StringBuffer stringBuffer = new StringBuffer();
-        stringBuffer.append("OfficeBuilding ("+getCountFloors()+", ");
+        stringBuffer.append("OfficeBuilding (" + getCountFloors() + ", ");
         for (int i = 0; i < getCountFloors(); i++) {
-            stringBuffer.append(getFloor(i).toString()+", ");
+            stringBuffer.append(getFloor(i).toString() + ", ");
         }
-        stringBuffer.delete(stringBuffer.length()-2,stringBuffer.length());
+        stringBuffer.delete(stringBuffer.length() - 2, stringBuffer.length());
         stringBuffer.append(")");
         return stringBuffer.toString();
     }
@@ -256,13 +259,18 @@ public final class OfficeBuilding implements Building, Serializable {
         int p = 17;
         int result = 0;
         for (int i = 0; i < getCountFloors(); i++) {
-            result += getCountFloors()*p | getFloor(i).hashCode();
+            result += getCountFloors() * p | getFloor(i).hashCode();
         }
         return result;
     }
 
+
     @Override
-    protected Object clone() throws CloneNotSupportedException {
-        return super.clone();
+    public Object clone() throws CloneNotSupportedException {
+        Floor[] floors = new Floor[getCountFloors()];
+        for (int i = 0; i < floors.length; i++) {
+            floors[i] = (Floor) getSpace(i).clone();
+        }
+        return new OfficeBuilding(floors);
     }
 }

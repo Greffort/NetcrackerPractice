@@ -96,7 +96,7 @@ public class Buildings implements Serializable {
             }
             floors[i] = factory.createFloor(spaces);
         }
-        dataInputStream.close();
+//        dataInputStream.close();
         return factory.createBuilding(floors);
     }
 
@@ -164,22 +164,22 @@ public class Buildings implements Serializable {
         }
     }
 
-    public static Building readBuilding(Reader in, Scanner scanner) throws IOException {
+    public static Building readBuilding(Scanner scanner) throws IOException {
         Floor[] floors;
-        scanner = new Scanner(in).useDelimiter("\\W+");
+        //scanner = new Scanner(in).useDelimiter("\\W+");
 
         floors = new Floor[scanner.nextInt()];
 
         for (int i = 0; i < floors.length; i++) {
             scanner.nextInt();
-            Space[] spaces = new Office[scanner.nextInt()];
+            Space[] spaces = new Space[scanner.nextInt()];
 
             for (int j = 0; j < spaces.length; j++) {
                 scanner.nextInt();
                 scanner.nextInt();
-                spaces[j] = new Office(scanner.nextInt(), scanner.nextInt());
+                spaces[j] = factory.createSpace(scanner.nextInt(), scanner.nextInt());
             }
-            floors[i] = new OfficeFloor(spaces);
+            floors[i] =factory.createFloor(spaces);
         }
         return new OfficeBuilding(floors);
     }

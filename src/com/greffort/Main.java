@@ -1,11 +1,16 @@
 package com.greffort;
 
 import com.greffort.buildings.Buildings;
+import com.greffort.buildings.dwelling.HotelFloor;
 import com.greffort.buildings.office.*;
 import com.greffort.buildings.dwelling.Dwelling;
 import com.greffort.buildings.dwelling.DwellingFloor;
 import com.greffort.buildings.dwelling.Flat;
+import com.greffort.exception.FloorIndexOutOfBoundsException;
+import com.greffort.exception.IndexChangeableSpacesException;
+import com.greffort.exception.SpaceIndexOutOfBoundsException;
 import com.greffort.interfaces.Building;
+import com.greffort.placementExchanger.PlacementExchanger;
 //import java.lang.*;
 import java.io.*;
 import java.util.Scanner;
@@ -130,61 +135,80 @@ public class Main {
  * Проверка работы форматированного ввода
  */
         checkWriteFormat();
+//
+//        OfficeFloor OfficeFloor11111 = new OfficeFloor(new Office[]{new Office(11, 110), new Office(12, 120), new Office(13, 130)});
+//        OfficeFloor OfficeFloor21111 = new OfficeFloor(new Office[]{new Office(21, 210), new Office(22, 220), new Office(23, 230)});
+//        OfficeFloor OfficeFloor31111 = new OfficeFloor(new Office[]{new Office(31, 310), new Office(32, 320), new Office(33, 330)});
+//
+//        OfficeFloor OfficeFloor1 = new OfficeFloor(new Office[]{new Office(11, 110), new Office(12, 120), new Office(13, 130)});
+//        OfficeFloor OfficeFloor2 = new OfficeFloor(new Office[]{new Office(21, 210), new Office(22, 220), new Office(23, 230)});
+//        OfficeFloor OfficeFloor3 = new OfficeFloor(new Office[]{new Office(7771, 310), new Office(32, 320), new Office(33, 330)});
+//
+//
+//        OfficeBuilding officeBuilding11 = new OfficeBuilding(new OfficeFloor[]{OfficeFloor11111, OfficeFloor21111, OfficeFloor31111});
+//        OfficeBuilding officeBuilding12 = new OfficeBuilding(new OfficeFloor[]{OfficeFloor1, OfficeFloor2, OfficeFloor31111});
+//        OfficeBuilding officeBuilding13 = new OfficeBuilding(new OfficeFloor[]{OfficeFloor1, OfficeFloor2, OfficeFloor31111});
+//
+//        OfficeFloor OfficeFloor11 = new OfficeFloor(new Office[]{new Office(11, 110), new Office(12, 120), new Office(13, 130)});
+//
+//        System.out.println(OfficeFloor21111.toString());
+//        System.out.println(OfficeFloor31111.toString());
+//        System.out.println(officeBuilding11.toString());
+//
+//        boolean b11 =dwellingFloor1.equals(dwellingFloor1);
+//        boolean b12 =dwellingFloor1.equals(dwellingFloor2);
+//        boolean b13 =dwellingFloor1.equals(dwellingFloor3);
+//        boolean b14 =dwellingFloor3.equals(dwellingFloor33);
+//
+//        boolean b21 =OfficeFloor11111.equals(OfficeFloor11111);
+//        boolean b22 =OfficeFloor11111.equals(OfficeFloor21111);
+//        boolean b23 =OfficeFloor11111.equals(OfficeFloor31111);
+//        boolean b24 =OfficeFloor11111.equals(OfficeFloor1);
+//
+//        boolean b31 =officeBuilding11.equals(officeBuilding12);
+//        boolean b32 =officeBuilding11.equals(OfficeFloor3);
+//        boolean b33 =officeBuilding11.equals(officeBuilding13);
+//
+//        Flat flat = new Flat();
+//        Flat flat1 = new Flat(50.0,2);
+//
+//        Office office = new Office(50.0,2);
+//
+//        int hashFlat = flat.hashCode();
+//        int hashFlat2 = flat1.hashCode();
+//        int gashOffice1 = office.hashCode();
+//
+//
+//        DwellingFloor dwellingFloor11 = new DwellingFloor(flats1);
+//        DwellingFloor dwellingFloor22 = new DwellingFloor(flats2);
+//
+//        int hashDW1 = dwellingFloor11.hashCode();
+//        int hashDW2 =dwellingFloor22.hashCode();
+//
+//        int hashOB1 = OfficeFloor1.hashCode();
+//        int hashOB2 =  OfficeFloor21111.hashCode();
+//        int hashOB3 =  OfficeFloor11111.hashCode();
+//
+//
+//
+//
+//        //////////////////
+//        System.out.println("Проверка смены помещений");
+//
+//        try {
+//            PlacementExchanger.exchangeFloorRooms(officeBuilding11.getFloor(2), 1, officeBuilding12.getFloor(2), 1);
+//            System.out.println("Обмен помещениями прошел успешно.");
+//        }
+//        catch (IndexChangeableSpacesException e) {
+//            System.out.println(e.getMessage());
+//        }
+//
+//        catch (SpaceIndexOutOfBoundsException | FloorIndexOutOfBoundsException e) {
+//            System.out.println(e.getMessage());
+//        }
+//        System.out.println("Конец проверки смены помещений\n");
 
-        OfficeFloor OfficeFloor11111 = new OfficeFloor(new Office[]{new Office(11, 110), new Office(12, 120), new Office(13, 130)});
-        OfficeFloor OfficeFloor21111 = new OfficeFloor(new Office[]{new Office(21, 210), new Office(22, 220), new Office(23, 230)});
-        OfficeFloor OfficeFloor31111 = new OfficeFloor(new Office[]{new Office(31, 310), new Office(32, 320), new Office(33, 330)});
-
-        OfficeFloor OfficeFloor1 = new OfficeFloor(new Office[]{new Office(11, 110), new Office(12, 120), new Office(13, 130)});
-        OfficeFloor OfficeFloor2 = new OfficeFloor(new Office[]{new Office(21, 210), new Office(22, 220), new Office(23, 230)});
-        OfficeFloor OfficeFloor3 = new OfficeFloor(new Office[]{new Office(7771, 310), new Office(32, 320), new Office(33, 330)});
-
-
-        OfficeBuilding officeBuilding11 = new OfficeBuilding(new OfficeFloor[]{OfficeFloor11111, OfficeFloor21111, OfficeFloor31111});
-        OfficeBuilding officeBuilding12 = new OfficeBuilding(new OfficeFloor[]{OfficeFloor1, OfficeFloor2, OfficeFloor3});
-        OfficeBuilding officeBuilding13 = new OfficeBuilding(new OfficeFloor[]{OfficeFloor1, OfficeFloor2, OfficeFloor31111});
-
-        OfficeFloor OfficeFloor11 = new OfficeFloor(new Office[]{new Office(11, 110), new Office(12, 120), new Office(13, 130)});
-
-        System.out.println(OfficeFloor21111.toString());
-        System.out.println(OfficeFloor31111.toString());
-        System.out.println(officeBuilding11.toString());
-
-        boolean b11 =dwellingFloor1.equals(dwellingFloor1);
-        boolean b12 =dwellingFloor1.equals(dwellingFloor2);
-        boolean b13 =dwellingFloor1.equals(dwellingFloor3);
-        boolean b14 =dwellingFloor3.equals(dwellingFloor33);
-
-        boolean b21 =OfficeFloor11111.equals(OfficeFloor11111);
-        boolean b22 =OfficeFloor11111.equals(OfficeFloor21111);
-        boolean b23 =OfficeFloor11111.equals(OfficeFloor31111);
-        boolean b24 =OfficeFloor11111.equals(OfficeFloor1);
-
-        boolean b31 =officeBuilding11.equals(officeBuilding12);
-        boolean b32 =officeBuilding11.equals(OfficeFloor3);
-        boolean b33 =officeBuilding11.equals(officeBuilding13);
-
-        Flat flat = new Flat();
-        Flat flat1 = new Flat(50.0,2);
-
-        Office office = new Office(50.0,2);
-
-        int hashFlat = flat.hashCode();
-        int hashFlat2 = flat1.hashCode();
-        int gashOffice1 = office.hashCode();
-
-
-        DwellingFloor dwellingFloor11 = new DwellingFloor(flats1);
-        DwellingFloor dwellingFloor22 = new DwellingFloor(flats2);
-
-        int hashDW1 = dwellingFloor11.hashCode();
-        int hashDW2 =dwellingFloor22.hashCode();
-
-        int hashOB1 = OfficeFloor1.hashCode();
-        int hashOB2 =  OfficeFloor21111.hashCode();
-        int hashOB3 =  OfficeFloor11111.hashCode();
-
-
+        HotelFloor hotelFloor = new HotelFloor(2);
     }
 
     private static void checkByteSymbolInOutput() {
@@ -266,7 +290,7 @@ public class Main {
         }
 
         try (FileReader fileReader = new FileReader("D:/workWrite.txt")) {
-            Scanner scanner = new Scanner(fileReader);
+           // Scanner scanner = new Scanner(fileReader);
             //Buildings.writeBuildingFormat(scanner);
         } catch (IOException e) {
             System.out.println("error1");

@@ -63,9 +63,9 @@ public final class Office implements Space, Serializable {
     }
 
     @NotNull
-    public String toString(){
+    public String toString() {
         StringBuffer stringBuffer = new StringBuffer();
-        return stringBuffer.append("Office ("+getRoomCount()+", "+getSquare()+")").toString();
+        return stringBuffer.append("Office (" + getRoomCount() + ", " + getSquare() + ")").toString();
     }
 
     @Override
@@ -85,7 +85,7 @@ public final class Office implements Space, Serializable {
     }
 
     @Override
-    protected Object clone() throws CloneNotSupportedException {
-        return super.clone();
+    public Object clone() throws CloneNotSupportedException {
+        return new Office(this.square, this.roomCount);
     }
 }

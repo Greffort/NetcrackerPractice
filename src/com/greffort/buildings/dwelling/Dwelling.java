@@ -7,7 +7,7 @@ import org.jetbrains.annotations.NotNull;
 import java.io.Serializable;
 import java.util.Arrays;
 
-public final class Dwelling implements Building, Serializable {
+public class Dwelling implements Building, Serializable {
 ////    +  Создайте публичный класс Dwelling жилого здания, основанный на массиве этажей здания.
 ////    + Номер квартиры явно не хранится.
 ////    + Нумерация квартир в доме сквозная и начинается с нуля.
@@ -228,11 +228,11 @@ public final class Dwelling implements Building, Serializable {
 
     public String toString() {
         StringBuffer stringBuffer = new StringBuffer();
-        stringBuffer.append("Dwelling ("+getCountFloors()+", ");
+        stringBuffer.append("Dwelling (" + getCountFloors() + ", ");
         for (int i = 0; i < dwellingFloors.length; i++) {
-            stringBuffer.append(dwellingFloors[i].toString()+", ");
+            stringBuffer.append(dwellingFloors[i].toString() + ", ");
         }
-        stringBuffer.delete(stringBuffer.length()-2,stringBuffer.length());
+        stringBuffer.delete(stringBuffer.length() - 2, stringBuffer.length());
         stringBuffer.append(")");
         return stringBuffer.toString();
     }
@@ -256,13 +256,17 @@ public final class Dwelling implements Building, Serializable {
         int p = 17;
         int result = 0;
         for (int i = 0; i < getCountFloors(); i++) {
-            result += getCountFloors()*p | getFloor(i).hashCode();
+            result += getCountFloors() * p | getFloor(i).hashCode();
         }
         return result;
     }
 
     @Override
-    protected Object clone() throws CloneNotSupportedException {
-        return super.clone();
+    public Object clone() throws CloneNotSupportedException {
+        Floor[] floors = new Floor[getCountFloors()];
+        for (int i = 0; i < floors.length; i++) {
+            floors[i] = (Floor) getSpace(i).clone();
+        }
+        return new Dwelling(floors);
     }
 }

@@ -169,13 +169,17 @@ public final class OfficeFloor implements Floor, Serializable {
         int p = 43;
         int result = 0;
         for (int i = 0; i < getCountSpace(); i++) {
-            result += getCountSpace()*p | getSpace(i).hashCode();
+            result += getCountSpace() * p | getSpace(i).hashCode();
         }
         return result;
     }
 
     @Override
-    protected Object clone() throws CloneNotSupportedException {
-        return super.clone();
+    public Object clone() throws CloneNotSupportedException {
+        Space[] spaces = new Space[getCountSpace()];
+        for (int i = 0; i < spaces.length; i++) {
+            spaces[i] = (Space) getSpace(i).clone();
+        }
+        return new OfficeFloor(spaces);
     }
 }

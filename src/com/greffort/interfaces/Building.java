@@ -48,4 +48,6 @@ public interface Building {
     Space getBestSpace();
 
     Space[] getSortSpaces();
+
+    Object clone() throws CloneNotSupportedException;
 }

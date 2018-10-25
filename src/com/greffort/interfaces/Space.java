@@ -18,4 +18,5 @@ public interface Space {
 
     void setSquare(final double square);
 
+    Object clone() throws CloneNotSupportedException;
 }

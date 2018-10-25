@@ -7,7 +7,7 @@ import com.greffort.interfaces.Space;
 import java.io.Serializable;
 import java.util.Arrays;
 
-public final class DwellingFloor implements Floor, Serializable {
+public class DwellingFloor implements Floor, Serializable {
 //
 //    + Создайте публичный класс DwellingFloor этажа жилого здания, основанный на массиве квартир.
 //    Номер квартиры явно не хранится.
@@ -30,7 +30,7 @@ public final class DwellingFloor implements Floor, Serializable {
     private Space[] arrayFlat;
 
 
-    public DwellingFloor(final int countFlat) {
+    public DwellingFloor(int countFlat) {
         this.arrayFlat = new Flat[countFlat];
         for (int i = 0; i < arrayFlat.length; i++) {
             arrayFlat[i] = new Flat();
@@ -157,13 +157,17 @@ public final class DwellingFloor implements Floor, Serializable {
         int p = 17;
         int result = 0;
         for (int i = 0; i < getCountSpace(); i++) {
-            result += getCountSpace()*p | getSpace(i).hashCode();
+            result += getCountSpace() * p | getSpace(i).hashCode();
         }
         return result;
     }
 
     @Override
-    protected Object clone() throws CloneNotSupportedException {
-        return super.clone();
+    public Object clone() throws CloneNotSupportedException {
+        Space[] spaces = new Space[getCountSpace()];
+        for (int i = 0; i < spaces.length; i++) {
+            spaces[i] = (Space) getSpace(i).clone();
+        }
+        return new DwellingFloor(spaces);
     }
 }
