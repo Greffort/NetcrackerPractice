@@ -1,11 +1,12 @@
-package com.greffort.building;
+package com.greffort.buildings.office;
 
 import com.greffort.exception.*;
 import com.greffort.interfaces.Space;
-import java.io.Serializable;
-import java.util.Objects;
+import org.jetbrains.annotations.NotNull;
 
-public final class Office implements Space {
+import java.io.Serializable;
+
+public final class Office implements Space, Serializable {
 
     /*
     Создайте класс Office офиса офисного здания.
@@ -61,6 +62,12 @@ public final class Office implements Space {
         this.square = square;
     }
 
+    @NotNull
+    public String toString(){
+        StringBuffer stringBuffer = new StringBuffer();
+        return stringBuffer.append("Office ("+getRoomCount()+", "+getSquare()+")").toString();
+    }
+
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
@@ -71,6 +78,14 @@ public final class Office implements Space {
 
     @Override
     public int hashCode() {
-        return Objects.hash(square, roomCount);
+        int p = 43;
+        long squareBit = Double.doubleToRawLongBits(this.square);
+        int squareBit2 = (int) (squareBit >>> 32);
+        return roomCount * p | (int) squareBit | squareBit2;
+    }
+
+    @Override
+    protected Object clone() throws CloneNotSupportedException {
+        return super.clone();
     }
 }

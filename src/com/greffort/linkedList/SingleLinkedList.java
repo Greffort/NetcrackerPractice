@@ -2,9 +2,12 @@ package com.greffort.linkedList;
 
 //import com.greffort.interfaces.Space;
 
-public final class SingleLinkedList<E> {
+import java.io.Serializable;
+import java.util.Objects;
 
-    class Node<E> {
+public final class SingleLinkedList<E> implements Serializable {
+
+    class Node<E> implements Serializable{
         E data;
         Node<E> next;
 
@@ -125,6 +128,19 @@ public final class SingleLinkedList<E> {
             }
         }
         size--;
+    }
+
+    public boolean equals(Object o,int index) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        SingleLinkedList<?> that = (SingleLinkedList<?>) o;
+        return size == that.size &&
+                Objects.equals(first, that.first);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(first, size);
     }
 }
 

@@ -1,4 +1,4 @@
-package com.greffort.building;
+package com.greffort.buildings.office;
 
 import com.greffort.exception.*;
 import com.greffort.interfaces.*;
@@ -224,6 +224,45 @@ public final class OfficeBuilding implements Building, Serializable {
 
     @Override
     public String toString() {
-        return "OfficeBuilding{" + "officeFloorDoubleLinkedList=" + officeFloorDoubleLinkedList + '}';
+        StringBuffer stringBuffer = new StringBuffer();
+        stringBuffer.append("OfficeBuilding ("+getCountFloors()+", ");
+        for (int i = 0; i < getCountFloors(); i++) {
+            stringBuffer.append(getFloor(i).toString()+", ");
+        }
+        stringBuffer.delete(stringBuffer.length()-2,stringBuffer.length());
+        stringBuffer.append(")");
+        return stringBuffer.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        OfficeBuilding that = (OfficeBuilding) o;
+        boolean b = false;
+        for (int i = 0; i < getCountFloors(); i++) {
+            if (this.getFloor(i).equals(that.getFloor(i))) {
+                b = true;
+            } else {
+                b = false;
+                break;
+            }
+        }
+        return b;
+    }
+
+    @Override
+    public int hashCode() {
+        int p = 17;
+        int result = 0;
+        for (int i = 0; i < getCountFloors(); i++) {
+            result += getCountFloors()*p | getFloor(i).hashCode();
+        }
+        return result;
+    }
+
+    @Override
+    protected Object clone() throws CloneNotSupportedException {
+        return super.clone();
     }
 }

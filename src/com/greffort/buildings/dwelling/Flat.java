@@ -1,10 +1,13 @@
-package com.greffort.dwelling;
+package com.greffort.buildings.dwelling;
 
 import com.greffort.exception.InvalidRoomsCountException;
 import com.greffort.interfaces.Space;
+import org.jetbrains.annotations.Contract;
+import org.jetbrains.annotations.NotNull;
+
 import java.io.Serializable;
 
-public final class Flat implements Space {
+public final class Flat implements Space, Serializable {
 
 //    Задание 1
 //    + Создайте публичный класс Flat квартиры жилого дома.
@@ -57,5 +60,49 @@ public final class Flat implements Space {
             throw new InvalidRoomsCountException();
         }
         this.square = square;
+    }
+
+
+    /**
+     * Добавьте в классы помещений Flat и Office реализации метода String toString(),
+     * выводящего тип помещения, текущее количество комнат помещения и его площадь через запятую в скобках.
+     * Например, Flat (3, 55.0)
+     */
+    @NotNull
+    public String toString() {
+        StringBuffer stringBuffer = new StringBuffer();
+        return stringBuffer.append(getClass() + " (" + getRoomCount() + ", " + getSquare() + ")").toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Flat flat = (Flat) o;
+        return Double.compare(flat.square, square) == 0 &&
+                roomCount == flat.roomCount;
+    }
+
+    /**
+     * Добавьте в классы помещений реализации методов int hashCode().
+     * Значение хеш-функции помещения можно вычислить
+     * как  значение последовательного побитового исключающегоИЛИ битового представления количества комнат помещения,
+     * и, например, первых 4 байтов и вторых 4-х байтов (для типа double)
+     * битовых представлений площадей помещений этажа (следует воспользоваться вспомогательными методами классов-оберток).
+     *
+     * @return
+     */
+    @Contract(pure = true)
+    @Override
+    public int hashCode() {
+        int p = 17;
+        long squareBit = Double.doubleToRawLongBits(this.square);
+        int squareBit2 = (int) (squareBit >>> 32);
+        return roomCount * p | (int) squareBit | squareBit2;
+    }
+
+    @Override
+    protected Object clone() throws CloneNotSupportedException {
+        return super.clone();
     }
 }

@@ -1,9 +1,11 @@
-package com.greffort.dwelling;
+package com.greffort.buildings.dwelling;
 
 import com.greffort.exception.*;
 import com.greffort.interfaces.*;
 import org.jetbrains.annotations.NotNull;
+
 import java.io.Serializable;
+import java.util.Arrays;
 
 public final class Dwelling implements Building, Serializable {
 ////    +  Создайте публичный класс Dwelling жилого здания, основанный на массиве этажей здания.
@@ -26,7 +28,7 @@ public final class Dwelling implements Building, Serializable {
 ////    + Создайте метод getBestSpace() получения самой большой по площади квартиры дома.
 ////    Создайте метод получения отсортированного по убыванию площадей массива квартир.
 ////
-////    Объедините имеющиеся на данный момент типы в пакет com.greffort.dwelling.
+////    Объедините имеющиеся на данный момент типы в пакет com.greffort.buildings.dwelling.
 ////    Проверьте работу классов, создав экземпляр многоэтажного жилого дома с различными произвольными
 ////    значениями количества квартир по этажам, а также площадей и количества комнат в квартирах.
 
@@ -215,5 +217,52 @@ public final class Dwelling implements Building, Serializable {
         return allFlats;
     }
 
+    /**
+     * Добавьте в классы зданий Dwelling, OfficeBuilding реализации метода String toString().
+     * Методы выводят текущее количество этажей и соответствующую информацию о каждом помещении каждого этажа,
+     * используя toString() уровня этажа и помещения. Например,
+     * Dwelling (2, DwellingFloor (3, Flat (...), ...), DwellingFloor (3, Flat (...), ...)
+     *
+     * @return
+     */
 
+    public String toString() {
+        StringBuffer stringBuffer = new StringBuffer();
+        stringBuffer.append("Dwelling ("+getCountFloors()+", ");
+        for (int i = 0; i < dwellingFloors.length; i++) {
+            stringBuffer.append(dwellingFloors[i].toString()+", ");
+        }
+        stringBuffer.delete(stringBuffer.length()-2,stringBuffer.length());
+        stringBuffer.append(")");
+        return stringBuffer.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Dwelling dwelling = (Dwelling) o;
+        return Arrays.equals(dwellingFloors, dwelling.dwellingFloors);
+    }
+
+    @Override
+    public int hashCode() {
+
+/**
+ * Добавьте в классы зданий реализации методов int hashCode().
+ * Значение хеш-функции здания вычисляется как значение побитового исключающего
+ * ИЛИ количества этажей здания и значений хеш-функций этажей здания.
+ */
+        int p = 17;
+        int result = 0;
+        for (int i = 0; i < getCountFloors(); i++) {
+            result += getCountFloors()*p | getFloor(i).hashCode();
+        }
+        return result;
+    }
+
+    @Override
+    protected Object clone() throws CloneNotSupportedException {
+        return super.clone();
+    }
 }

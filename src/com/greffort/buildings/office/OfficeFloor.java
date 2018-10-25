@@ -1,14 +1,15 @@
-package com.greffort.building;
+package com.greffort.buildings.office;
 
 import com.greffort.exception.SpaceIndexOutOfBoundsException;
 import com.greffort.interfaces.Floor;
 import com.greffort.interfaces.Space;
 import com.greffort.linkedList.SingleLinkedList;
 import org.jetbrains.annotations.NotNull;
+
 import java.io.Serializable;
 //import com.greffort.linkedList.DoubleLinkedList;
 
-public final class OfficeFloor implements Floor {
+public final class OfficeFloor implements Floor, Serializable {
 
 //    + Создайте класс OfficeFloor этажа офисного здания.
 //    + Работа класса должна быть основана на односвязном циклическом списке офисов с выделенной головой.
@@ -33,6 +34,7 @@ public final class OfficeFloor implements Floor {
 //private DoubleLinkedList<Office> officeSingleLinkedList = new DoubleLinkedList<>();
 
     private SingleLinkedList<Space> officeSingleLinkedList;
+
 
     public OfficeFloor(final int numberOffices) {
         officeSingleLinkedList = new SingleLinkedList<Space>();
@@ -131,5 +133,49 @@ public final class OfficeFloor implements Floor {
             }
         }
         return office;
+    }
+
+
+    public String toString() {
+
+        StringBuffer stringBuffer = new StringBuffer();
+        stringBuffer.append("OfficeFloor (" + getCountSpace() + ", ");
+        for (int i = 0; i < getCountSpace(); i++) {
+            stringBuffer.append(getSpace(i).toString() + "), ");
+        }
+        stringBuffer.delete(stringBuffer.length() - 2, stringBuffer.length());
+        return stringBuffer.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        OfficeFloor that = (OfficeFloor) o;
+        boolean b = false;
+        for (int i = 0; i < getCountSpace(); i++) {
+            if (this.getSpace(i).equals(that.getSpace(i))) {
+                b = true;
+            } else {
+                b = false;
+                break;
+            }
+        }
+        return b;
+    }
+
+    @Override
+    public int hashCode() {
+        int p = 43;
+        int result = 0;
+        for (int i = 0; i < getCountSpace(); i++) {
+            result += getCountSpace()*p | getSpace(i).hashCode();
+        }
+        return result;
+    }
+
+    @Override
+    protected Object clone() throws CloneNotSupportedException {
+        return super.clone();
     }
 }

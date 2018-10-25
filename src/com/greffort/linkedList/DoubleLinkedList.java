@@ -1,7 +1,10 @@
 package com.greffort.linkedList;
 
-public final class DoubleLinkedList<E> {
-    class Node<E> {
+import java.io.Serializable;
+import java.util.Objects;
+
+public final class DoubleLinkedList<E> implements Serializable {
+    class Node<E> implements Serializable{
         E data;
         Node<E> next;
         Node<E> prev;
@@ -130,6 +133,20 @@ public final class DoubleLinkedList<E> {
             }
         }
         size--;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        DoubleLinkedList<?> that = (DoubleLinkedList<?>) o;
+        return size == that.size &&
+                Objects.equals(first, that.first);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(first, size);
     }
 
 
