@@ -1,9 +1,12 @@
 package com.greffort.linkedList;
 
+import com.greffort.interfaces.Floor;
+
 import java.io.Serializable;
+import java.util.NoSuchElementException;
 import java.util.Objects;
 
-public final class DoubleLinkedList<E> implements Serializable {
+public final class DoubleLinkedList<E> implements Serializable/*,Iterable<E>*/ {
     class Node<E> implements Serializable{
         E data;
         Node<E> next;
@@ -149,5 +152,35 @@ public final class DoubleLinkedList<E> implements Serializable {
         return Objects.hash(first, size);
     }
 
+    public Iterator<E> iterator() {
+        return new Iterator<E>();
+    }
 
+    private class Iterator<E> implements java.util.Iterator<E> {
+
+        private int index = 0;
+
+        Node<E> x = first;
+        boolean isFirst = true;
+
+        public boolean hasNext() {
+            if (first == null) {
+                return false;
+            } else {
+                return index < getSize();
+            }
+        }
+
+        public E next() throws NoSuchElementException {
+            if (isFirst) {
+                isFirst = false;
+                index++;
+                return (E)first.data;
+            }
+            x = x.next;
+            index++;
+            return x.data;
+        }
+
+    }
 }

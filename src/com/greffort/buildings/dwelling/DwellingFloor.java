@@ -3,11 +3,15 @@ package com.greffort.buildings.dwelling;
 import com.greffort.exception.SpaceIndexOutOfBoundsException;
 import com.greffort.interfaces.Floor;
 import com.greffort.interfaces.Space;
+import org.jetbrains.annotations.Contract;
 
 import java.io.Serializable;
+import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Iterator;
+import java.util.NoSuchElementException;
 
-public class DwellingFloor implements Floor, Serializable {
+public class DwellingFloor implements Floor, Serializable, Iterable<Space> {
 //
 //    + Создайте публичный класс DwellingFloor этажа жилого здания, основанный на массиве квартир.
 //    Номер квартиры явно не хранится.
@@ -28,7 +32,6 @@ public class DwellingFloor implements Floor, Serializable {
 //    + Создайте метод getBestSpace() получения самой большой по площади квартиры этажа.
 
     private Space[] arrayFlat;
-
 
     public DwellingFloor(int countFlat) {
         this.arrayFlat = new Flat[countFlat];
@@ -118,6 +121,12 @@ public class DwellingFloor implements Floor, Serializable {
     public Space getBestSpace() {
         double bestSpace = 0;
         int index = 0;
+
+        DwellingFloor spaces = this;
+//        for (Space space1: this) {
+//            System.out.println(space1.getSquare());
+//        }
+
         for (int i = 0; i < arrayFlat.length; i++) {
             if (arrayFlat[i].getSquare() > bestSpace) {
                 bestSpace = arrayFlat[i].getSquare();
@@ -144,6 +153,7 @@ public class DwellingFloor implements Floor, Serializable {
         return stringBuffer.toString();
     }
 
+    @Contract(value = "null -> false", pure = true)
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
@@ -169,5 +179,26 @@ public class DwellingFloor implements Floor, Serializable {
             spaces[i] = (Space) getSpace(i).clone();
         }
         return new DwellingFloor(spaces);
+    }
+
+    public Iterator<Space> iterator(){
+        return new Iterator<>();
+    }
+
+    private class Iterator<E> implements java.util.Iterator<E> {
+
+        private int index = 0;
+
+        public boolean hasNext() {
+            if(arrayFlat == null){
+                return false;
+            }else{
+                return index<arrayFlat.length;}
+        }
+
+        public E next() throws NoSuchElementException {
+            return (E)arrayFlat[index++];
+        }
+
     }
 }

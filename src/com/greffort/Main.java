@@ -10,6 +10,8 @@ import com.greffort.exception.FloorIndexOutOfBoundsException;
 import com.greffort.exception.IndexChangeableSpacesException;
 import com.greffort.exception.SpaceIndexOutOfBoundsException;
 import com.greffort.interfaces.Building;
+import com.greffort.interfaces.Floor;
+import com.greffort.interfaces.Space;
 import com.greffort.placementExchanger.PlacementExchanger;
 //import java.lang.*;
 import java.io.*;
@@ -93,9 +95,9 @@ public class Main {
 ////        officeFloor.getSpace(2);
 ////        officeFloor.getSpace(3);
 //
-//        OfficeFloor OfficeFloor1 = new OfficeFloor(new Office[]{new Office(11, 11), new Office(12, 12), new Office(13, 13)});
-//        OfficeFloor OfficeFloor2 = new OfficeFloor(new Office[]{new Office(21, 21), new Office(22, 22), new Office(23, 23)});
-//        OfficeFloor OfficeFloor3 = new OfficeFloor(new Office[]{new Office(31, 31), new Office(32, 32), new Office(33, 33)});
+        OfficeFloor OfficeFloor1 = new OfficeFloor(new Office[]{new Office(11, 11), new Office(12, 12), new Office(13, 13)});
+        OfficeFloor OfficeFloor2 = new OfficeFloor(new Office[]{new Office(21, 21), new Office(22, 22), new Office(23, 23)});
+        OfficeFloor OfficeFloor3 = new OfficeFloor(new Office[]{new Office(31, 31), new Office(32, 32), new Office(33, 33)});
 //
 //        //OfficeFloor1.removeSpace(0);
 //        OfficeBuilding officeBuilding = new OfficeBuilding(new OfficeFloor[]{OfficeFloor1, OfficeFloor2, OfficeFloor3});
@@ -209,6 +211,27 @@ public class Main {
 //        System.out.println("Конец проверки смены помещений\n");
 
         HotelFloor hotelFloor = new HotelFloor(2);
+
+        DwellingFloor spaces = new DwellingFloor(flats1);
+
+        for (Space space:spaces)
+        {
+            System.out.println(space.getSquare()+" ff");
+        }
+        spaces.getBestSpace();
+
+
+        OfficeFloor spaces1 = new OfficeFloor(flats1);
+
+        spaces1.getBestSpace();
+
+        for (Space space :
+                spaces1) {
+            System.out.println(space.getSquare() +"rihbgeibe");
+        }
+
+        OfficeBuilding floors = new OfficeBuilding(new Floor[]{OfficeFloor1, OfficeFloor2,OfficeFloor3});
+        floors.addSpace(new Office(), 1);
     }
 
     private static void checkByteSymbolInOutput() {

@@ -2,35 +2,14 @@ package com.greffort.buildings.dwelling;
 
 import com.greffort.exception.*;
 import com.greffort.interfaces.*;
+import org.jetbrains.annotations.Contract;
 import org.jetbrains.annotations.NotNull;
 
 import java.io.Serializable;
 import java.util.Arrays;
+import java.util.NoSuchElementException;
 
 public class Dwelling implements Building, Serializable {
-////    +  Создайте публичный класс Dwelling жилого здания, основанный на массиве этажей здания.
-////    + Номер квартиры явно не хранится.
-////    + Нумерация квартир в доме сквозная и начинается с нуля.
-////    ? Конструктор может принимать количество этажей и массив количества квартир по этажам.
-////    + Конструктор может принимать массив этажей дома.
-////    + Создайте метод получения общего количества этажей дома.
-////    + Создайте метод получения общего количества квартир дома.
-////    + Создайте метод получения общей площади квартир дома.
-////    + Создайте метод получения общего количества комнат дома.
-////    + Создайте метод получения массива этажей жилого дома.
-////
-////    + Создайте метод получения объекта этажа, по его номеру в доме.
-////    + Создайте метод изменения этажа по его номеру в доме и ссылке на обновленный этаж.
-////    + Создайте метод получения объекта квартиры по ее номеру в доме.
-////    + Создайте метод изменения объекта квартиры по ее номеру в доме и ссылке на объект квартиры.
-////    + Создайте метод добавления квартиры в дом по будущему номеру квартиры в доме (т.е. в параметрах указывается номер, который должны иметь квартира после вставки) и ссылке на объект квартиры (количество этажей в доме при этом не увеличивается).
-////    + Создайте метод удаления квартиры по ее номеру в доме.
-////    + Создайте метод getBestSpace() получения самой большой по площади квартиры дома.
-////    Создайте метод получения отсортированного по убыванию площадей массива квартир.
-////
-////    Объедините имеющиеся на данный момент типы в пакет com.greffort.buildings.dwelling.
-////    Проверьте работу классов, создав экземпляр многоэтажного жилого дома с различными произвольными
-////    значениями количества квартир по этажам, а также площадей и количества комнат в квартирах.
 
     private Floor[] dwellingFloors;
 
@@ -217,18 +196,10 @@ public class Dwelling implements Building, Serializable {
         return allFlats;
     }
 
-    /**
-     * Добавьте в классы зданий Dwelling, OfficeBuilding реализации метода String toString().
-     * Методы выводят текущее количество этажей и соответствующую информацию о каждом помещении каждого этажа,
-     * используя toString() уровня этажа и помещения. Например,
-     * Dwelling (2, DwellingFloor (3, Flat (...), ...), DwellingFloor (3, Flat (...), ...)
-     *
-     * @return
-     */
-
     public String toString() {
         StringBuffer stringBuffer = new StringBuffer();
         stringBuffer.append("Dwelling (" + getCountFloors() + ", ");
+
         for (int i = 0; i < dwellingFloors.length; i++) {
             stringBuffer.append(dwellingFloors[i].toString() + ", ");
         }
@@ -237,6 +208,7 @@ public class Dwelling implements Building, Serializable {
         return stringBuffer.toString();
     }
 
+    @Contract(value = "null -> false", pure = true)
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
@@ -268,5 +240,26 @@ public class Dwelling implements Building, Serializable {
             floors[i] = (Floor) getSpace(i).clone();
         }
         return new Dwelling(floors);
+    }
+
+    public Iterator<Floor> iterator(){
+        return new Iterator<>();
+    }
+
+    private class Iterator<E> implements java.util.Iterator<E> {
+
+        private int index = 0;
+
+        public boolean hasNext() {
+            if(dwellingFloors == null){
+                return false;
+            }else{
+            return index<dwellingFloors.length;}
+        }
+
+        public E next() throws NoSuchElementException {
+            return (E)dwellingFloors[index++];
+        }
+
     }
 }

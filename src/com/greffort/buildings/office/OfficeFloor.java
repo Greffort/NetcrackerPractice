@@ -1,5 +1,6 @@
 package com.greffort.buildings.office;
 
+import com.greffort.buildings.dwelling.DwellingFloor;
 import com.greffort.exception.SpaceIndexOutOfBoundsException;
 import com.greffort.interfaces.Floor;
 import com.greffort.interfaces.Space;
@@ -7,6 +8,8 @@ import com.greffort.linkedList.SingleLinkedList;
 import org.jetbrains.annotations.NotNull;
 
 import java.io.Serializable;
+import java.util.Iterator;
+import java.util.NoSuchElementException;
 //import com.greffort.linkedList.DoubleLinkedList;
 
 public final class OfficeFloor implements Floor, Serializable {
@@ -123,6 +126,9 @@ public final class OfficeFloor implements Floor, Serializable {
     }
 
     public Space getBestSpace() {
+            for (Space space: this){
+                System.out.println(space.getSquare() + "rrrrrrrr");
+            }
         Space office = null;
         double bestSpace = 0;
         int index = 0;
@@ -134,7 +140,6 @@ public final class OfficeFloor implements Floor, Serializable {
         }
         return office;
     }
-
 
     public String toString() {
 
@@ -182,4 +187,27 @@ public final class OfficeFloor implements Floor, Serializable {
         }
         return new OfficeFloor(spaces);
     }
+
+    public Iterator<Space> iterator() {
+       return officeSingleLinkedList.iterator();
+    }
+//    private class Iterator<E> implements java.util.Iterator<E> {
+//
+//        private int index = 0;
+//
+//        public boolean hasNext() {
+//            if (officeSingleLinkedList == null) {
+//                return false;
+//            } else {
+//                return index < officeSingleLinkedList.getSize();
+//            }
+//        }
+//
+//        public E next() throws NoSuchElementException {
+//            return (E)officeSingleLinkedList.getNode(index++);
+//        }
+//
+//    }
+
 }
+

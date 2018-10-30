@@ -1,5 +1,6 @@
 package com.greffort.buildings;
 
+import com.greffort.buildings.dwelling.Flat;
 import com.greffort.buildings.office.Office;
 import com.greffort.buildings.office.OfficeBuilding;
 import com.greffort.buildings.office.OfficeFloor;

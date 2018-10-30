@@ -7,32 +7,10 @@ import org.jetbrains.annotations.Contract;
 import org.jetbrains.annotations.NotNull;
 
 import java.io.Serializable;
+import java.util.Iterator;
+import java.util.NoSuchElementException;
 
 public final class OfficeBuilding implements Building, Serializable {
-
-// + Создайте класс OfficeBuilding офисного здания.
-//    + Работа класса должна быть основана на двусвязном циклическом списке этажей с выделенной головой.
-//    + Номер офиса явно не хранится.
-//    + Нумерация офисов в здании сквозная и начинается с нуля.
-//    Создайте три вспомогательных приватных метода:
-//    + - приватный метод получения узла по его номеру;
-//    + - приватный метод добавления узла в список по номеру;
-//    + - приватный метод удаления узла из списка по его номеру.
-//    + Конструктор может принимать количество этажей и массив количества офисов по этажам.
-//    + Конструктор может принимать массив этажей офисного здания.
-//    + Создайте метод получения общего количества этажей здания.
-//    + Создайте метод получения общего количества офисов здания.
-//    + Создайте метод получения общей площади помещений здания.
-//    + Создайте метод получения общего количества комнат здания.
-//    + Создайте метод получения массива этажей офисного здания.
-//    + Создайте метод получения объекта этажа, по его номеру в здании.
-//    + Создайте метод изменения этажа по его номеру в здании и ссылке на объект нового этажа.
-//    + Создайте метод получения объекта офиса по его номеру в офисном здании.
-//    + Создайте метод изменения объекта офиса по его номеру в доме и ссылке на объект офиса.
-//    + Создайте метод добавления офиса в здание по номеру офиса в здании и ссылке на объект офиса.
-//    + Создайте метод удаления офиса по его номеру в здании.
-//    + Создайте метод getBestSpace() получения самого большого по площади офиса здания.
-//    + Создайте метод получения отсортированного по убыванию площадей массива офисов.
 
     private DoubleLinkedList<Floor> officeFloorDoubleLinkedList;
 
@@ -54,6 +32,7 @@ public final class OfficeBuilding implements Building, Serializable {
         this.officeFloorDoubleLinkedList = doubleLinkedList;
     }
 
+    @Contract(pure = true)
     private Floor getNode(final int index) {
         return officeFloorDoubleLinkedList.getNode(index);
     }
@@ -67,31 +46,41 @@ public final class OfficeBuilding implements Building, Serializable {
         if (false) throw new ArrayStoreException();
     }
 
+    @Contract(pure = true)
     public int getCountFloors() {
         return officeFloorDoubleLinkedList.getSize();
     }
 
     public int getCountSpaces() {
         int countSpaces = 0;
-        for (int i = 0; i < officeFloorDoubleLinkedList.getSize(); i++) {
-            countSpaces += getNode(i).getSpaces().length;
+        for (Floor floor : this) {
+            countSpaces += floor.getSpaces().length;
         }
+//        for (int i = 0; i < officeFloorDoubleLinkedList.getSize(); i++) {
+//            countSpaces += getNode(i).getSpaces().length;
+//        }
         return countSpaces;
     }
 
     public double getTotalSquare() {
         int totalSquare = 0;
-        for (int i = 0; i < officeFloorDoubleLinkedList.getSize(); i++) {
-            totalSquare += getNode(i).getTotalSquare();
+        for (Floor floor : this) {
+            totalSquare += floor.getTotalSquare();
         }
+//        for (int i = 0; i < officeFloorDoubleLinkedList.getSize(); i++) {
+//            totalSquare += getNode(i).getTotalSquare();
+//        }
         return totalSquare;
     }
 
     public int getTotalRoomCount() {
         int totalRoomCount = 0;
-        for (int i = 0; i < officeFloorDoubleLinkedList.getSize(); i++) {
-            totalRoomCount += getNode(i).getTotalRoomCount();
+        for (Floor floor : this) {
+            totalRoomCount += floor.getTotalRoomCount();
         }
+//        for (int i = 0; i < officeFloorDoubleLinkedList.getSize(); i++) {
+//            totalRoomCount += getNode(i).getTotalRoomCount();
+//        }
         return totalRoomCount;
     }
 
@@ -122,15 +111,24 @@ public final class OfficeBuilding implements Building, Serializable {
             throw new SpaceIndexOutOfBoundsException();
         }
         int counter = 0;
-        for (int i = 0; i < officeFloorDoubleLinkedList.getSize(); i++) {
-            for (int j = 0; j < officeFloorDoubleLinkedList.getNode(i).getCountSpace(); j++) {
+        for (Floor floor : this) {
+            for (Space space : floor) {
                 if (index == counter) {
-                    return officeFloorDoubleLinkedList.getNode(i).getSpace(j);
+                    return space;
                 } else {
                     counter++;
                 }
             }
         }
+//        for (int i = 0; i < officeFloorDoubleLinkedList.getSize(); i++) {
+//            for (int j = 0; j < officeFloorDoubleLinkedList.getNode(i).getCountSpace(); j++) {
+//                if (index == counter) {
+//                    return officeFloorDoubleLinkedList.getNode(i).getSpace(j);
+//                } else {
+//                    counter++;
+//                }
+//            }
+//        }
         return null;
     }
 
@@ -139,16 +137,26 @@ public final class OfficeBuilding implements Building, Serializable {
             throw new SpaceIndexOutOfBoundsException();
         }
         int counter = 0;
-        for (int i = 0; i < officeFloorDoubleLinkedList.getSize(); i++) {
-            for (int j = 0; j < officeFloorDoubleLinkedList.getNode(i).getCountSpace(); j++) {
+        for (Floor floor : this) {
+            for (Space space : floor) {
                 if (index == counter) {
-                    officeFloorDoubleLinkedList.getNode(i).setSpace(office, j);
+                    space = office;
                     return;
                 } else {
                     counter++;
                 }
             }
         }
+//        for (int i = 0; i < officeFloorDoubleLinkedList.getSize(); i++) {
+//            for (int j = 0; j < officeFloorDoubleLinkedList.getNode(i).getCountSpace(); j++) {
+//                if (index == counter) {
+//                    officeFloorDoubleLinkedList.getNode(i).setSpace(office, j);
+//                    return;
+//                } else {
+//                    counter++;
+//                }
+//            }
+//        }
     }
 
     public void addSpace(final Space office, final int index) {
@@ -156,6 +164,10 @@ public final class OfficeBuilding implements Building, Serializable {
             throw new SpaceIndexOutOfBoundsException();
         }
         int counter = 0;
+        for (Floor floor : this) {
+            floor.addSpace(office, index);
+        }
+
         for (int i = 0; i < officeFloorDoubleLinkedList.getSize(); i++) {
             for (int j = 0; j < officeFloorDoubleLinkedList.getNode(i).getCountSpace(); j++) {
                 if (index == counter) {
@@ -265,6 +277,8 @@ public final class OfficeBuilding implements Building, Serializable {
     }
 
 
+    @NotNull
+    @Contract(" -> new")
     @Override
     public Object clone() throws CloneNotSupportedException {
         Floor[] floors = new Floor[getCountFloors()];
@@ -273,4 +287,27 @@ public final class OfficeBuilding implements Building, Serializable {
         }
         return new OfficeBuilding(floors);
     }
+
+    public Iterator<Floor> iterator() {
+        return officeFloorDoubleLinkedList.iterator();
+        //return new Iterator<>();
+    }
+
+//    private class Iterator<E> implements java.util.Iterator<E> {
+//
+//        private int index = 0;
+//
+//        public boolean hasNext() {
+//            if (officeFloorDoubleLinkedList == null) {
+//                return false;
+//            } else {
+//                return index < officeFloorDoubleLinkedList.getSize();
+//            }
+//        }
+//
+//        public E next() throws NoSuchElementException {
+//            return (E) officeFloorDoubleLinkedList.getNode(index++);
+//        }
+//
+//    }
 }
