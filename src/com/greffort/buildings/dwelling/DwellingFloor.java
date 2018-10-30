@@ -3,33 +3,11 @@ package com.greffort.buildings.dwelling;
 import com.greffort.exception.SpaceIndexOutOfBoundsException;
 import com.greffort.interfaces.Floor;
 import com.greffort.interfaces.Space;
-import org.jetbrains.annotations.Contract;
-
 import java.io.Serializable;
-import java.util.ArrayList;
 import java.util.Arrays;
-import java.util.Iterator;
 import java.util.NoSuchElementException;
 
 public class DwellingFloor implements Floor, Serializable, Iterable<Space> {
-//
-//    + Создайте публичный класс DwellingFloor этажа жилого здания, основанный на массиве квартир.
-//    Номер квартиры явно не хранится.
-//    Нумерация квартир на этаже сквозная и начинается с нуля.
-//    + Конструктор может принимать количество квартир на этаже.
-//    + Конструктор может принимать массив квартир этажа.
-//    + Создайте метод получения количества квартир на этаже.
-//    + Создайте метод получения общей площади квартир этажа.
-//    + Создайте метод получения общего количества комнат этажа.
-//
-//    + Создайте метод получения массива квартир этажа.
-//    + Создайте метод получения объекта квартиры по ее номеру на этаже.
-//    + Создайте метод изменения квартиры по ее номеру на этаже и ссылке на новую квартиру.
-//    + Создайте метод добавления новой квартиры на этаже по будущему номеру квартиры
-//    + (т.е. в параметрах указывается номер, который должны иметь квартира после вставки) и ссылке на объект квартиры.
-//       Можно ли указать 100 индекс?
-//    + Создайте метод удаления квартиры по ее номеру на этаже.
-//    + Создайте метод getBestSpace() получения самой большой по площади квартиры этажа.
 
     private Space[] arrayFlat;
 
@@ -121,12 +99,6 @@ public class DwellingFloor implements Floor, Serializable, Iterable<Space> {
     public Space getBestSpace() {
         double bestSpace = 0;
         int index = 0;
-
-        DwellingFloor spaces = this;
-//        for (Space space1: this) {
-//            System.out.println(space1.getSquare());
-//        }
-
         for (int i = 0; i < arrayFlat.length; i++) {
             if (arrayFlat[i].getSquare() > bestSpace) {
                 bestSpace = arrayFlat[i].getSquare();
@@ -136,12 +108,6 @@ public class DwellingFloor implements Floor, Serializable, Iterable<Space> {
         return arrayFlat[index];
     }
 
-    /**
-     * Добавьте в классы этажей DwellingFloor, OfficeFloor реализации метода String toString().
-     * Методы выводят тип этажа, текущее количество помещений этажа и соответствующую информацию по каждому помещению,
-     * используя метод toString() помещения. Например,
-     * DwellingFloor (3, Flat (3, 55.0), Flat (2, 48.0), Flat (1, 37.0))
-     */
     public String toString() {
 
         StringBuffer stringBuffer = new StringBuffer();
@@ -153,7 +119,6 @@ public class DwellingFloor implements Floor, Serializable, Iterable<Space> {
         return stringBuffer.toString();
     }
 
-    @Contract(value = "null -> false", pure = true)
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
@@ -181,24 +146,45 @@ public class DwellingFloor implements Floor, Serializable, Iterable<Space> {
         return new DwellingFloor(spaces);
     }
 
-    public Iterator<Space> iterator(){
+    public Iterator<Space> iterator() {
         return new Iterator<>();
     }
 
-    private class Iterator<E> implements java.util.Iterator<E> {
+    private class Iterator<E> implements java.util.Iterator<E>, Serializable {
 
         private int index = 0;
 
         public boolean hasNext() {
-            if(arrayFlat == null){
+            if (arrayFlat == null) {
                 return false;
-            }else{
-                return index<arrayFlat.length;}
+            } else {
+                return index < arrayFlat.length;
+            }
         }
 
         public E next() throws NoSuchElementException {
-            return (E)arrayFlat[index++];
+            return (E) arrayFlat[index++];
         }
 
+    }
+
+    public int compareTo(Floor floor) {
+        /**
+         * В классах этажей реализуйте метод int compareTo(T o) таким образом,
+         * чтобы он сравнивал объекты этажей по количеству помещений и считал бОльшим этаж с бОльшим количеством помещений
+         *
+         * Если этот метод возвращает отрицательное число, то текущий объект будет располагаться перед тем, который передается
+         * через параметр.
+         * Если метод вернет положительное число, то, наоборот, после второго объекта.
+         * Если метод возвратит ноль, значит, оба объекта равны.
+         */
+        if (this.getCountSpace() > floor.getCountSpace()) {
+            return 1;
+        }
+        if (this.getCountSpace() < floor.getCountSpace()) {
+            return -1;
+        } else {
+            return 0;
+        }
     }
 }

@@ -4,13 +4,12 @@ import java.io.Serializable;
 import java.util.NoSuchElementException;
 import java.util.Objects;
 
-public final class SingleLinkedList<E> implements Serializable/*,Iterable<E>*/ {
+public final class SingleLinkedList<E> implements Serializable, Iterable<E> {
 
-    class Node<E> implements Serializable{
+    private class Node<E> implements Serializable {
         E data;
         Node<E> next;
 
-        //Node<E> prev; Для двусвязного списка
         Node(E element) {
             this.data = element;
         }
@@ -129,7 +128,7 @@ public final class SingleLinkedList<E> implements Serializable/*,Iterable<E>*/ {
         size--;
     }
 
-    public boolean equals(Object o,int index) {
+    public boolean equals(Object o, int index) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         SingleLinkedList<?> that = (SingleLinkedList<?>) o;
@@ -141,10 +140,12 @@ public final class SingleLinkedList<E> implements Serializable/*,Iterable<E>*/ {
     public int hashCode() {
         return Objects.hash(first, size);
     }
+
     public Iterator<E> iterator() {
         return new Iterator<>();
     }
-    private class Iterator<E> implements java.util.Iterator<E> {
+
+    private class Iterator<E> implements java.util.Iterator<E>, Serializable {
 
         private int index = 0;
 
@@ -163,12 +164,11 @@ public final class SingleLinkedList<E> implements Serializable/*,Iterable<E>*/ {
             if (isFirst) {
                 isFirst = false;
                 index++;
-                return (E)first.data;
+                return (E) first.data;
             }
             x = x.next;
             index++;
             return x.data;
-//            return (E) getNode(index++);
         }
 
     }

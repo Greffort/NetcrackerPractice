@@ -1,8 +1,6 @@
 package com.greffort.factory;
 
-import com.greffort.interfaces.Building;
-import com.greffort.interfaces.Floor;
-import com.greffort.interfaces.Space;
+import com.greffort.interfaces.*;
 import org.jetbrains.annotations.NotNull;
 
 public interface Factory {

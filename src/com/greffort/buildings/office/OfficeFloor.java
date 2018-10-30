@@ -1,43 +1,16 @@
 package com.greffort.buildings.office;
 
-import com.greffort.buildings.dwelling.DwellingFloor;
 import com.greffort.exception.SpaceIndexOutOfBoundsException;
 import com.greffort.interfaces.Floor;
 import com.greffort.interfaces.Space;
 import com.greffort.linkedList.SingleLinkedList;
 import org.jetbrains.annotations.NotNull;
-
 import java.io.Serializable;
 import java.util.Iterator;
-import java.util.NoSuchElementException;
-//import com.greffort.linkedList.DoubleLinkedList;
 
 public final class OfficeFloor implements Floor, Serializable {
 
-//    + Создайте класс OfficeFloor этажа офисного здания.
-//    + Работа класса должна быть основана на односвязном циклическом списке офисов с выделенной головой.
-//    + Номер офиса явно не хранится.
-//
-//    + Создайте приватный метод получения узла по его номеру.
-//    + Создайте приватный метод добавления узла в список по номеру.
-//    + Создайте приватный метод удаления узла из списка по его номеру.
-//
-//    + Конструктор может принимать количество офисов на этаже.
-//    + Конструктор может принимать массив офисов этажа.
-//    + Создайте метод получения количества офисов на этаже.
-//    + Создайте метод получения общей площади помещений этажа.
-//    + Создайте метод получения общего количества комнат этажа.
-//    + Создайте метод получения массива офисов этажа.
-//
-//    + Создайте метод получения офиса по его номеру на этаже.
-//    + Создайте метод изменения офиса по его номеру на этаже и ссылке на обновленный офис.
-//    + Создайте метод добавления нового офиса на этаже по будущему номеру офиса.
-//    + Создайте метод удаления офиса по его номеру на этаже.
-//    + Создайте метод getBestSpace() получения самого большого по площади офиса этажа.
-//private DoubleLinkedList<Office> officeSingleLinkedList = new DoubleLinkedList<>();
-
     private SingleLinkedList<Space> officeSingleLinkedList;
-
 
     public OfficeFloor(final int numberOffices) {
         officeSingleLinkedList = new SingleLinkedList<Space>();
@@ -58,7 +31,7 @@ public final class OfficeFloor implements Floor, Serializable {
     }
 
     private void addNode(final Space iSpace, final int index) {
-        officeSingleLinkedList.addNode(iSpace, index);//Exception in thread "main" java.lang.NullPointerException
+        officeSingleLinkedList.addNode(iSpace, index);
     }
 
     private Space getNode(final int index) {
@@ -126,9 +99,6 @@ public final class OfficeFloor implements Floor, Serializable {
     }
 
     public Space getBestSpace() {
-            for (Space space: this){
-                System.out.println(space.getSquare() + "rrrrrrrr");
-            }
         Space office = null;
         double bestSpace = 0;
         int index = 0;
@@ -191,23 +161,25 @@ public final class OfficeFloor implements Floor, Serializable {
     public Iterator<Space> iterator() {
        return officeSingleLinkedList.iterator();
     }
-//    private class Iterator<E> implements java.util.Iterator<E> {
-//
-//        private int index = 0;
-//
-//        public boolean hasNext() {
-//            if (officeSingleLinkedList == null) {
-//                return false;
-//            } else {
-//                return index < officeSingleLinkedList.getSize();
-//            }
-//        }
-//
-//        public E next() throws NoSuchElementException {
-//            return (E)officeSingleLinkedList.getNode(index++);
-//        }
-//
-//    }
 
+    public int compareTo(Floor floor) {
+        /**
+         * В классах этажей реализуйте метод int compareTo(T o) таким образом,
+         * чтобы он сравнивал объекты этажей по количеству помещений и считал бОльшим этаж с бОльшим количеством помещений
+         *
+         * Если этот метод возвращает отрицательное число, то текущий объект будет располагаться перед тем, который передается
+         * через параметр.
+         * Если метод вернет положительное число, то, наоборот, после второго объекта.
+         * Если метод возвратит ноль, значит, оба объекта равны.
+         */
+        if (this.getCountSpace() > floor.getCountSpace()) {
+            return 1;
+        }
+        if (this.getCountSpace() < floor.getCountSpace()) {
+            return -1;
+        } else {
+            return 0;
+        }
+    }
 }
 

@@ -3,25 +3,10 @@ package com.greffort.buildings.office;
 import com.greffort.exception.*;
 import com.greffort.interfaces.Space;
 import org.jetbrains.annotations.NotNull;
-
 import java.io.Serializable;
 
 public final class Office implements Space, Serializable {
 
-    /*
-    Создайте класс Office офиса офисного здания.
-    Офис не хранит свой номер.
-    Разные офисы могут иметь разные площади.
-    Разные офисы могут иметь разное количество комнат.
-
-    Конструктор по умолчанию создает офис из 1 комнаты площадью 250 кв.м. (константы)
-    Конструктор может принимать площадь офиса (создается офис с 1 комнатой).
-    Конструктор может принимать площадь офиса и количество комнат.
-    Создайте метод получения количества комнат в офисе.
-    Создайте метод изменения количества комнат в офисе.
-    Создайте метод получения площади офиса.
-    Создайте метод изменения площади офиса.
-    */
     private static final double DEFAULT_SQUARE = 250;
     private static final int DEFAULT_ROOM_COUNT = 1;
     private double square;
@@ -87,5 +72,25 @@ public final class Office implements Space, Serializable {
     @Override
     public Object clone() throws CloneNotSupportedException {
         return new Office(this.square, this.roomCount);
+    }
+
+    public int compareTo(Space space) {
+        /**
+         * В классах помещений реализуйте метод int compareTo(T o) таким образом,
+         * чтобы он сравнивал объекты помещений по их площади и считал бОльшим помещение с большей площадью.
+         *
+         * Если этот метод возвращает отрицательное число, то текущий объект будет располагаться перед тем, который передается
+         * через параметр.
+         * Если метод вернет положительное число, то, наоборот, после второго объекта.
+         * Если метод возвратит ноль, значит, оба объекта равны.
+         */
+        if (this.getSquare() > space.getSquare()) {
+            return 1;
+        }
+        if (this.getSquare() < space.getSquare()) {
+            return -1;
+        } else {
+            return 0;
+        }
     }
 }

@@ -1,9 +1,6 @@
 package com.greffort.buildings;
 
-import com.greffort.buildings.dwelling.Flat;
-import com.greffort.buildings.office.Office;
 import com.greffort.buildings.office.OfficeBuilding;
-import com.greffort.buildings.office.OfficeFloor;
 import com.greffort.factory.OfficeFactory;
 import com.greffort.factory.Factory;
 import com.greffort.interfaces.Building;
@@ -16,44 +13,7 @@ import java.util.*;
 
 
 public class Buildings implements Serializable {
-    /**
-     * //      Создайте отдельный класс Buildings, работающий со ссылками типа Space, Floor, Building,
-     * //      содержащий статические методы ввода-вывода зданий:
-     * <p>
-     * //          •	записи данных о здании в байтовый поток
-     * //      public static void outputBuilding (Building office, OutputStream out);
-     * <p>
-     * //          •	чтения данных о здании из байтового потока
-     * //      public static Building inputBuilding (InputStream in);
-     * <p>
-     * //          •	записи здания в символьный поток
-     * //      public static void writeBuilding (Building office, Writer out);
-     * <p>
-     * //          •	чтения здания из символьного потока
-     * //      public static Building readBuilding (Reader in).
-     * <p>
-     * //      Записанные данные о здании представляет собой последовательность чисел, первым из которых является количество этажей,
-     * //      далее следует количество помещений текущего этажа и соответствующие значения количества комнат и площадей помещений текущего этажа.
-     * <p>
-     * //      Например, символьная запись для трехэтажного здания:
-     * //          «3 2 3 150.0 2 100.0 1 3 250.0 3 2 140.0 1 60.0 1 50.0»
-     * <p>
-     * //      Для чтения этажа из символьного потока можно использовать StreamTokenizer.
-     * //      Проверьте возможности всех реализованных методов, в качестве реальных потоков используя файловые потоки,
-     * //      а также потоки System.in и System.out.
-     * <p>
-     * ---------------------------------------------------------
-     * Добавьте в класс Buildings следующие методы:
-     * •	сериализации здания в байтовый поток
-     * public static void serializeBuilding (Building office, OutputStream out);
-     * •	десериализации здания из байтового потока
-     * public static Building deserializeBuilding (InputStream in);
-     * Добавьте метод текстовой записи
-     * public static void writeBuildingFormat (Building office, Writer out)
-     * для зданий класса Buildings, использующий возможности форматированного вывода.
-     * Перегрузите метод текстового чтения зданий класса Buildings таким образом,
-     * чтобы он использовал возможности форматированного ввода и вывода и имел аргумент типа Scanner.
-     */
+
     private static Factory factory = new OfficeFactory(); // сделать выбор фабрики
 
     public static void setFactory(Factory factory) {
@@ -64,40 +24,29 @@ public class Buildings implements Serializable {
         return factory.createBuilding(floors);
     }
 
-
     public static void outputBuilding(Building building, OutputStream out) throws IOException {
         DataOutputStream dataOutputStream = new DataOutputStream(out);
-
         // Сделать запись первым байтом - тип здания, тип этажа, тип помещения
-        //write count floor on office
         dataOutputStream.writeInt(building.getCountFloors());
         for (int i = 0, countFloors = building.getCountFloors(); i < countFloors; i++) {
-            //write count spaces on floor
             dataOutputStream.writeInt(building.getFloors()[i].getCountSpace());
             for (int j = 0, countSpaces = building.getFloors()[i].getCountSpace(); j < countSpaces; j++) {
-                //write count room
                 dataOutputStream.writeDouble(building.getFloors()[i].getSpaces()[j].getSquare());
                 dataOutputStream.writeInt(building.getFloors()[i].getSpaces()[j].getRoomCount());
-                //write space
-
             }
         }
     }
 
     public static Building inputBuilding(InputStream in) throws IOException {
         DataInputStream dataInputStream = new DataInputStream(in);
-        //count Floors
-        // Space space = null;
         Floor[] floors = new Floor[dataInputStream.readInt()];
         for (int i = 0; i < floors.length; i++) {
-            //count Spaces on Floor
             Space[] spaces = new Space[dataInputStream.readInt()];
             for (int j = 0; j < spaces.length; j++) {
                 spaces[j] = factory.createSpace(dataInputStream.readDouble(), dataInputStream.readInt());
             }
             floors[i] = factory.createFloor(spaces);
         }
-//        dataInputStream.close();
         return factory.createBuilding(floors);
     }
 
@@ -144,15 +93,6 @@ public class Buildings implements Serializable {
         return (Building) objectInputStream.readObject();
     }
 
-    /**
-     * Добавьте метод текстовой записи
-     * public static void writeBuildingFormat (Building office, Writer out)
-     * для зданий класса Buildings,
-     * использующий возможности форматированного вывода.
-     * <p>
-     * Перегрузите метод текстового чтения зданий класса Buildings таким образом,
-     * чтобы он использовал возможности форматированного ввода и вывода и имел аргумент типа Scanner.
-     */
     public static void writeBuildingFormat(@NotNull Building building, Writer out) {
         PrintWriter printWriter = new PrintWriter(out);
         printWriter.printf(Locale.ENGLISH, "Количество этажей: %d %n", building.getCountFloors());
@@ -167,21 +107,79 @@ public class Buildings implements Serializable {
 
     public static Building readBuilding(Scanner scanner) throws IOException {
         Floor[] floors;
-        //scanner = new Scanner(in).useDelimiter("\\W+");
-
         floors = new Floor[scanner.nextInt()];
-
         for (int i = 0; i < floors.length; i++) {
             scanner.nextInt();
             Space[] spaces = new Space[scanner.nextInt()];
-
             for (int j = 0; j < spaces.length; j++) {
                 scanner.nextInt();
                 scanner.nextInt();
                 spaces[j] = factory.createSpace(scanner.nextInt(), scanner.nextInt());
             }
-            floors[i] =factory.createFloor(spaces);
+            floors[i] = factory.createFloor(spaces);
         }
         return new OfficeBuilding(floors);
+    }
+
+    //Добавьте в класс Buildings метод сортировки помещений этажа по возрастанию площадей помещений,
+    // и метод сортировки этажей здания по возрастанию количества помещений на этаже.
+
+    public Floor sort(Floor floors) {
+        /**
+         * //Добавьте в класс Buildings метод сортировки помещений этажа по возрастанию площадей помещений,
+         * // и метод сортировки этажей здания по возрастанию количества помещений на этаже.
+         *
+         * положительное, если вызывающий объект больше объекта, переданного в качестве параметра;
+         * отрицательное, если вызывающий объект меньше объекта, переданного в качестве параметра;
+         * нуль, если объекты равны.
+         */
+
+        Space[] spaces = new Space[floors.getCountSpace()];
+        for (int i = 0, j = 1; j < floors.getCountSpace(); i++) {
+
+            floors.getSpace(i).compareTo(floors.getSpace(j));
+
+            if (floors.getSpace(i).compareTo(floors.getSpace(j)) > 0) {
+                Space s = floors.getSpace(i);
+                floors.setSpace(floors.getSpace(j),i);
+                floors.setSpace(s,j);
+            }
+            if (floors.getSpace(i).compareTo(floors.getSpace(j)) < 0) {
+
+            } else {
+
+            }
+
+        }
+        for (Space space : floors) {
+            if (space.compareTo(space) > 0) {
+
+            }
+            if (space.compareTo(space) < 0) {
+
+            } else {
+
+            }
+        }
+        return factory.createFloor(spaces);
+    }
+
+    public int sort(Floor floor) {
+        /**
+         *  //Добавьте в класс Buildings метод сортировки помещений этажа по возрастанию площадей помещений,
+         *  // и метод сортировки этажей здания по возрастанию количества помещений на этаже.
+         * Если этот метод возвращает отрицательное число, то текущий объект будет располагаться перед тем, который передается
+         * через параметр.
+         * Если метод вернет положительное число, то, наоборот, после второго объекта.
+         * Если метод возвратит ноль, значит, оба объекта равны.
+         */
+        if (this.getCountSpace() > floor.getCountSpace()) {
+            return 1;
+        }
+        if (this.getCountSpace() < floor.getCountSpace()) {
+            return -1;
+        } else {
+            return 0;
+        }
     }
 }

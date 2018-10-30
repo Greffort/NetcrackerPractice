@@ -1,6 +1,6 @@
 package com.greffort.interfaces;
 
-public interface Space {
+public interface Space extends Comparable<Space> {
 
     int getRoomCount();
 
@@ -11,4 +11,6 @@ public interface Space {
     void setSquare(final double square);
 
     Object clone() throws CloneNotSupportedException;
+
+
 }

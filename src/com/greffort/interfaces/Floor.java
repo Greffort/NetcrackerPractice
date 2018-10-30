@@ -1,8 +1,6 @@
 package com.greffort.interfaces;
 
-import java.util.Iterator;
-
-public interface Floor extends Iterable<Space> /*, Comparable<Space>*/{
+public interface Floor extends Iterable<Space> , Comparable<Floor> {
 
     int getCountSpace();
 
@@ -23,5 +21,4 @@ public interface Floor extends Iterable<Space> /*, Comparable<Space>*/{
     Space getBestSpace();
 
     Object clone() throws CloneNotSupportedException;
-
 }

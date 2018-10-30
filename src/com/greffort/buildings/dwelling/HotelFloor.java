@@ -3,24 +3,8 @@ package com.greffort.buildings.dwelling;
 import com.greffort.exception.InvalidCoeffException;
 import com.greffort.interfaces.Space;
 
-import java.util.Objects;
+public class HotelFloor extends DwellingFloor {
 
-public class HotelFloor extends DwellingFloor{
-    /**
-     * Создайте пакет buildings.dwelling.hotel.
-     *
-     * Создайте класс HotelFloor, расширяющий класс DwellingFloor.
-     *
-     * Каждый этаж отеля имеет показатель «количество звезд».
-     *
-     * Разные этажи отеля могут иметь разные значения показателя количества звезд.
-     *
-     * Этаж отеля можно создать как по количеству помещений этажа, так и по массиву помещений.
-     *
-     * Количество звезд этажа при создании объекта должно браться из константы в классе, равной 1.
-     *
-     * У объекта этажа отеля должны быть методы получения и изменения его количества звезд.
-     */
     private static final int DEFAULT_STARS = 1;
     private int stars;
 
@@ -47,7 +31,7 @@ public class HotelFloor extends DwellingFloor{
 
     public String toString() {
         StringBuffer stringBuffer = new StringBuffer();
-        stringBuffer.append("HotelFloor (" + getCountSpace() + ", "+(getStars()) +", ");
+        stringBuffer.append("HotelFloor (" + getCountSpace() + ", " + (getStars()) + ", ");
         for (int i = 0; i < getCountSpace(); i++) {
             stringBuffer.append(getSpace(i).toString() + "), ");
         }

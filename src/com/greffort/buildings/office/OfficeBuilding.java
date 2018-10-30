@@ -4,11 +4,9 @@ import com.greffort.exception.*;
 import com.greffort.interfaces.*;
 import com.greffort.linkedList.DoubleLinkedList;
 import org.jetbrains.annotations.Contract;
-import org.jetbrains.annotations.NotNull;
 
 import java.io.Serializable;
 import java.util.Iterator;
-import java.util.NoSuchElementException;
 
 public final class OfficeBuilding implements Building, Serializable {
 
@@ -56,9 +54,6 @@ public final class OfficeBuilding implements Building, Serializable {
         for (Floor floor : this) {
             countSpaces += floor.getSpaces().length;
         }
-//        for (int i = 0; i < officeFloorDoubleLinkedList.getSize(); i++) {
-//            countSpaces += getNode(i).getSpaces().length;
-//        }
         return countSpaces;
     }
 
@@ -67,9 +62,6 @@ public final class OfficeBuilding implements Building, Serializable {
         for (Floor floor : this) {
             totalSquare += floor.getTotalSquare();
         }
-//        for (int i = 0; i < officeFloorDoubleLinkedList.getSize(); i++) {
-//            totalSquare += getNode(i).getTotalSquare();
-//        }
         return totalSquare;
     }
 
@@ -78,9 +70,6 @@ public final class OfficeBuilding implements Building, Serializable {
         for (Floor floor : this) {
             totalRoomCount += floor.getTotalRoomCount();
         }
-//        for (int i = 0; i < officeFloorDoubleLinkedList.getSize(); i++) {
-//            totalRoomCount += getNode(i).getTotalRoomCount();
-//        }
         return totalRoomCount;
     }
 
@@ -120,15 +109,6 @@ public final class OfficeBuilding implements Building, Serializable {
                 }
             }
         }
-//        for (int i = 0; i < officeFloorDoubleLinkedList.getSize(); i++) {
-//            for (int j = 0; j < officeFloorDoubleLinkedList.getNode(i).getCountSpace(); j++) {
-//                if (index == counter) {
-//                    return officeFloorDoubleLinkedList.getNode(i).getSpace(j);
-//                } else {
-//                    counter++;
-//                }
-//            }
-//        }
         return null;
     }
 
@@ -137,26 +117,16 @@ public final class OfficeBuilding implements Building, Serializable {
             throw new SpaceIndexOutOfBoundsException();
         }
         int counter = 0;
-        for (Floor floor : this) {
-            for (Space space : floor) {
+        for (int i = 0; i < officeFloorDoubleLinkedList.getSize(); i++) {
+            for (int j = 0; j < officeFloorDoubleLinkedList.getNode(i).getCountSpace(); j++) {
                 if (index == counter) {
-                    space = office;
+                    officeFloorDoubleLinkedList.getNode(i).setSpace(office, j);
                     return;
                 } else {
                     counter++;
                 }
             }
         }
-//        for (int i = 0; i < officeFloorDoubleLinkedList.getSize(); i++) {
-//            for (int j = 0; j < officeFloorDoubleLinkedList.getNode(i).getCountSpace(); j++) {
-//                if (index == counter) {
-//                    officeFloorDoubleLinkedList.getNode(i).setSpace(office, j);
-//                    return;
-//                } else {
-//                    counter++;
-//                }
-//            }
-//        }
     }
 
     public void addSpace(final Space office, final int index) {
@@ -167,7 +137,6 @@ public final class OfficeBuilding implements Building, Serializable {
         for (Floor floor : this) {
             floor.addSpace(office, index);
         }
-
         for (int i = 0; i < officeFloorDoubleLinkedList.getSize(); i++) {
             for (int j = 0; j < officeFloorDoubleLinkedList.getNode(i).getCountSpace(); j++) {
                 if (index == counter) {
@@ -276,9 +245,6 @@ public final class OfficeBuilding implements Building, Serializable {
         return result;
     }
 
-
-    @NotNull
-    @Contract(" -> new")
     @Override
     public Object clone() throws CloneNotSupportedException {
         Floor[] floors = new Floor[getCountFloors()];
@@ -290,24 +256,5 @@ public final class OfficeBuilding implements Building, Serializable {
 
     public Iterator<Floor> iterator() {
         return officeFloorDoubleLinkedList.iterator();
-        //return new Iterator<>();
     }
-
-//    private class Iterator<E> implements java.util.Iterator<E> {
-//
-//        private int index = 0;
-//
-//        public boolean hasNext() {
-//            if (officeFloorDoubleLinkedList == null) {
-//                return false;
-//            } else {
-//                return index < officeFloorDoubleLinkedList.getSize();
-//            }
-//        }
-//
-//        public E next() throws NoSuchElementException {
-//            return (E) officeFloorDoubleLinkedList.getNode(index++);
-//        }
-//
-//    }
 }

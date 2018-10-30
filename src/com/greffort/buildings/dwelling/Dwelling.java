@@ -2,9 +2,7 @@ package com.greffort.buildings.dwelling;
 
 import com.greffort.exception.*;
 import com.greffort.interfaces.*;
-import org.jetbrains.annotations.Contract;
 import org.jetbrains.annotations.NotNull;
-
 import java.io.Serializable;
 import java.util.Arrays;
 import java.util.NoSuchElementException;
@@ -208,8 +206,6 @@ public class Dwelling implements Building, Serializable {
         return stringBuffer.toString();
     }
 
-    @Contract(value = "null -> false", pure = true)
-    @Override
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
@@ -219,12 +215,6 @@ public class Dwelling implements Building, Serializable {
 
     @Override
     public int hashCode() {
-
-/**
- * Добавьте в классы зданий реализации методов int hashCode().
- * Значение хеш-функции здания вычисляется как значение побитового исключающего
- * ИЛИ количества этажей здания и значений хеш-функций этажей здания.
- */
         int p = 17;
         int result = 0;
         for (int i = 0; i < getCountFloors(); i++) {
@@ -242,23 +232,24 @@ public class Dwelling implements Building, Serializable {
         return new Dwelling(floors);
     }
 
-    public Iterator<Floor> iterator(){
+    public Iterator<Floor> iterator() {
         return new Iterator<>();
     }
 
-    private class Iterator<E> implements java.util.Iterator<E> {
+    private class Iterator<E> implements java.util.Iterator<E>, Serializable {
 
         private int index = 0;
 
         public boolean hasNext() {
-            if(dwellingFloors == null){
+            if (dwellingFloors == null) {
                 return false;
-            }else{
-            return index<dwellingFloors.length;}
+            } else {
+                return index < dwellingFloors.length;
+            }
         }
 
         public E next() throws NoSuchElementException {
-            return (E)dwellingFloors[index++];
+            return (E) dwellingFloors[index++];
         }
 
     }

@@ -6,15 +6,6 @@ import org.jetbrains.annotations.Contract;
 import org.jetbrains.annotations.NotNull;
 
 public class Hotel extends Dwelling {
-    /**
-     *
-     * Добавьте в класс HotelFloor реализацию метода int hashCode(). Значение хеш-функции этажа отеля вычисляется как значение побитового
-     * исключающего ИЛИ количества помещений на этаже, показателя звездности этажа и значений хеш-функций помещений этажа.
-     *
-     * Добавьте в класс Hotel реализацию метода int hashCode(). Значение хеш-функции здания вычисляется как значение побитового
-     * исключающего ИЛИ количества этажей здания и значений хеш-функций этажей отеля.
-     */
-
 
     public Hotel(int dwellingFloorCount, @NotNull int[] arrayFlatCounts) {
         super(dwellingFloorCount, arrayFlatCounts);
@@ -23,20 +14,6 @@ public class Hotel extends Dwelling {
     public Hotel(Floor[] arrayDwellingFloor) {
         super(arrayDwellingFloor);
     }
-
-    /**
-     * Переопределите метод getBestSpace() у класса отеля.
-     * Лучшим считается номер с максимальным значением показателя area*coeff, где area-площадь помещения,
-     * coeff-определяется следующим образом.
-     * * *	    0,25
-     * * **	0,5
-     * * ***	1
-     * * ****	1,25
-     * * *****	1,5
-     *
-     * @return
-     */
-
 
     public int getStars() {
         int result = 0;
@@ -86,9 +63,9 @@ public class Hotel extends Dwelling {
     public boolean equals(Object o) {
         if (this == o) return true;
         if (!(o instanceof Hotel)) return false;
-        if (!(((Hotel) o).getCountFloors()==getCountFloors())) return false;
+        if (!(((Hotel) o).getCountFloors() == getCountFloors())) return false;
         Hotel that = (Hotel) o;
-        if(!(getStars() == that.getStars()))return false;
+        if (!(getStars() == that.getStars())) return false;
         return super.equals(o);
     }
 
