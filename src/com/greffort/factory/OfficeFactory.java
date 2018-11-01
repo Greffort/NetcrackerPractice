@@ -4,7 +4,7 @@ import com.greffort.buildings.office.*;
 import com.greffort.interfaces.*;
 import org.jetbrains.annotations.NotNull;
 
-public class OfficeFactory implements Factory {
+public class OfficeFactory implements BuildingFactory {
     public Space createSpace(final double square, final int roomCount) {
         return new Office(square, roomCount);
     }
@@ -23,5 +23,15 @@ public class OfficeFactory implements Factory {
 
     public Building createBuilding(final int numberOfficeFloors, final int[] numberOfficeFloor) {
         return new OfficeBuilding(numberOfficeFloors, numberOfficeFloor);
+    }
+
+    @Override
+    public Space createSpace(double area) {
+        return new Office(area);
+    }
+
+    @Override
+    public Floor createFloor(int spacesCount) {
+        return new OfficeFloor(spacesCount);
     }
 }

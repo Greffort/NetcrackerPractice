@@ -1,8 +1,9 @@
 package com.greffort.buildings;
 
 import com.greffort.buildings.office.OfficeBuilding;
+import com.greffort.factory.DwellingFactory;
 import com.greffort.factory.OfficeFactory;
-import com.greffort.factory.Factory;
+import com.greffort.factory.BuildingFactory;
 import com.greffort.interfaces.Building;
 import com.greffort.interfaces.Floor;
 import com.greffort.interfaces.Space;
@@ -12,12 +13,32 @@ import java.io.*;
 import java.util.*;
 
 
-public class Buildings implements Serializable {
+public class Buildings<E> implements Serializable {
 
-    private static Factory factory = new OfficeFactory(); // сделать выбор фабрики
+    private static BuildingFactory factory = new DwellingFactory();
 
-    public static void setFactory(Factory factory) {
+    public static void setBuildingFactory(BuildingFactory factory) {
         Buildings.factory = factory;
+    }
+
+    public static Space createSpace(double area) {
+        return factory.createSpace(area);
+    }
+
+    public static Space createSpace( double area,int roomsCount) {
+        return factory.createSpace(area, roomsCount);
+    }
+
+    public static Floor createFloor(int spacesCount) {
+        return factory.createFloor(spacesCount);
+    }
+
+    public static Floor createFloor(Space[] spaces) {
+        return factory.createFloor(spaces);
+    }
+
+    public static Building createBuilding(int floorsCount, int[] spacesCounts) {
+        return factory.createBuilding(floorsCount, spacesCounts);
     }
 
     public static Building createBuilding(Floor[] floors) {
@@ -43,11 +64,11 @@ public class Buildings implements Serializable {
         for (int i = 0; i < floors.length; i++) {
             Space[] spaces = new Space[dataInputStream.readInt()];
             for (int j = 0; j < spaces.length; j++) {
-                spaces[j] = factory.createSpace(dataInputStream.readDouble(), dataInputStream.readInt());
+                spaces[j] = createSpace(dataInputStream.readDouble(), dataInputStream.readInt());
             }
-            floors[i] = factory.createFloor(spaces);
+            floors[i] = createFloor(spaces);
         }
-        return factory.createBuilding(floors);
+        return createBuilding(floors);
     }
 
     public static void writeBuilding(Building building, Writer out) {
@@ -74,11 +95,11 @@ public class Buildings implements Serializable {
                 double number1 = streamTokenizer.nval;
                 streamTokenizer.nextToken();
                 int number2 = ((int) streamTokenizer.nval);
-                spaces[j] = factory.createSpace(number1, number2);
+                spaces[j] = createSpace(number1, number2);
             }
-            floors[i] = factory.createFloor(spaces);
+            floors[i] =createFloor(spaces);
         }
-        return factory.createBuilding(floors);
+        return createBuilding(floors);
 
     }
 
@@ -114,17 +135,14 @@ public class Buildings implements Serializable {
             for (int j = 0; j < spaces.length; j++) {
                 scanner.nextInt();
                 scanner.nextInt();
-                spaces[j] = factory.createSpace(scanner.nextInt(), scanner.nextInt());
+                spaces[j] = createSpace(scanner.nextInt(), scanner.nextInt());
             }
-            floors[i] = factory.createFloor(spaces);
+            floors[i] = createFloor(spaces);
         }
-        return new OfficeBuilding(floors);
+        return createBuilding(floors);
     }
 
-    //Добавьте в класс Buildings метод сортировки помещений этажа по возрастанию площадей помещений,
-    // и метод сортировки этажей здания по возрастанию количества помещений на этаже.
-
-    public Floor sort(Floor floors) {
+    public static <E extends Comparable<E>> void sort(E[] floors) {
         /**
          * //Добавьте в класс Buildings метод сортировки помещений этажа по возрастанию площадей помещений,
          * // и метод сортировки этажей здания по возрастанию количества помещений на этаже.
@@ -133,53 +151,43 @@ public class Buildings implements Serializable {
          * отрицательное, если вызывающий объект меньше объекта, переданного в качестве параметра;
          * нуль, если объекты равны.
          */
-
-        Space[] spaces = new Space[floors.getCountSpace()];
-        for (int i = 0, j = 1; j < floors.getCountSpace(); i++) {
-
-            floors.getSpace(i).compareTo(floors.getSpace(j));
-
-            if (floors.getSpace(i).compareTo(floors.getSpace(j)) > 0) {
-                Space s = floors.getSpace(i);
-                floors.setSpace(floors.getSpace(j),i);
-                floors.setSpace(s,j);
-            }
-            if (floors.getSpace(i).compareTo(floors.getSpace(j)) < 0) {
-
-            } else {
-
-            }
-
-        }
-        for (Space space : floors) {
-            if (space.compareTo(space) > 0) {
-
-            }
-            if (space.compareTo(space) < 0) {
-
-            } else {
-
+        for (int i = floors.length - 1; i > 0; i--) {
+            for (int j = 0; j < i; j++) {
+                if (floors[j].compareTo(floors[j + 1]) < 0) {
+                    E tmp = floors[j];
+                    floors[j] = floors[j + 1];
+                    floors[j + 1] = tmp;
+                }
+                if (floors[j].compareTo(floors[j + 1]) > 0) {
+                    E tmp = floors[j + 1];
+                    floors[j + 1] = floors[j];
+                    floors[j] = tmp;
+                }
             }
         }
-        return factory.createFloor(spaces);
     }
 
-    public int sort(Floor floor) {
+    public static <E> void sort(E[] floors, Comparator<? super E> c) {
         /**
-         *  //Добавьте в класс Buildings метод сортировки помещений этажа по возрастанию площадей помещений,
-         *  // и метод сортировки этажей здания по возрастанию количества помещений на этаже.
-         * Если этот метод возвращает отрицательное число, то текущий объект будет располагаться перед тем, который передается
-         * через параметр.
-         * Если метод вернет положительное число, то, наоборот, после второго объекта.
-         * Если метод возвратит ноль, значит, оба объекта равны.
+         * В класс Buildings добавьте два метода сортировки с критерием – сортировка помещений на этаже по
+         * убыванию количества комнат и сортировка этажей в здании по убыванию общей площади помещений этажа.
+         * Объедините оба метода в один параметризованный метод сортировки с критерием.
          */
-        if (this.getCountSpace() > floor.getCountSpace()) {
-            return 1;
-        }
-        if (this.getCountSpace() < floor.getCountSpace()) {
-            return -1;
-        } else {
-            return 0;
+        for (int i = floors.length - 1; i > 0; i--) {
+            for (int j = 0; j < i; j++) {
+                if (c.compare(floors[j], floors[j + 1]) < 0) {
+                    E tmp = floors[j];
+                    floors[j] = floors[j + 1];
+                    floors[j + 1] = tmp;
+                }
+                if (c.compare(floors[j], floors[j + 1]) > 0) {
+                    E tmp = floors[j + 1];
+                    floors[j + 1] = floors[j];
+                    floors[j] = tmp;
+                }
+            }
         }
     }
+
+
 }

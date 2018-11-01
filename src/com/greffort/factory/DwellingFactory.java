@@ -4,7 +4,7 @@ import com.greffort.buildings.dwelling.*;
 import com.greffort.interfaces.*;
 import org.jetbrains.annotations.NotNull;
 
-public class DwellingFactory implements Factory {
+public class DwellingFactory implements BuildingFactory {
 
     public Flat createSpace(final double square, final int roomCount) {
         return new Flat(square, roomCount);
@@ -25,4 +25,13 @@ public class DwellingFactory implements Factory {
     public Dwelling createBuilding(final int numberOfficeFloors, final int[] numberOfficeFloor) {
         return new Dwelling(numberOfficeFloors, numberOfficeFloor);
     }
+
+    public Space createSpace(double area) {
+        return new Flat(area);
+    }
+
+    public Floor createFloor(int spacesCount) {
+        return new DwellingFloor(spacesCount);
+    }
+
 }

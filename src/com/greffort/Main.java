@@ -6,6 +6,7 @@ import com.greffort.buildings.office.*;
 import com.greffort.buildings.dwelling.Dwelling;
 import com.greffort.buildings.dwelling.DwellingFloor;
 import com.greffort.buildings.dwelling.Flat;
+import com.greffort.comparators.ComparatorSpace;
 import com.greffort.exception.FloorIndexOutOfBoundsException;
 import com.greffort.exception.IndexChangeableSpacesException;
 import com.greffort.exception.SpaceIndexOutOfBoundsException;
@@ -95,7 +96,7 @@ public class Main {
 ////        officeFloor.getSpace(2);
 ////        officeFloor.getSpace(3);
 //
-        OfficeFloor OfficeFloor1 = new OfficeFloor(new Office[]{new Office(11, 11), new Office(12, 12), new Office(13, 13)});
+        OfficeFloor OfficeFloor1 = new OfficeFloor(new Office[]{new Office(31, 11), new Office(30, 12), new Office(1, 13)});
         OfficeFloor OfficeFloor2 = new OfficeFloor(new Office[]{new Office(21, 21), new Office(22, 22), new Office(23, 23)});
         OfficeFloor OfficeFloor3 = new OfficeFloor(new Office[]{new Office(31, 31), new Office(32, 32), new Office(33, 33)});
 //
@@ -232,6 +233,13 @@ public class Main {
 
         OfficeBuilding floors = new OfficeBuilding(new Floor[]{OfficeFloor1, OfficeFloor2,OfficeFloor3});
         floors.addSpace(new Office(), 1);
+        Floor floor = floors.getFloor(0);
+
+Space[] spaces2 = new Space[]{new Office(1,2),new Flat(3434,12), new Office(2,2)};
+        Buildings.sort(spaces2);
+        Buildings.sort(spaces2,new ComparatorSpace());
+//Floor floor1 = Buildings.sort(floor);
+        int f = 0;
     }
 
     private static void checkByteSymbolInOutput() {

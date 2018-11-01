@@ -5,36 +5,23 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="5d06f703-f5f6-4195-b915-446c8f284201" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/src/com/greffort/comparators/ComparatorFloor.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/com/greffort/comparators/ComparatorSpace.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/com/greffort/factory/BuildingFactory.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/com/greffort/factory/HotelFactory.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/NetcrackerPractice/com/greffort/exception/FloorIndexOutOfBoundsException.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/NetcrackerPractice/com/greffort/exception/FloorIndexOutOfBoundsException.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/NetcrackerPractice/com/greffort/exception/InvalidSpaceAreaException.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/NetcrackerPractice/com/greffort/exception/InvalidSpaceAreaException.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/NetcrackerPractice/com/greffort/interfaces/Building.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/NetcrackerPractice/com/greffort/interfaces/Building.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/NetcrackerPractice/com/greffort/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/NetcrackerPractice/com/greffort/Main.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/NetcrackerPractice/com/greffort/interfaces/Floor.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/NetcrackerPractice/com/greffort/interfaces/Floor.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/NetcrackerPractice/com/greffort/interfaces/Space.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/NetcrackerPractice/com/greffort/interfaces/Space.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/NetcrackerPractice/com/greffort/linkedList/DoubleLinkedList$Node.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/NetcrackerPractice/com/greffort/linkedList/DoubleLinkedList$Node.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/NetcrackerPractice/com/greffort/linkedList/DoubleLinkedList.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/NetcrackerPractice/com/greffort/linkedList/DoubleLinkedList.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/NetcrackerPractice/com/greffort/linkedList/SingleLinkedList$Node.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/NetcrackerPractice/com/greffort/linkedList/SingleLinkedList$Node.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/NetcrackerPractice/com/greffort/linkedList/SingleLinkedList.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/NetcrackerPractice/com/greffort/linkedList/SingleLinkedList.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/greffort/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/greffort/Main.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/com/greffort/buildings/Buildings.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/greffort/buildings/Buildings.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/greffort/buildings/dwelling/Dwelling.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/greffort/buildings/dwelling/Dwelling.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/greffort/buildings/dwelling/DwellingFloor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/greffort/buildings/dwelling/DwellingFloor.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/greffort/buildings/dwelling/Flat.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/greffort/buildings/dwelling/Flat.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/greffort/buildings/dwelling/Hotel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/greffort/buildings/dwelling/Hotel.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/greffort/buildings/dwelling/HotelFloor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/greffort/buildings/dwelling/HotelFloor.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/greffort/buildings/office/Office.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/greffort/buildings/office/Office.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/greffort/buildings/office/OfficeBuilding.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/greffort/buildings/office/OfficeBuilding.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/greffort/buildings/office/OfficeFloor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/greffort/buildings/office/OfficeFloor.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/greffort/exception/FloorIndexOutOfBoundsException.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/greffort/exception/FloorIndexOutOfBoundsException.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/greffort/exception/InvalidCoeffException.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/greffort/exception/InvalidCoeffException.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/greffort/exception/InvalidSpaceAreaException.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/greffort/exception/InvalidSpaceAreaException.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/com/greffort/factory/DwellingFactory.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/greffort/factory/DwellingFactory.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/greffort/factory/Factory.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/greffort/factory/Factory.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/greffort/factory/Factory.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/com/greffort/factory/OfficeFactory.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/greffort/factory/OfficeFactory.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/greffort/interfaces/Building.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/greffort/interfaces/Building.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/greffort/interfaces/Floor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/greffort/interfaces/Floor.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/greffort/interfaces/Space.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/greffort/interfaces/Space.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/greffort/linkedList/DoubleLinkedList.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/greffort/linkedList/DoubleLinkedList.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/greffort/linkedList/SingleLinkedList.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/greffort/linkedList/SingleLinkedList.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/greffort/placementExchanger/PlacementExchanger.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/greffort/placementExchanger/PlacementExchanger.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -114,7 +101,7 @@
         <counts>
           <entry key="class" value="6" />
           <entry key="iml" value="1" />
-          <entry key="java" value="313" />
+          <entry key="java" value="329" />
           <entry key="practice1" value="1" />
           <entry key="practice2" value="1" />
           <entry key="practice3" value="1" />
@@ -128,27 +115,27 @@
         <counts>
           <entry key="CLASS" value="6" />
           <entry key="IDEA_MODULE" value="1" />
-          <entry key="JAVA" value="313" />
+          <entry key="JAVA" value="329" />
           <entry key="PLAIN_TEXT" value="7" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
           <entry key="dummy" value="19" />
-          <entry key="java" value="13497" />
+          <entry key="java" value="15086" />
           <entry key="practice1" value="13" />
           <entry key="practice2" value="5" />
           <entry key="practice3" value="7" />
           <entry key="practice4" value="7" />
           <entry key="practice5" value="16" />
           <entry key="practice6" value="33" />
-          <entry key="txt" value="113" />
+          <entry key="txt" value="156" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="JAVA" value="13497" />
-          <entry key="PLAIN_TEXT" value="213" />
+          <entry key="JAVA" value="15086" />
+          <entry key="PLAIN_TEXT" value="256" />
         </counts>
       </usages-collector>
     </session>
@@ -158,48 +145,172 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/com/greffort/interfaces/Floor.java">
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/com/greffort/buildings/Buildings.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="34">
-              <caret line="2" column="65" selection-start-line="2" selection-start-column="65" selection-end-line="2" selection-end-column="65" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/com/greffort/buildings/dwelling/DwellingFloor.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1071">
-              <caret line="188" column="5" lean-forward="true" selection-start-line="170" selection-start-column="4" selection-end-line="188" selection-end-column="5" />
+            <state relative-caret-position="11">
+              <caret line="38" lean-forward="true" selection-start-line="38" selection-end-line="38" />
               <folding>
-                <element signature="method#DwellingFloor#0;class#DwellingFloor#0" />
-                <element signature="method#getTotalSquare#0;class#DwellingFloor#0" />
-                <element signature="method#getTotalRoomCount#0;class#DwellingFloor#0" />
-                <element signature="method#getSpace#0;class#DwellingFloor#0" />
-                <element signature="method#setSpace#0;class#DwellingFloor#0" />
-                <element signature="method#addSpace#0;class#DwellingFloor#0" />
-                <element signature="method#removeSpace#0;class#DwellingFloor#0" />
-                <element signature="method#getBestSpace#0;class#DwellingFloor#0" />
-                <element signature="method#toString#0;class#DwellingFloor#0" />
-                <element signature="method#equals#0;class#DwellingFloor#0" />
-                <element signature="method#hashCode#0;class#DwellingFloor#0" />
-                <element signature="method#clone#0;class#DwellingFloor#0" />
-                <element signature="class#Iterator#0;class#DwellingFloor#0" />
-                <element signature="method#hasNext#0;class#Iterator#0;class#DwellingFloor#0" />
-                <element signature="method#next#0;class#Iterator#0;class#DwellingFloor#0" />
+                <element signature="method#createBuilding#0;class#Buildings#0" />
+                <element signature="method#outputBuilding#0;class#Buildings#0" />
+                <element signature="method#inputBuilding#0;class#Buildings#0" />
+                <element signature="method#writeBuilding#0;class#Buildings#0" />
+                <element signature="method#readBuilding#0;class#Buildings#0" />
+                <element signature="method#serializeBuilding#0;class#Buildings#0" />
+                <element signature="method#deserializeBuilding#0;class#Buildings#0" />
+                <element signature="method#writeBuildingFormat#0;class#Buildings#0" />
+                <element signature="method#readBuilding#1;class#Buildings#0" />
+                <element signature="e#7818#8887#0" />
+                <element signature="method#sort#1;class#Buildings#0" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/com/greffort/comparators/ComparatorFloor.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="238">
+              <caret line="14" column="8" selection-start-line="14" selection-start-column="8" selection-end-line="14" selection-end-column="37" />
+              <folding>
+                <element signature="imports" expanded="true" />
+                <element signature="e#446#447#0" expanded="true" />
+                <element signature="e#490#491#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/com/greffort/comparators/ComparatorSpace.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="187">
+              <caret line="11" lean-forward="true" selection-start-line="11" selection-end-line="11" />
+              <folding>
+                <element signature="imports" expanded="true" />
+                <element signature="e#223#224#0" expanded="true" />
+                <element signature="e#269#270#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/com/greffort/factory/DwellingFactory.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="306">
+              <caret line="32" selection-start-line="32" selection-end-line="32" />
+              <folding>
+                <element signature="method#createBuilding#1;class#DwellingFactory#0" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/com/greffort/factory/OfficeFactory.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="442">
+              <caret line="34" column="43" selection-start-line="34" selection-start-column="43" selection-end-line="34" selection-end-column="43" />
+              <folding>
+                <element signature="imports" expanded="true" />
+                <element signature="e#275#276#0" expanded="true" />
+                <element signature="e#327#328#0" expanded="true" />
+                <element signature="method#createBuilding#1;class#OfficeFactory#0" />
+                <element signature="e#914#915#0" expanded="true" />
+                <element signature="e#941#942#0" expanded="true" />
+                <element signature="e#1004#1005#0" expanded="true" />
+                <element signature="e#1031#1032#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/com/greffort/factory/BuildingFactory.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="85">
+              <caret line="5" column="25" lean-forward="true" selection-start-line="5" selection-start-column="25" selection-end-line="5" selection-end-column="25" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/com/greffort/factory/HotelFactory.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="207">
+              <caret line="19" column="63" selection-start-line="19" selection-start-column="63" selection-end-line="19" selection-end-column="63" />
+              <folding>
+                <element signature="imports" expanded="true" />
+                <element signature="e#321#322#0" expanded="true" />
+                <element signature="e#348#349#0" expanded="true" />
+                <element signature="e#407#408#0" expanded="true" />
+                <element signature="e#434#435#0" expanded="true" />
+                <element signature="e#493#494#0" expanded="true" />
+                <element signature="e#520#521#0" expanded="true" />
+                <element signature="e#600#601#0" expanded="true" />
+                <element signature="e#627#628#0" expanded="true" />
+                <element signature="e#823#824#0" expanded="true" />
+                <element signature="e#850#851#0" expanded="true" />
+                <element signature="e#695#696#0" expanded="true" />
+                <element signature="e#722#723#0" expanded="true" />
+                <element signature="e#901#902#0" expanded="true" />
+                <element signature="e#928#929#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/com/greffort/buildings/office/Office.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="374">
+              <caret line="39" selection-start-line="39" selection-end-line="39" />
+              <folding>
+                <element signature="method#Office#2;class#Office#0" />
+                <element signature="method#setRoomCount#0;class#Office#0" />
+                <element signature="e#993#994#0" expanded="true" />
+                <element signature="method#setSquare#0;class#Office#0" />
+                <element signature="method#toString#0;class#Office#0" />
+                <element signature="method#equals#0;class#Office#0" />
+                <element signature="method#hashCode#0;class#Office#0" />
+                <element signature="method#clone#0;class#Office#0" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/com/greffort/buildings/dwelling/Flat.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="221">
+              <caret line="20" column="11" selection-start-line="20" selection-start-column="11" selection-end-line="20" selection-end-column="11" />
+              <folding>
+                <element signature="e#567#568#0" expanded="true" />
+                <element signature="e#615#616#0" expanded="true" />
+                <element signature="method#Flat#2;class#Flat#0" />
+                <element signature="method#setRoomCount#0;class#Flat#0" />
+                <element signature="e#1026#1027#0" expanded="true" />
+                <element signature="e#1055#1056#0" expanded="true" />
+                <element signature="method#setSquare#0;class#Flat#0" />
+                <element signature="method#toString#0;class#Flat#0" />
+                <element signature="method#equals#0;class#Flat#0" />
+                <element signature="method#hashCode#0;class#Flat#0" />
+                <element signature="method#clone#0;class#Flat#0" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/com/greffort/buildings/dwelling/Dwelling.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="352">
-              <caret line="184" column="8" lean-forward="true" selection-start-line="184" selection-start-column="8" selection-end-line="192" selection-end-column="9" />
+            <state relative-caret-position="136">
+              <caret line="13" column="11" selection-start-line="13" selection-start-column="11" selection-end-line="13" selection-end-column="11" />
               <folding>
-                <element signature="method#Dwelling#0;class#Dwelling#0" />
                 <element signature="method#getCountSpaces#0;class#Dwelling#0" />
                 <element signature="method#getTotalSquare#0;class#Dwelling#0" />
                 <element signature="method#getTotalRoomCount#0;class#Dwelling#0" />
@@ -217,105 +328,6 @@
                 <element signature="class#Iterator#0;class#Dwelling#0" />
                 <element signature="method#hasNext#0;class#Iterator#0;class#Dwelling#0" />
                 <element signature="method#next#0;class#Iterator#0;class#Dwelling#0" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/com/greffort/buildings/office/OfficeFloor.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="538">
-              <caret line="182" column="5" lean-forward="true" selection-start-line="164" selection-start-column="3" selection-end-line="182" selection-end-column="5" />
-              <folding>
-                <element signature="imports" expanded="true" />
-                <element signature="e#1111#1112#0" expanded="true" />
-                <element signature="e#1172#1173#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/com/greffort/buildings/Buildings.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="337">
-              <caret line="144" column="37" lean-forward="true" selection-start-line="144" selection-start-column="37" selection-end-line="144" selection-end-column="37" />
-              <folding>
-                <element signature="method#outputBuilding#0;class#Buildings#0" />
-                <element signature="method#inputBuilding#0;class#Buildings#0" />
-                <element signature="method#writeBuilding#0;class#Buildings#0" />
-                <element signature="method#readBuilding#0;class#Buildings#0" />
-                <element signature="method#serializeBuilding#0;class#Buildings#0" />
-                <element signature="method#deserializeBuilding#0;class#Buildings#0" />
-                <element signature="method#writeBuildingFormat#0;class#Buildings#0" />
-                <element signature="method#readBuilding#1;class#Buildings#0" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/com/greffort/placementExchanger/PlacementExchanger.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="170">
-              <caret line="10" column="16" selection-start-line="10" selection-start-column="16" selection-end-line="10" selection-end-column="16" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/com/greffort/interfaces/Building.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="34">
-              <caret line="2" column="50" selection-start-line="2" selection-start-column="50" selection-end-line="2" selection-end-column="50" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/com/greffort/interfaces/Space.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="136">
-              <caret line="8" column="23" lean-forward="true" selection-start-line="8" selection-start-column="23" selection-end-line="8" selection-end-column="23" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/com/greffort/buildings/dwelling/Flat.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="334">
-              <caret line="91" column="36" selection-start-line="91" selection-start-column="36" selection-end-line="91" selection-end-column="36" />
-              <folding>
-                <element signature="method#Flat#2;class#Flat#0" />
-                <element signature="method#setRoomCount#0;class#Flat#0" />
-                <element signature="method#setSquare#0;class#Flat#0" />
-                <element signature="method#toString#0;class#Flat#0" />
-                <element signature="method#equals#0;class#Flat#0" />
-                <element signature="method#hashCode#0;class#Flat#0" />
-                <element signature="method#clone#0;class#Flat#0" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/com/greffort/buildings/office/Office.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="351">
-              <caret line="86" column="8" selection-start-line="86" selection-start-column="8" selection-end-line="93" selection-end-column="9" />
-              <folding>
-                <element signature="method#Office#2;class#Office#0" />
-                <element signature="method#setRoomCount#0;class#Office#0" />
-                <element signature="method#setSquare#0;class#Office#0" />
-                <element signature="method#toString#0;class#Office#0" />
-                <element signature="method#equals#0;class#Office#0" />
-                <element signature="method#hashCode#0;class#Office#0" />
-                <element signature="method#clone#0;class#Office#0" />
               </folding>
             </state>
           </provider>
@@ -344,9 +356,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/com/greffort/linkedList/DoublyLinkedList.java" />
-        <option value="$PROJECT_DIR$/src/com/greffort/buildingsOffice/Office.java" />
-        <option value="$PROJECT_DIR$/src/com/greffort/interfaces/IFloor.java" />
         <option value="$PROJECT_DIR$/src/com/greffort/interfaces/ISpace.java" />
         <option value="$PROJECT_DIR$/src/com/greffort/buildings/Flat.java" />
         <option value="$PROJECT_DIR$/src/com/greffort/interfaces/IBuilding.java" />
@@ -365,7 +374,6 @@
         <option value="$PROJECT_DIR$/src/com/greffort/dwelling/Dwelling.java" />
         <option value="$PROJECT_DIR$/src/com/greffort/dwelling/DwellingFloor.java" />
         <option value="$PROJECT_DIR$/src/com/greffort/dwelling/Flat.java" />
-        <option value="$PROJECT_DIR$/src/com/greffort/factory/BuildingFactory.java" />
         <option value="$PROJECT_DIR$/src/tasks/practice1" />
         <option value="$PROJECT_DIR$/src/tasks/practice2" />
         <option value="$PROJECT_DIR$/src/tasks/practice3" />
@@ -373,14 +381,10 @@
         <option value="$PROJECT_DIR$/src/tasks/practice5" />
         <option value="$PROJECT_DIR$/src/tasks/practice6" />
         <option value="$PROJECT_DIR$/src/com/greffort/buildings/dwelling/HotelBuilding.java" />
-        <option value="$PROJECT_DIR$/src/com/greffort/Main.java" />
         <option value="$PROJECT_DIR$/src/com/greffort/buildings/dwelling/Hotel.java" />
         <option value="$PROJECT_DIR$/src/com/greffort/exception/FloorIndexOutOfBoundsException.java" />
         <option value="$PROJECT_DIR$/src/com/greffort/exception/InvalidCoeffException.java" />
         <option value="$PROJECT_DIR$/src/com/greffort/exception/InvalidSpaceAreaException.java" />
-        <option value="$PROJECT_DIR$/src/com/greffort/factory/DwellingFactory.java" />
-        <option value="$PROJECT_DIR$/src/com/greffort/factory/Factory.java" />
-        <option value="$PROJECT_DIR$/src/com/greffort/factory/OfficeFactory.java" />
         <option value="$PROJECT_DIR$/src/com/greffort/linkedList/DoubleLinkedList.java" />
         <option value="$PROJECT_DIR$/src/com/greffort/placementExchanger/PlacementExchanger.java" />
         <option value="$PROJECT_DIR$/src/com/greffort/buildings/dwelling/Dwelling.java" />
@@ -394,6 +398,14 @@
         <option value="$PROJECT_DIR$/src/com/greffort/buildings/dwelling/DwellingFloor.java" />
         <option value="$PROJECT_DIR$/src/com/greffort/buildings/office/OfficeFloor.java" />
         <option value="$PROJECT_DIR$/src/com/greffort/buildings/dwelling/Flat.java" />
+        <option value="$PROJECT_DIR$/src/com/greffort/Main.java" />
+        <option value="$PROJECT_DIR$/src/com/greffort/factory/Factory.java" />
+        <option value="$PROJECT_DIR$/src/com/greffort/factory/DwellingFactory.java" />
+        <option value="$PROJECT_DIR$/src/com/greffort/factory/OfficeFactory.java" />
+        <option value="$PROJECT_DIR$/src/com/greffort/factory/BuildingFactory.java" />
+        <option value="$PROJECT_DIR$/src/com/greffort/factory/HotelFactory.java" />
+        <option value="$PROJECT_DIR$/src/com/greffort/comparators/ComparatorFloor.java" />
+        <option value="$PROJECT_DIR$/src/com/greffort/comparators/ComparatorSpace.java" />
         <option value="$PROJECT_DIR$/src/com/greffort/buildings/Buildings.java" />
       </list>
     </option>
@@ -464,7 +476,7 @@
               <item name="NetcrackerPractice" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="greffort" type="462c0819:PsiDirectoryNode" />
-              <item name="exception" type="462c0819:PsiDirectoryNode" />
+              <item name="comparators" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="NetcrackerPractice" type="b2602c69:ProjectViewProjectNode" />
@@ -472,27 +484,6 @@
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="greffort" type="462c0819:PsiDirectoryNode" />
               <item name="factory" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="NetcrackerPractice" type="b2602c69:ProjectViewProjectNode" />
-              <item name="NetcrackerPractice" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="greffort" type="462c0819:PsiDirectoryNode" />
-              <item name="interfaces" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="NetcrackerPractice" type="b2602c69:ProjectViewProjectNode" />
-              <item name="NetcrackerPractice" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="greffort" type="462c0819:PsiDirectoryNode" />
-              <item name="linkedList" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="NetcrackerPractice" type="b2602c69:ProjectViewProjectNode" />
-              <item name="NetcrackerPractice" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="greffort" type="462c0819:PsiDirectoryNode" />
-              <item name="placementExchanger" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -507,7 +498,7 @@
     <property name="Repository.Attach.Sources" value="false" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1540908588559" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1541076794189" />
     <property name="last_opened_file_path" value="$USER_HOME$/Desktop/Java SE/Buildings-master2" />
     <property name="settings.editor.selected.configurable" value="copyright" />
   </component>
@@ -680,7 +671,14 @@
       <option name="project" value="LOCAL" />
       <updated>1540889772330</updated>
     </task>
-    <option name="localTasksCounter" value="14" />
+    <task id="LOCAL-00014" summary="без коментариев. &#10;&#10;Реализация compareTo/">
+      <created>1540921624068</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1540921624068</updated>
+    </task>
+    <option name="localTasksCounter" value="15" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
@@ -709,7 +707,7 @@
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32903227" />
       <window_info anchor="bottom" id="Run" order="2" sideWeight="0.49924356" weight="0.31290323" />
-      <window_info anchor="bottom" id="Debug" order="3" sideWeight="0.49924356" weight="0.2629032" />
+      <window_info anchor="bottom" id="Debug" order="3" sideWeight="0.49924356" weight="0.36935484" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" weight="0.33387887" />
@@ -735,11 +733,11 @@
       <window_info id="UI Designer" order="3" />
       <window_info id="Capture Tool" order="4" />
       <window_info id="Favorites" order="5" side_tool="true" weight="0.32980332" />
-      <window_info active="true" content_ui="combo" id="Project" order="6" sideWeight="0.4983871" visible="true" weight="0.16263238" />
+      <window_info content_ui="combo" id="Project" order="6" sideWeight="0.4983871" visible="true" weight="0.23146747" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32903227" />
-      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.49924356" visible="true" weight="0.31290323" />
-      <window_info anchor="bottom" id="Debug" order="3" sideWeight="0.49924356" weight="0.2629032" />
+      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.49924356" weight="0.31290323" />
+      <window_info active="true" anchor="bottom" id="Debug" order="3" sideWeight="0.49924356" visible="true" weight="0.14516129" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" weight="0.33387887" />
@@ -749,13 +747,13 @@
       <window_info anchor="bottom" id="Version Control" order="10" show_stripe_button="false" />
       <window_info anchor="bottom" id="Messages" order="11" weight="0.24193548" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
-      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
-      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
-      <window_info anchor="right" id="Palette" order="3" />
-      <window_info anchor="right" id="Capture Analysis" order="4" />
-      <window_info anchor="right" id="Theme Preview" order="5" />
-      <window_info anchor="right" id="Palette&#9;" order="6" />
-      <window_info anchor="right" id="Database" order="7" />
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="1" weight="0.25" />
+      <window_info anchor="right" id="Palette" order="2" />
+      <window_info anchor="right" id="Capture Analysis" order="3" />
+      <window_info anchor="right" id="Theme Preview" order="4" />
+      <window_info anchor="right" id="Palette&#9;" order="5" />
+      <window_info anchor="right" id="Database" order="6" />
+      <window_info anchor="right" id="Ant Build" order="7" weight="0.24962178" />
       <window_info anchor="right" id="Maven Projects" order="8" />
     </layout-to-restore>
   </component>
@@ -768,16 +766,41 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="1" />
     <MESSAGE value="Реализация Iterator&lt;E&gt;. &#10;Оставлены реализации Iterator внутри классов зданий." />
-    <option name="LAST_COMMIT_MESSAGE" value="Реализация Iterator&lt;E&gt;. &#10;Оставлены реализации Iterator внутри классов зданий." />
+    <MESSAGE value="без коментариев. &#10;&#10;Реализация compareTo/" />
+    <option name="LAST_COMMIT_MESSAGE" value="без коментариев. &#10;&#10;Реализация compareTo/" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/com/greffort/Main.java</url>
-          <line>178</line>
+          <line>179</line>
           <properties />
           <option name="timeStamp" value="10" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/com/greffort/Main.java</url>
+          <line>241</line>
+          <properties />
+          <option name="timeStamp" value="18" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/com/greffort/Main.java</url>
+          <line>240</line>
+          <properties />
+          <option name="timeStamp" value="20" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/com/greffort/Main.java</url>
+          <line>239</line>
+          <properties />
+          <option name="timeStamp" value="21" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/com/greffort/buildings/Buildings.java</url>
+          <line>74</line>
+          <properties />
+          <option name="timeStamp" value="23" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
@@ -803,27 +826,6 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="jar://C:/Program Files/Java/jdk1.8.0_181/jre/lib/rt.jar!/sun/misc/Launcher.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="89">
-          <caret line="199" selection-start-line="199" selection-end-line="199" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://C:/Program Files/Java/jdk1.8.0_181/src.zip!/java/lang/ClassLoader.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="149">
-          <caret line="462" selection-start-line="462" selection-end-line="462" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://C:/Program Files/Java/jdk1.8.0_181/src.zip!/java/util/concurrent/ConcurrentHashMap.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="115">
-          <caret line="1011" selection-start-line="1011" selection-end-line="1011" />
-        </state>
-      </provider>
-    </entry>
     <entry file="jar://C:/Program Files/Java/jdk1.8.0_181/src.zip!/java/lang/String.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="183">
@@ -971,19 +973,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/greffort/Main.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="769">
-          <caret line="229" column="55" selection-start-line="229" selection-start-column="55" selection-end-line="229" selection-end-column="55" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="method#checkByteSymbolInOutput#0;class#Main#0" />
-            <element signature="method#checkSerializableWork#0;class#Main#0" />
-            <element signature="method#checkWriteFormat#0;class#Main#0" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/com/greffort/exception/IndexChangeableFloorsException.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="119">
@@ -1002,36 +991,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="34">
           <caret line="2" column="70" selection-start-line="2" selection-start-column="70" selection-end-line="2" selection-end-column="70" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/greffort/buildings/dwelling/Hotel.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-23">
-          <caret line="47" column="5" lean-forward="true" selection-start-line="47" selection-start-column="5" selection-end-line="47" selection-end-column="5" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#316#317#0" expanded="true" />
-            <element signature="e#374#375#0" expanded="true" />
-            <element signature="e#422#423#0" expanded="true" />
-            <element signature="e#463#464#0" expanded="true" />
-            <element signature="e#2391#2392#0" expanded="true" />
-            <element signature="e#2449#2450#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/greffort/buildings/dwelling/HotelFloor.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-391">
-          <caret line="4" selection-start-line="4" selection-end-line="4" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#522#523#0" expanded="true" />
-            <element signature="e#555#556#0" expanded="true" />
-            <element signature="e#1479#1480#0" expanded="true" />
-            <element signature="e#1549#1550#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1076,66 +1035,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/greffort/factory/DwellingFactory.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="68">
-          <caret line="6" column="13" selection-start-line="6" selection-start-column="13" selection-end-line="6" selection-end-column="13" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#271#272#0" expanded="true" />
-            <element signature="e#321#322#0" expanded="true" />
-            <element signature="e#366#367#0" expanded="true" />
-            <element signature="e#438#439#0" expanded="true" />
-            <element signature="e#510#511#0" expanded="true" />
-            <element signature="e#559#560#0" expanded="true" />
-            <element signature="e#625#626#0" expanded="true" />
-            <element signature="e#674#675#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/greffort/linkedList/SingleLinkedList.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="153">
-          <caret line="11" selection-start-line="11" selection-end-line="11" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/greffort/factory/OfficeFactory.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="136">
-          <caret line="14" selection-start-line="14" selection-end-line="14" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#267#268#0" expanded="true" />
-            <element signature="e#319#320#0" expanded="true" />
-            <element signature="e#364#365#0" expanded="true" />
-            <element signature="e#438#439#0" expanded="true" />
-            <element signature="e#501#502#0" expanded="true" />
-            <element signature="e#547#548#0" expanded="true" />
-            <element signature="e#613#614#0" expanded="true" />
-            <element signature="e#668#669#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/com/greffort/exception/FloorIndexOutOfBoundsException.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="85">
           <caret line="5" column="85" selection-start-line="5" selection-start-column="85" selection-end-line="5" selection-end-column="85" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/greffort/factory/Factory.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="68">
-          <caret line="5" column="17" selection-start-line="5" selection-start-column="17" selection-end-line="5" selection-end-column="17" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1163,85 +1066,53 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/greffort/interfaces/Space.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="136">
-          <caret line="8" column="23" lean-forward="true" selection-start-line="8" selection-start-column="23" selection-end-line="8" selection-end-column="23" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/greffort/buildings/office/Office.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="351">
-          <caret line="86" column="8" selection-start-line="86" selection-start-column="8" selection-end-line="93" selection-end-column="9" />
-          <folding>
-            <element signature="method#Office#2;class#Office#0" />
-            <element signature="method#setRoomCount#0;class#Office#0" />
-            <element signature="method#setSquare#0;class#Office#0" />
-            <element signature="method#toString#0;class#Office#0" />
-            <element signature="method#equals#0;class#Office#0" />
-            <element signature="method#hashCode#0;class#Office#0" />
-            <element signature="method#clone#0;class#Office#0" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/com/greffort/interfaces/Floor.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="34">
+        <state relative-caret-position="-170">
           <caret line="2" column="65" selection-start-line="2" selection-start-column="65" selection-end-line="2" selection-end-column="65" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/greffort/interfaces/Space.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="238">
+          <caret line="14" lean-forward="true" selection-start-line="14" selection-end-line="14" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/greffort/linkedList/SingleLinkedList.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="160">
+          <caret line="22" selection-start-line="22" selection-end-line="22" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#481#482#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/greffort/buildings/office/OfficeFloor.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="538">
-          <caret line="182" column="5" lean-forward="true" selection-start-line="164" selection-start-column="3" selection-end-line="182" selection-end-column="5" />
+        <state relative-caret-position="-10">
+          <caret line="66" column="49" selection-start-line="66" selection-start-column="49" selection-end-line="66" selection-end-column="49" />
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="e#1111#1112#0" expanded="true" />
             <element signature="e#1172#1173#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/greffort/buildings/Buildings.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="337">
-          <caret line="144" column="37" lean-forward="true" selection-start-line="144" selection-start-column="37" selection-end-line="144" selection-end-column="37" />
-          <folding>
-            <element signature="method#outputBuilding#0;class#Buildings#0" />
-            <element signature="method#inputBuilding#0;class#Buildings#0" />
-            <element signature="method#writeBuilding#0;class#Buildings#0" />
-            <element signature="method#readBuilding#0;class#Buildings#0" />
-            <element signature="method#serializeBuilding#0;class#Buildings#0" />
-            <element signature="method#deserializeBuilding#0;class#Buildings#0" />
-            <element signature="method#writeBuildingFormat#0;class#Buildings#0" />
-            <element signature="method#readBuilding#1;class#Buildings#0" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/greffort/buildings/dwelling/Flat.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="334">
-          <caret line="91" column="36" selection-start-line="91" selection-start-column="36" selection-end-line="91" selection-end-column="36" />
-          <folding>
-            <element signature="method#Flat#2;class#Flat#0" />
-            <element signature="method#setRoomCount#0;class#Flat#0" />
-            <element signature="method#setSquare#0;class#Flat#0" />
-            <element signature="method#toString#0;class#Flat#0" />
-            <element signature="method#equals#0;class#Flat#0" />
-            <element signature="method#hashCode#0;class#Flat#0" />
-            <element signature="method#clone#0;class#Flat#0" />
+            <element signature="e#1218#1219#0" expanded="true" />
+            <element signature="e#1278#1279#0" expanded="true" />
+            <element signature="e#1326#1327#0" expanded="true" />
+            <element signature="e#1382#1383#0" expanded="true" />
+            <element signature="e#1416#1417#0" expanded="true" />
+            <element signature="e#1471#1472#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/greffort/buildings/dwelling/DwellingFloor.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1071">
-          <caret line="188" column="5" lean-forward="true" selection-start-line="170" selection-start-column="4" selection-end-line="188" selection-end-column="5" />
+        <state relative-caret-position="357">
+          <caret line="182" column="9" lean-forward="true" selection-start-line="182" selection-start-column="9" selection-end-line="182" selection-end-column="9" />
           <folding>
             <element signature="method#DwellingFloor#0;class#DwellingFloor#0" />
             <element signature="method#getTotalSquare#0;class#DwellingFloor#0" />
@@ -1262,12 +1133,50 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/greffort/Main.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="303">
+          <caret line="241" selection-start-line="241" selection-end-line="241" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="method#checkByteSymbolInOutput#0;class#Main#0" />
+            <element signature="method#checkSerializableWork#0;class#Main#0" />
+            <element signature="method#checkWriteFormat#0;class#Main#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/greffort/buildings/dwelling/HotelFloor.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="170">
+          <caret line="10" column="29" selection-start-line="10" selection-start-column="29" selection-end-line="10" selection-end-column="29" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/greffort/buildings/dwelling/Hotel.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="170">
+          <caret line="10" column="11" lean-forward="true" selection-start-line="10" selection-start-column="11" selection-end-line="10" selection-end-column="11" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#316#317#0" expanded="true" />
+            <element signature="e#374#375#0" expanded="true" />
+            <element signature="e#422#423#0" expanded="true" />
+            <element signature="e#463#464#0" expanded="true" />
+            <element signature="e#2391#2392#0" expanded="true" />
+            <element signature="e#2449#2450#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/com/greffort/buildings/dwelling/Dwelling.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="352">
-          <caret line="184" column="8" lean-forward="true" selection-start-line="184" selection-start-column="8" selection-end-line="192" selection-end-column="9" />
+        <state relative-caret-position="136">
+          <caret line="13" column="11" selection-start-line="13" selection-start-column="11" selection-end-line="13" selection-end-column="11" />
           <folding>
-            <element signature="method#Dwelling#0;class#Dwelling#0" />
             <element signature="method#getCountSpaces#0;class#Dwelling#0" />
             <element signature="method#getTotalSquare#0;class#Dwelling#0" />
             <element signature="method#getTotalRoomCount#0;class#Dwelling#0" />
@@ -1285,6 +1194,148 @@
             <element signature="class#Iterator#0;class#Dwelling#0" />
             <element signature="method#hasNext#0;class#Iterator#0;class#Dwelling#0" />
             <element signature="method#next#0;class#Iterator#0;class#Dwelling#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/greffort/buildings/dwelling/Flat.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="221">
+          <caret line="20" column="11" selection-start-line="20" selection-start-column="11" selection-end-line="20" selection-end-column="11" />
+          <folding>
+            <element signature="e#567#568#0" expanded="true" />
+            <element signature="e#615#616#0" expanded="true" />
+            <element signature="method#Flat#2;class#Flat#0" />
+            <element signature="method#setRoomCount#0;class#Flat#0" />
+            <element signature="e#1026#1027#0" expanded="true" />
+            <element signature="e#1055#1056#0" expanded="true" />
+            <element signature="method#setSquare#0;class#Flat#0" />
+            <element signature="method#toString#0;class#Flat#0" />
+            <element signature="method#equals#0;class#Flat#0" />
+            <element signature="method#hashCode#0;class#Flat#0" />
+            <element signature="method#clone#0;class#Flat#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/greffort/buildings/office/Office.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="374">
+          <caret line="39" selection-start-line="39" selection-end-line="39" />
+          <folding>
+            <element signature="method#Office#2;class#Office#0" />
+            <element signature="method#setRoomCount#0;class#Office#0" />
+            <element signature="e#993#994#0" expanded="true" />
+            <element signature="method#setSquare#0;class#Office#0" />
+            <element signature="method#toString#0;class#Office#0" />
+            <element signature="method#equals#0;class#Office#0" />
+            <element signature="method#hashCode#0;class#Office#0" />
+            <element signature="method#clone#0;class#Office#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/greffort/factory/DwellingFactory.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="306">
+          <caret line="32" selection-start-line="32" selection-end-line="32" />
+          <folding>
+            <element signature="method#createBuilding#1;class#DwellingFactory#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/greffort/factory/HotelFactory.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="207">
+          <caret line="19" column="63" selection-start-line="19" selection-start-column="63" selection-end-line="19" selection-end-column="63" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#321#322#0" expanded="true" />
+            <element signature="e#348#349#0" expanded="true" />
+            <element signature="e#407#408#0" expanded="true" />
+            <element signature="e#434#435#0" expanded="true" />
+            <element signature="e#493#494#0" expanded="true" />
+            <element signature="e#520#521#0" expanded="true" />
+            <element signature="e#600#601#0" expanded="true" />
+            <element signature="e#627#628#0" expanded="true" />
+            <element signature="e#823#824#0" expanded="true" />
+            <element signature="e#850#851#0" expanded="true" />
+            <element signature="e#695#696#0" expanded="true" />
+            <element signature="e#722#723#0" expanded="true" />
+            <element signature="e#901#902#0" expanded="true" />
+            <element signature="e#928#929#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/greffort/factory/BuildingFactory.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="85">
+          <caret line="5" column="25" lean-forward="true" selection-start-line="5" selection-start-column="25" selection-end-line="5" selection-end-column="25" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/greffort/factory/OfficeFactory.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="442">
+          <caret line="34" column="43" selection-start-line="34" selection-start-column="43" selection-end-line="34" selection-end-column="43" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#275#276#0" expanded="true" />
+            <element signature="e#327#328#0" expanded="true" />
+            <element signature="method#createBuilding#1;class#OfficeFactory#0" />
+            <element signature="e#914#915#0" expanded="true" />
+            <element signature="e#941#942#0" expanded="true" />
+            <element signature="e#1004#1005#0" expanded="true" />
+            <element signature="e#1031#1032#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/greffort/comparators/ComparatorFloor.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="238">
+          <caret line="14" column="8" selection-start-line="14" selection-start-column="8" selection-end-line="14" selection-end-column="37" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#446#447#0" expanded="true" />
+            <element signature="e#490#491#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/greffort/comparators/ComparatorSpace.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="187">
+          <caret line="11" lean-forward="true" selection-start-line="11" selection-end-line="11" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#223#224#0" expanded="true" />
+            <element signature="e#269#270#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/greffort/buildings/Buildings.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="11">
+          <caret line="38" lean-forward="true" selection-start-line="38" selection-end-line="38" />
+          <folding>
+            <element signature="method#createBuilding#0;class#Buildings#0" />
+            <element signature="method#outputBuilding#0;class#Buildings#0" />
+            <element signature="method#inputBuilding#0;class#Buildings#0" />
+            <element signature="method#writeBuilding#0;class#Buildings#0" />
+            <element signature="method#readBuilding#0;class#Buildings#0" />
+            <element signature="method#serializeBuilding#0;class#Buildings#0" />
+            <element signature="method#deserializeBuilding#0;class#Buildings#0" />
+            <element signature="method#writeBuildingFormat#0;class#Buildings#0" />
+            <element signature="method#readBuilding#1;class#Buildings#0" />
+            <element signature="e#7818#8887#0" />
+            <element signature="method#sort#1;class#Buildings#0" />
           </folding>
         </state>
       </provider>
