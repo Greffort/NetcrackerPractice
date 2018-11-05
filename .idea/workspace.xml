@@ -6,7 +6,20 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="5d06f703-f5f6-4195-b915-446c8f284201" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/src/com/greffort/buildings/threads/Cleaner.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/com/greffort/buildings/threads/Repairer.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/NetcrackerPractice/com/greffort/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/NetcrackerPractice/com/greffort/Main.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/greffort/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/greffort/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/greffort/buildings/Buildings.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/greffort/buildings/Buildings.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/greffort/buildings/dwelling/Dwelling.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/greffort/buildings/dwelling/Dwelling.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/greffort/buildings/dwelling/DwellingFloor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/greffort/buildings/dwelling/DwellingFloor.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/greffort/buildings/dwelling/Flat.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/greffort/buildings/dwelling/Flat.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/greffort/buildings/dwelling/HotelFloor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/greffort/buildings/dwelling/HotelFloor.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/greffort/buildings/office/OfficeFloor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/greffort/buildings/office/OfficeFloor.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/greffort/comparators/ComparatorFloor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/greffort/comparators/ComparatorFloor.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/greffort/comparators/ComparatorSpace.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/greffort/comparators/ComparatorSpace.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/greffort/linkedList/SingleLinkedList.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/greffort/linkedList/SingleLinkedList.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -86,7 +99,6 @@
       <usages-collector id="statistics.file.extensions.open">
         <counts>
           <entry key="class" value="6" />
-          <entry key="gitignore" value="1" />
           <entry key="iml" value="1" />
           <entry key="java" value="366" />
           <entry key="practice1" value="1" />
@@ -103,13 +115,12 @@
           <entry key="CLASS" value="6" />
           <entry key="IDEA_MODULE" value="1" />
           <entry key="JAVA" value="366" />
-          <entry key="PLAIN_TEXT" value="8" />
+          <entry key="PLAIN_TEXT" value="7" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
           <entry key="dummy" value="19" />
-          <entry key="gitignore" value="1" />
           <entry key="java" value="15486" />
           <entry key="practice1" value="13" />
           <entry key="practice2" value="5" />
@@ -123,7 +134,7 @@
       <usages-collector id="statistics.file.types.edit">
         <counts>
           <entry key="JAVA" value="15486" />
-          <entry key="PLAIN_TEXT" value="257" />
+          <entry key="PLAIN_TEXT" value="256" />
         </counts>
       </usages-collector>
     </session>
@@ -133,6 +144,15 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/com/greffort/interfaces/Floor.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="391">
+              <caret line="23" column="1" selection-start-line="23" selection-start-column="1" selection-end-line="23" selection-end-column="1" />
+            </state>
+          </provider>
+        </entry>
+      </file>
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/com/greffort/buildings/dwelling/DwellingFloor.java">
           <provider selected="true" editor-type-id="text-editor">
@@ -241,7 +261,7 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/com/greffort/Main.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="268">
@@ -249,15 +269,6 @@
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/.gitignore">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="102">
-              <caret line="6" column="5" lean-forward="true" selection-start-line="6" selection-start-column="5" selection-end-line="6" selection-end-column="5" />
             </state>
           </provider>
         </entry>
@@ -304,6 +315,7 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
+        <option value="$PROJECT_DIR$/src/com/greffort/interfaces/IBuilding.java" />
         <option value="$PROJECT_DIR$/src/com/greffort/buildingsOffice/OfficeBuilding.java" />
         <option value="$PROJECT_DIR$/src/com/greffort/buildingsOffice/OfficeFloor.java" />
         <option value="$PROJECT_DIR$/src/com/greffort/buildings/Dwelling.java" />
@@ -354,7 +366,6 @@
         <option value="$PROJECT_DIR$/src/com/greffort/buildings/dwelling/DwellingFloor.java" />
         <option value="$PROJECT_DIR$/src/com/greffort/buildings/threads/Repairer.java" />
         <option value="$PROJECT_DIR$/src/com/greffort/buildings/threads/Cleaner.java" />
-        <option value="$PROJECT_DIR$/src/.gitignore" />
       </list>
     </option>
   </component>
@@ -410,16 +421,13 @@
     <property name="Repository.Attach.Sources" value="false" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1541417630475" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1541417440723" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/../creat_test_gradle" />
     <property name="settings.editor.selected.configurable" value="preferences.keymap" />
   </component>
   <component name="RecentsManager">
     <key name="CopyClassDialog.RECENTS_KEY">
       <recent name="com.greffort.factory" />
-    </key>
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="C:\Users\Aleks\IdeaProjects\NetcrackerPractice\src" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -600,14 +608,7 @@
       <option name="project" value="LOCAL" />
       <updated>1541076848469</updated>
     </task>
-    <task id="LOCAL-00016" summary="без коментариев. &#10;&#10;Реализация compareTo/">
-      <created>1541417476615</created>
-      <option name="number" value="00016" />
-      <option name="presentableId" value="LOCAL-00016" />
-      <option name="project" value="LOCAL" />
-      <updated>1541417476615</updated>
-    </task>
-    <option name="localTasksCounter" value="17" />
+    <option name="localTasksCounter" value="16" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
@@ -623,8 +624,7 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1382" height="754" extended-state="6" />
-    <editor active="true" />
+    <frame x="-8" y="-8" width="1382" height="754" extended-state="7" />
     <layout>
       <window_info id="Structure" order="0" sideWeight="0.5016129" side_tool="true" weight="0.16263238" />
       <window_info id="Image Layers" order="1" />
@@ -737,6 +737,13 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
+    <entry file="jar://C:/Program Files/Java/jdk1.8.0_181/src.zip!/java/io/BufferedReader.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="402">
+          <caret line="114" column="35" selection-start-line="114" selection-start-column="35" selection-end-line="114" selection-end-column="35" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/txt.txt" />
     <entry file="jar://C:/Program Files/Java/jdk1.8.0_181/src.zip!/java/io/OutputStream.java">
       <provider selected="true" editor-type-id="text-editor">
@@ -917,9 +924,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="187">
           <caret line="11" column="22" lean-forward="true" selection-start-line="11" selection-start-column="22" selection-end-line="11" selection-end-column="22" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -927,10 +931,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="119">
           <caret line="7" column="11" selection-start-line="7" selection-start-column="11" selection-end-line="7" selection-end-column="11" />
-          <folding>
-            <element signature="e#222#223#0" expanded="true" />
-            <element signature="e#296#297#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -963,15 +963,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="238">
           <caret line="14" column="22" lean-forward="true" selection-start-line="14" selection-start-column="22" selection-end-line="14" selection-end-column="22" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#316#317#0" expanded="true" />
-            <element signature="e#374#375#0" expanded="true" />
-            <element signature="e#422#423#0" expanded="true" />
-            <element signature="e#463#464#0" expanded="true" />
-            <element signature="e#2391#2392#0" expanded="true" />
-            <element signature="e#2449#2450#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -997,9 +988,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="510">
           <caret line="32" column="11" selection-start-line="32" selection-start-column="11" selection-end-line="32" selection-end-column="11" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1183,13 +1171,6 @@
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/.gitignore">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="102">
-          <caret line="6" column="5" lean-forward="true" selection-start-line="6" selection-start-column="5" selection-end-line="6" selection-end-column="5" />
         </state>
       </provider>
     </entry>
