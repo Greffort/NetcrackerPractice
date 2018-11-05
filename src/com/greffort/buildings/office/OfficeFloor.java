@@ -5,6 +5,7 @@ import com.greffort.interfaces.Floor;
 import com.greffort.interfaces.Space;
 import com.greffort.linkedList.SingleLinkedList;
 import org.jetbrains.annotations.NotNull;
+
 import java.io.Serializable;
 import java.util.Iterator;
 
@@ -159,7 +160,7 @@ public final class OfficeFloor implements Floor, Serializable {
     }
 
     public Iterator<Space> iterator() {
-       return officeSingleLinkedList.iterator();
+        return officeSingleLinkedList.iterator();
     }
 
     public int compareTo(Floor floor) {

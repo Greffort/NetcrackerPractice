@@ -165,7 +165,6 @@ public class DwellingFloor implements Floor, Serializable, Iterable<Space> {
         public E next() throws NoSuchElementException {
             return (E) arrayFlat[index++];
         }
-
     }
 
     public int compareTo(Floor floor) {

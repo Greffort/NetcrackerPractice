@@ -52,7 +52,7 @@ public final class Flat implements Space, Serializable {
     @NotNull
     public String toString() {
         StringBuffer stringBuffer = new StringBuffer();
-        return stringBuffer.append(getClass() + " (" + getRoomCount() + ", " + getSquare() + ")").toString();
+        return stringBuffer.append("Flat" + " (" + getRoomCount() + ", " + getSquare() + ")").toString();
     }
 
     @Override

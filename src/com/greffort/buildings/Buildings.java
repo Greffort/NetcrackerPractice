@@ -1,19 +1,13 @@
 package com.greffort.buildings;
 
-import com.greffort.buildings.office.OfficeBuilding;
-import com.greffort.factory.DwellingFactory;
-import com.greffort.factory.OfficeFactory;
-import com.greffort.factory.BuildingFactory;
-import com.greffort.interfaces.Building;
-import com.greffort.interfaces.Floor;
-import com.greffort.interfaces.Space;
+import com.greffort.factory.*;
+import com.greffort.interfaces.*;
 import org.jetbrains.annotations.NotNull;
 
 import java.io.*;
 import java.util.*;
 
-
-public class Buildings<E> implements Serializable {
+public class Buildings implements Serializable {
 
     private static BuildingFactory factory = new DwellingFactory();
 
@@ -25,7 +19,7 @@ public class Buildings<E> implements Serializable {
         return factory.createSpace(area);
     }
 
-    public static Space createSpace( double area,int roomsCount) {
+    public static Space createSpace(double area, int roomsCount) {
         return factory.createSpace(area, roomsCount);
     }
 
@@ -97,16 +91,14 @@ public class Buildings<E> implements Serializable {
                 int number2 = ((int) streamTokenizer.nval);
                 spaces[j] = createSpace(number1, number2);
             }
-            floors[i] =createFloor(spaces);
+            floors[i] = createFloor(spaces);
         }
         return createBuilding(floors);
-
     }
 
     public static void serializeBuilding(Building building, OutputStream out) throws IOException {
         ObjectOutputStream objectOutputStream = new ObjectOutputStream(out);
         objectOutputStream.writeObject(building);
-
     }
 
     public static Building deserializeBuilding(InputStream in) throws IOException, ClassNotFoundException {
@@ -153,11 +145,6 @@ public class Buildings<E> implements Serializable {
          */
         for (int i = floors.length - 1; i > 0; i--) {
             for (int j = 0; j < i; j++) {
-                if (floors[j].compareTo(floors[j + 1]) < 0) {
-                    E tmp = floors[j];
-                    floors[j] = floors[j + 1];
-                    floors[j + 1] = tmp;
-                }
                 if (floors[j].compareTo(floors[j + 1]) > 0) {
                     E tmp = floors[j + 1];
                     floors[j + 1] = floors[j];
@@ -167,7 +154,8 @@ public class Buildings<E> implements Serializable {
         }
     }
 
-    public static <E> void sort(E[] floors, Comparator<? super E> c) {
+    public static <E extends Comparable<E>> void sort(E[] floors, Comparator<E> c) {
+        //public static <E> void sort(E[] floors, Comparator<? super E> c) {
         /**
          * В класс Buildings добавьте два метода сортировки с критерием – сортировка помещений на этаже по
          * убыванию количества комнат и сортировка этажей в здании по убыванию общей площади помещений этажа.
@@ -175,11 +163,6 @@ public class Buildings<E> implements Serializable {
          */
         for (int i = floors.length - 1; i > 0; i--) {
             for (int j = 0; j < i; j++) {
-                if (c.compare(floors[j], floors[j + 1]) < 0) {
-                    E tmp = floors[j];
-                    floors[j] = floors[j + 1];
-                    floors[j + 1] = tmp;
-                }
                 if (c.compare(floors[j], floors[j + 1]) > 0) {
                     E tmp = floors[j + 1];
                     floors[j + 1] = floors[j];
@@ -188,6 +171,4 @@ public class Buildings<E> implements Serializable {
             }
         }
     }
-
-
 }

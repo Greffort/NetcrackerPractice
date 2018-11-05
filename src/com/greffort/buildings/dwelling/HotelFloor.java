@@ -31,7 +31,7 @@ public class HotelFloor extends DwellingFloor {
 
     public String toString() {
         StringBuffer stringBuffer = new StringBuffer();
-        stringBuffer.append("HotelFloor (" + getCountSpace() + ", " + (getStars()) + ", ");
+        stringBuffer.append("HotelFloor (" + getStars() + ", " + getCountSpace() + ", ");
         for (int i = 0; i < getCountSpace(); i++) {
             stringBuffer.append(getSpace(i).toString() + "), ");
         }

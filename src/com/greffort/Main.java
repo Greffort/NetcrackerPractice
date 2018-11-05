@@ -1,22 +1,18 @@
 package com.greffort;
 
-import com.greffort.buildings.Buildings;
-import com.greffort.buildings.dwelling.HotelFloor;
+import com.greffort.buildings.*;
+import com.greffort.buildings.dwelling.*;
 import com.greffort.buildings.office.*;
-import com.greffort.buildings.dwelling.Dwelling;
-import com.greffort.buildings.dwelling.DwellingFloor;
-import com.greffort.buildings.dwelling.Flat;
 import com.greffort.comparators.ComparatorSpace;
-import com.greffort.exception.FloorIndexOutOfBoundsException;
-import com.greffort.exception.IndexChangeableSpacesException;
-import com.greffort.exception.SpaceIndexOutOfBoundsException;
-import com.greffort.interfaces.Building;
-import com.greffort.interfaces.Floor;
-import com.greffort.interfaces.Space;
+import com.greffort.exception.*;
+import com.greffort.factory.HotelFactory;
+import com.greffort.interfaces.*;
 import com.greffort.placementExchanger.PlacementExchanger;
 //import java.lang.*;
 import java.io.*;
 import java.util.Scanner;
+
+import static java.lang.Double.NaN;
 
 
 public class Main {
@@ -215,10 +211,10 @@ public class Main {
 
         DwellingFloor spaces = new DwellingFloor(flats1);
 
-        for (Space space:spaces)
-        {
-            System.out.println(space.getSquare()+" ff");
-        }
+//        for (Space space:spaces)
+//        {
+//            System.out.println(space.getSquare()+" 1");
+//        }
         spaces.getBestSpace();
 
 
@@ -226,20 +222,36 @@ public class Main {
 
         spaces1.getBestSpace();
 
-        for (Space space :
-                spaces1) {
-            System.out.println(space.getSquare() +"rihbgeibe");
-        }
+//        for (Space space :
+//                spaces1) {
+//            System.out.println(space.getSquare() +"2");
+//        }
 
         OfficeBuilding floors = new OfficeBuilding(new Floor[]{OfficeFloor1, OfficeFloor2,OfficeFloor3});
         floors.addSpace(new Office(), 1);
         Floor floor = floors.getFloor(0);
 
-Space[] spaces2 = new Space[]{new Office(1,2),new Flat(3434,12), new Office(2,2)};
+Space[] spaces2 = new Space[]{new Office(1,4),new Flat(3434,12), new Office(2,2)};
         Buildings.sort(spaces2);
-        Buildings.sort(spaces2,new ComparatorSpace());
+        //Buildings.sort(spaces2,new ComparatorSpace());
 //Floor floor1 = Buildings.sort(floor);
+
+        Space space = new Flat(NaN,1);
+        Space[] spaces3 = new Space[]{new Flat(2,1),new Flat(3434,12), new Office(2,2)};
+        Buildings.sort(spaces3,new ComparatorSpace());
+
+
+        Buildings.setBuildingFactory(new HotelFactory());
+
+        Floor floor2 = Buildings.createFloor(spaces3);
+
+        System.out.println(((HotelFloor) floor2).toString());
+
+        ((HotelFloor) floor2).setStars(5);
+        System.out.println(((HotelFloor) floor2).toString());
+
         int f = 0;
+
     }
 
     private static void checkByteSymbolInOutput() {

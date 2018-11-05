@@ -170,7 +170,6 @@ public final class SingleLinkedList<E> implements Serializable, Iterable<E> {
             index++;
             return x.data;
         }
-
     }
 }
 
