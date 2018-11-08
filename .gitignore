@@ -1,0 +1,17 @@
+# Created by .ignore support plugin (hsz.mobi)
+.idea/description.html
+.idea/modules.xml
+.idea/project-template.xml
+.idea/uiDesigner.xml
+out/production/NetcrackerPractice/com/greffort/buildings/
+out/production/NetcrackerPractice/com/greffort/comparators/
+out/production/NetcrackerPractice/com/greffort/exception/IndexChangeableFloorsException.class
+out/production/NetcrackerPractice/com/greffort/exception/IndexChangeableSpacesException.class
+out/production/NetcrackerPractice/com/greffort/exception/InvalidCoeffException.class
+out/production/NetcrackerPractice/com/greffort/factory/
+out/production/NetcrackerPractice/com/greffort/linkedList/DoubleLinkedList$1.class
+out/production/NetcrackerPractice/com/greffort/linkedList/DoubleLinkedList$Iterator.class
+out/production/NetcrackerPractice/com/greffort/linkedList/SingleLinkedList$1.class
+out/production/NetcrackerPractice/com/greffort/linkedList/SingleLinkedList$Iterator.class
+out/production/NetcrackerPractice/com/greffort/placementExchanger/
+out/production/NetcrackerPractice/tasks/
