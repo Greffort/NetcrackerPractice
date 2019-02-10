@@ -79,16 +79,22 @@ public class Buildings implements Serializable {
 
     public static Building readBuilding(Reader in) throws IOException {
         StreamTokenizer streamTokenizer = new StreamTokenizer(in);
-        streamTokenizer.nextToken();
+
+//        streamTokenizer.whitespaceChars(' ','\n');
+        if (streamTokenizer.nextToken() == streamTokenizer.TT_EOL){
+            return null;
+        }
+//        streamTokenizer.nextToken();
         Floor[] floors = new Floor[(int) streamTokenizer.nval];
         for (int i = 0; i < floors.length; i++) {
             streamTokenizer.nextToken();
             Space[] spaces = new Space[(int) streamTokenizer.nval];
             for (int j = 0; j < spaces.length; j++) {
                 streamTokenizer.nextToken();
-                double number1 = streamTokenizer.nval;
-                streamTokenizer.nextToken();
                 int number2 = ((int) streamTokenizer.nval);
+                streamTokenizer.nextToken();
+                double number1 = streamTokenizer.nval;
+
                 spaces[j] = createSpace(number1, number2);
             }
             floors[i] = createFloor(spaces);
@@ -118,16 +124,33 @@ public class Buildings implements Serializable {
         }
     }
 
+//    public static Building readBuilding(Scanner scanner) throws IOException {
+//        Floor[] floors;
+//        floors = new Floor[scanner.nextInt()];
+//        for (int i = 0; i < floors.length; i++) {
+//            scanner.nextInt();
+//            Space[] spaces = new Space[scanner.nextInt()];
+//            for (int j = 0; j < spaces.length; j++) {
+//                scanner.nextInt();
+//                scanner.nextInt();
+//                int room = scanner.nextInt();
+//                double square = scanner.nextDouble();
+//                spaces[j] = createSpace(square, room);
+//            }
+//            floors[i] = createFloor(spaces);
+//        }
+//        return createBuilding(floors);
+//    }
+
     public static Building readBuilding(Scanner scanner) throws IOException {
         Floor[] floors;
         floors = new Floor[scanner.nextInt()];
         for (int i = 0; i < floors.length; i++) {
-            scanner.nextInt();
             Space[] spaces = new Space[scanner.nextInt()];
             for (int j = 0; j < spaces.length; j++) {
-                scanner.nextInt();
-                scanner.nextInt();
-                spaces[j] = createSpace(scanner.nextInt(), scanner.nextInt());
+                int room = scanner.nextInt();
+                double square = scanner.nextDouble();
+                spaces[j] = createSpace(square,room);
             }
             floors[i] = createFloor(spaces);
         }
@@ -170,5 +193,19 @@ public class Buildings implements Serializable {
                 }
             }
         }
+    }
+
+    /*
+     * Добавьте в класс Buildings со статическими методами обработки реализацию метода
+     * Floor synchronizedFloor (Floor floor),
+     * возвращающего ссылку на оболочку указанного объекта этажа, безопасную с точки зрения многопоточности.
+     *
+     * Для этого потребуется в пакете buildings описать новый класс декоратора SynchronizedFloor, реализующий
+     * с обеспечением синхронизации методы интерфейса Floor, а также перегружающий ряд методов класса Object.
+     * Создание специальных итераторов и их синхронизация не требуются
+     */
+
+    public static Floor synchronizedFloor(Floor floor) {
+        return new SynchronizedFloor(floor);
     }
 }
