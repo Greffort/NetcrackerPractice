@@ -5,30 +5,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="5d06f703-f5f6-4195-b915-446c8f284201" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/qaplug_profiles.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/com/greffort/buildings/DecoratorFloor.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/com/greffort/buildings/SynchronizedFloor.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/com/greffort/buildings/net/client/BinaryClient.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/com/greffort/buildings/net/client/SerialClient.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/com/greffort/buildings/net/server/parallel/BinaryServer.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/com/greffort/buildings/net/server/parallel/SerialServer.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/com/greffort/buildings/net/server/sequental/BinaryServer.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/com/greffort/buildings/net/server/sequental/SerialServer.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/com/greffort/buildings/threads/MySemaphore.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/com/greffort/buildings/threads/SequentalCleaner.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/com/greffort/buildings/threads/SequentalRepairer.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/com/greffort/exception/BuildingUnderArrestException.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/com/greffort/main/main007/Main0701.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/com/greffort/main/main007/Main0702.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/com/greffort/main/main007/Main0703.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/com/greffort/main/main008/Main0801.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/NetcrackerPractice/com/greffort/Main.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/greffort/Main.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/greffort/buildings/Buildings.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/greffort/buildings/Buildings.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/greffort/buildings/threads/Cleaner.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/greffort/buildings/threads/Cleaner.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/greffort/buildings/threads/Repairer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/greffort/buildings/threads/Repairer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/greffort/buildings/net/client/SerialClient.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/greffort/buildings/net/client/SerialClient.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/greffort/buildings/net/server/sequental/SerialServer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/greffort/buildings/net/server/sequental/SerialServer.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -168,7 +147,7 @@
           <entry key="iml" value="1" />
           <entry key="inpputTypeBuilding" value="1" />
           <entry key="inputTypeBuilding" value="1" />
-          <entry key="java" value="485" />
+          <entry key="java" value="486" />
           <entry key="practice1" value="1" />
           <entry key="practice2" value="1" />
           <entry key="practice3" value="1" />
@@ -183,7 +162,7 @@
           <entry key="CLASS" value="6" />
           <entry key="Git file" value="1" />
           <entry key="IDEA_MODULE" value="1" />
-          <entry key="JAVA" value="485" />
+          <entry key="JAVA" value="486" />
           <entry key="PLAIN_TEXT" value="11" />
         </counts>
       </usages-collector>
@@ -191,7 +170,7 @@
         <counts>
           <entry key="dummy" value="44" />
           <entry key="inputTypeBuilding" value="6" />
-          <entry key="java" value="25018" />
+          <entry key="java" value="25161" />
           <entry key="practice1" value="13" />
           <entry key="practice2" value="5" />
           <entry key="practice3" value="7" />
@@ -203,7 +182,7 @@
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="JAVA" value="25018" />
+          <entry key="JAVA" value="25161" />
           <entry key="PLAIN_TEXT" value="288" />
         </counts>
       </usages-collector>
@@ -235,24 +214,34 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/com/greffort/buildings/net/client/BinaryClient.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-190">
-              <caret line="42" column="35" selection-start-line="42" selection-start-column="35" selection-end-line="42" selection-end-column="35" />
+            <state relative-caret-position="680">
+              <caret line="76" column="9" lean-forward="true" selection-start-line="36" selection-start-column="4" selection-end-line="76" selection-end-column="9" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="docComment;class#BinaryClient#0" />
+                <element signature="e#3635#3650#0" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/com/greffort/buildings/net/server/sequental/BinaryServer.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="96">
-              <caret line="32" lean-forward="true" selection-start-line="32" selection-end-line="32" />
+            <state relative-caret-position="443">
+              <caret line="81" lean-forward="true" selection-start-line="81" selection-end-line="81" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/com/greffort/buildings/net/server/parallel/SerialServer.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="85">
+              <caret line="5" column="25" selection-start-line="5" selection-start-column="25" selection-end-line="5" selection-end-column="25" />
             </state>
           </provider>
         </entry>
@@ -269,11 +258,14 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/com/greffort/buildings/net/client/SerialClient.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="85">
-              <caret line="5" column="25" selection-start-line="5" selection-start-column="25" selection-end-line="5" selection-end-column="25" />
+            <state relative-caret-position="340">
+              <caret line="30" column="42" lean-forward="true" selection-start-line="30" selection-start-column="42" selection-end-line="30" selection-end-column="42" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -281,8 +273,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/com/greffort/buildings/net/server/sequental/SerialServer.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="350">
-              <caret line="75" column="15" lean-forward="true" selection-start-line="66" selection-start-column="14" selection-end-line="75" selection-end-column="15" />
+            <state relative-caret-position="324">
+              <caret line="40" column="17" lean-forward="true" selection-start-line="40" selection-start-column="17" selection-end-line="40" selection-end-column="17" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -314,7 +306,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/com/greffort/exception/InvalidSpaceAreaException.java" />
         <option value="$PROJECT_DIR$/src/com/greffort/linkedList/DoubleLinkedList.java" />
         <option value="$PROJECT_DIR$/src/com/greffort/placementExchanger/PlacementExchanger.java" />
         <option value="$PROJECT_DIR$/src/com/greffort/buildings/office/OfficeBuilding.java" />
@@ -361,10 +352,11 @@
         <option value="$PROJECT_DIR$/src/com/greffort/exception/BuildingUnderArrestException.java" />
         <option value="$PROJECT_DIR$/src/com/greffort/buildings/net/server/BinaryServer.java" />
         <option value="$PROJECT_DIR$/src/com/greffort/buildings/Buildings.java" />
-        <option value="$PROJECT_DIR$/src/com/greffort/buildings/net/server/sequental/SerialServer.java" />
         <option value="$PROJECT_DIR$/src/com/greffort/buildings/net/client/BinaryClient.java" />
         <option value="$PROJECT_DIR$/src/com/greffort/buildings/net/server/parallel/BinaryServer.java" />
         <option value="$PROJECT_DIR$/src/com/greffort/buildings/net/server/sequental/BinaryServer.java" />
+        <option value="$PROJECT_DIR$/src/com/greffort/buildings/net/server/sequental/SerialServer.java" />
+        <option value="$PROJECT_DIR$/src/com/greffort/buildings/net/client/SerialClient.java" />
       </list>
     </option>
   </component>
@@ -474,7 +466,7 @@
     <property name="Repository.Attach.Sources" value="false" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1549829569567" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1549830193677" />
     <property name="extract.method.default.visibility" value="private" />
     <property name="last_opened_file_path" value="D:/YandexDisk/1OneDrive/Documents/!Netcrecker/Java SE/Buildings-master1" />
     <property name="settings.editor.selected.configurable" value="preferences.keymap" />
@@ -498,7 +490,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Application.BinaryClient">
+  <component name="RunManager" selected="Application.SerialClient">
     <configuration name="BinaryClient" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="com.greffort.buildings.net.client.BinaryClient" />
       <module name="NetcrackerPractice" />
@@ -538,22 +530,25 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="Main" type="Application" factoryName="Application" temporary="true">
-      <option name="MAIN_CLASS_NAME" value="com.greffort.main.Main0001" />
+    <configuration name="SerialClient" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.greffort.buildings.net.client.SerialClient" />
       <module name="NetcrackerPractice" />
-      <option name="WORKING_DIRECTORY" value="file://$PROJECT_DIR$" />
-      <RunnerSettings RunnerId="Run" />
-      <ConfigurationWrapper RunnerId="Run" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.greffort.buildings.net.client.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="Main0702" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="com.greffort.main.main007.Main0702" />
+    <configuration name="SerialServer" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.greffort.buildings.net.server.sequental.SerialServer" />
       <module name="NetcrackerPractice" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="com.greffort.main.Main0001" />
+          <option name="PATTERN" value="com.greffort.buildings.net.server.sequental.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -562,19 +557,19 @@
       </method>
     </configuration>
     <list>
-      <item itemvalue="Application.Main" />
-      <item itemvalue="Application.Main0702" />
       <item itemvalue="Application.BinaryServer" />
       <item itemvalue="Application.BinaryClient" />
       <item itemvalue="Application.BinaryServer (1)" />
+      <item itemvalue="Application.SerialServer" />
+      <item itemvalue="Application.SerialClient" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.SerialClient" />
+        <item itemvalue="Application.SerialServer" />
         <item itemvalue="Application.BinaryClient" />
         <item itemvalue="Application.BinaryServer (1)" />
         <item itemvalue="Application.BinaryServer" />
-        <item itemvalue="Application.Main" />
-        <item itemvalue="Application.Main0702" />
       </list>
     </recent_temporary>
   </component>
@@ -639,7 +634,7 @@
       <workItem from="1549604515856" duration="6417000" />
       <workItem from="1549732457562" duration="7765000" />
       <workItem from="1549740978880" duration="12907000" />
-      <workItem from="1549809140990" duration="20403000" />
+      <workItem from="1549809140990" duration="21026000" />
     </task>
     <task id="LOCAL-00001" summary="1">
       <created>1539271315052</created>
@@ -760,11 +755,18 @@
       <option name="project" value="LOCAL" />
       <updated>1541686922631</updated>
     </task>
-    <option name="localTasksCounter" value="18" />
+    <task id="LOCAL-00018" summary="без коментариев.">
+      <created>1549829588453</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1549829588454</updated>
+    </task>
+    <option name="localTasksCounter" value="19" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="289582000" />
+    <option name="totallyTimeSpent" value="290205000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -788,7 +790,7 @@
       <window_info content_ui="combo" id="Project" order="6" sideWeight="0.4983871" visible="true" weight="0.18656716" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32903227" />
-      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.49924356" weight="0.28698555" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" sideWeight="0.49924356" visible="true" weight="0.28698555" />
       <window_info anchor="bottom" id="Debug" order="3" sideWeight="0.49924356" weight="0.27252504" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -1132,13 +1134,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/greffort/buildings/net/server/parallel/SerialServer.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="85">
-          <caret line="5" column="25" selection-start-line="5" selection-start-column="25" selection-end-line="5" selection-end-column="25" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/com/greffort/exception/BuildingUnderArrestException.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="153">
@@ -1188,31 +1183,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/greffort/buildings/net/server/sequental/SerialServer.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="350">
-          <caret line="75" column="15" lean-forward="true" selection-start-line="66" selection-start-column="14" selection-end-line="75" selection-end-column="15" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/greffort/buildings/net/client/SerialClient.java">
+    <entry file="file://$PROJECT_DIR$/src/com/greffort/buildings/net/server/parallel/SerialServer.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="85">
           <caret line="5" column="25" selection-start-line="5" selection-start-column="25" selection-end-line="5" selection-end-column="25" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/greffort/buildings/net/client/BinaryClient.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-190">
-          <caret line="42" column="35" selection-start-line="42" selection-start-column="35" selection-end-line="42" selection-end-column="35" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="docComment;class#BinaryClient#0" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1226,10 +1200,42 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/greffort/buildings/net/client/BinaryClient.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="680">
+          <caret line="76" column="9" lean-forward="true" selection-start-line="36" selection-start-column="4" selection-end-line="76" selection-end-column="9" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="docComment;class#BinaryClient#0" />
+            <element signature="e#3635#3650#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/com/greffort/buildings/net/server/sequental/BinaryServer.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="96">
-          <caret line="32" lean-forward="true" selection-start-line="32" selection-end-line="32" />
+        <state relative-caret-position="443">
+          <caret line="81" lean-forward="true" selection-start-line="81" selection-end-line="81" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/greffort/buildings/net/server/sequental/SerialServer.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="324">
+          <caret line="40" column="17" lean-forward="true" selection-start-line="40" selection-start-column="17" selection-end-line="40" selection-end-column="17" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/greffort/buildings/net/client/SerialClient.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="340">
+          <caret line="30" column="42" lean-forward="true" selection-start-line="30" selection-start-column="42" selection-end-line="30" selection-end-column="42" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
