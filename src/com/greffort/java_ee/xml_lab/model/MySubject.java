@@ -1,4 +1,4 @@
-package com.greffort.java_ee.xml_lab;
+package com.greffort.java_ee.xml_lab.model;
 
 import javax.xml.bind.annotation.XmlAttribute;
 import javax.xml.bind.annotation.XmlType;

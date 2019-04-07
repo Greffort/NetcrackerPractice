@@ -1,5 +1,9 @@
 package com.greffort.java_ee.xml_lab;
 
+import com.greffort.java_ee.xml_lab.model.Group;
+import com.greffort.java_ee.xml_lab.model.MySubject;
+import com.greffort.java_ee.xml_lab.model.Student;
+
 import javax.xml.bind.JAXBContext;
 import javax.xml.bind.JAXBException;
 import javax.xml.bind.Marshaller;

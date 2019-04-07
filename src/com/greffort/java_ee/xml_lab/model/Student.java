@@ -1,4 +1,4 @@
-package com.greffort.java_ee.xml_lab;
+package com.greffort.java_ee.xml_lab.model;
 
 import javax.xml.bind.annotation.XmlAttribute;
 import javax.xml.bind.annotation.XmlElement;
@@ -67,7 +67,7 @@ public class Student {
         return average;
     }
 
-    public void setAverage(double average,String kostil) {
+    public void setAverage(double average, String kostil) {
         this.average = average;
     }
 //добавить список предметов, и средний балл

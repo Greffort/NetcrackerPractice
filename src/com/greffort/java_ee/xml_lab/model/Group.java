@@ -1,6 +1,4 @@
-package com.greffort.java_ee.xml_lab;
-
-import jdk.nashorn.internal.objects.annotations.Getter;
+package com.greffort.java_ee.xml_lab.model;
 
 import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlElementWrapper;
@@ -11,10 +9,10 @@ import java.util.List;
 
 public @XmlType(name = "group")
 @XmlRootElement
-class Group{
+class Group {
 
     @XmlElementWrapper(name = "students", nillable = true)
-    @XmlElement(name="student")
+    @XmlElement(name = "student")
     private List<Student> student;
 
     public Group() {
@@ -29,7 +27,7 @@ class Group{
         return student;
     }
 
-    public void setStudent(List<Student> student,String kostil) {
+    public void setStudent(List<Student> student, String kostil) {
         this.student = student;
     }
 }
