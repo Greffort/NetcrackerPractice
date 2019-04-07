@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+
+<!DOCTYPE group SYSTEM
+        "C:\Users\Aleks\IdeaProjects\1work_project\NetcrackerPractice\src\com\greffort\java_ee\xml_lab\xml_file\group.dtd">
+<group>
+    <student firstname = "Ivan" lastname = "Ivanov" groupnumber = "1" >
+        <subject title = "math" mark = "1"/>
+        <average>5</average>
+    </student>
+    <student firstname = "Petr" lastname = "Ivanov" groupnumber = "1" >
+        <subject title = "math" mark = "1"/>
+        <subject title = "math" mark = "2"/>
+        <subject title = "math" mark = "2"/>
+        <average>5</average>
+    </student>
+    <student firstname = "Semen" lastname = "Ivanov" groupnumber = "1" >
+        <subject title = "math" mark = "3"/>
+        <subject title = "math" mark = "3"/>
+    </student>
+</group>
