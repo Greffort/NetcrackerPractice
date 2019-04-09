@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8"/>
+    <title>Лаб №14</title>
+    <link rel="stylesheet" type="text/css" href="../css/mystyle.css">
+</head>
+
+<body>
+
+<com.greffort.form name="employeeSearch" id = "formID">
+    <p>
+        Введите номер сотрудника<br/>
+        <input id="textEmpNo" type="text" name="textEmpNo">
+        <input id="buttonEmpNo" type="button" name="buttonEmpNo" value="ок" onclick="checkInputTextEmpNo();">
+    </p>
+    <p>
+        Введите имя сотрудника <br/>
+        <input id="textEName" type="text" name="textEName" class="field"
+               value="Например, Иванов"
+               onfocus="onFocus()"
+               onblur="onBlur()">
+        <button type="submit" name="buttonEName" value="ок" onclick="sendEname()">ok
+        </button>
+    </p>
+    <p>
+        <input type="button" name="buttonAllEmp" value="Вывести всех сотрудников">
+    </p>
+    <p>
+        <a href="" name="aNewEmp">Создать нового сотрудника</a>
+    </p>
+
+    <table border="1" cellpadding="1" cellspacing="1" name = "table" id = "table">
+        <caption>Список сотрудников</caption>
+        <thead>
+        <tr>
+            <th scope="col"><input type="checkbox"></th>
+            <th scope="col">№</th>
+            <th scope="col">Имя</th>
+            <th scope="col">Должность</th>
+            <th scope="col">Дата приема на работу</th>
+            <th scope="col">Департамент</th>
+            <th scope="col"><a href="javascript:checkDelete()">Удалить</a></th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+            <td><input type="checkbox"></td>
+            <td><a href="7839">7839</a></td>
+            <td>KING</td>
+            <td>PRESIDENT</td>
+            <td>17.11.81</td>
+            <td>10</td>
+        </tr>
+        <tr>
+            <td><input type="checkbox"></td>
+            <td><a href="7839">7839</a></td>
+            <td>KING</td>
+            <td>PRESIDENT</td>
+            <td>17.11.81</td>
+            <td>11</td>
+        </tr>
+        <tr>
+            <td><input type="checkbox"></td>
+            <td><a href="q">7839</a></td>
+            <td>KING</td>
+            <td>PRESIDENT</td>
+            <td>17.11.81</td>
+            <td>13</td>
+        </tr>
+        <tr>
+            <td><input type="checkbox"></td>
+            <td><a href="q">7839</a></td>
+            <td>KING</td>
+            <td>PRESIDENT</td>
+            <td>17.11.81</td>
+            <td>14</td>
+        </tr>
+        <tr>
+            <td><input type="checkbox"></td>
+            <td><a href="q">7839</a></td>
+            <td>KING</td>
+            <td>PRESIDENT</td>
+            <td>17.11.81</td>
+            <td>15</td>
+        </tr>
+        <tr>
+            <td><input type="checkbox"></td>
+            <td><a href="q">7839</a></td>
+            <td>KING</td>
+            <td>PRESIDENT</td>
+            <td>17.11.81</td>
+            <td>16</td>
+        </tr>
+        <tr>
+            <td><input type="checkbox"></td>
+            <td><a href="q">7839</a></td>
+            <td>KING</td>
+            <td>PRESIDENT</td>
+            <td>17.11.81</td>
+            <td>17</td>
+        </tr>
+        <tr>
+            <td><input type="checkbox"></td>
+            <td><a href="q">7839</a></td>
+            <td>KING</td>
+            <td>PRESIDENT</td>
+            <td>17.11.81</td>
+            <td>18</td>
+        </tr>
+        <tr>
+            <td><input type="checkbox"></td>
+            <td><a href="q">7839</a></td>
+            <td>KING</td>
+            <td>PRESIDENT</td>
+            <td>17.11.81</td>
+            <td>19</td>
+        </tr>
+        <tr>
+            <td><input type="checkbox"></td>
+            <td><a href="q">7839</a></td>
+            <td>KING</td>
+            <td>PRESIDENT</td>
+            <td>17.11.81</td>
+            <td>20</td>
+        </tr>
+        </tbody>
+    </table>
+</com.greffort.form>
+<script src="../javascript/Javascript.js"></script>
+</body>
+</html>
+
+

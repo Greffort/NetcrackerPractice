@@ -1,7 +1,7 @@
 package com.greffort.java_ee.xml_lab.model;
 
 import javax.xml.bind.annotation.XmlElement;
-import javax.xml.bind.annotation.XmlElementWrapper;
+import javax.xml.bind.annotation.XmlElements;
 import javax.xml.bind.annotation.XmlRootElement;
 import javax.xml.bind.annotation.XmlType;
 import java.util.ArrayList;
@@ -11,8 +11,13 @@ public @XmlType(name = "group")
 @XmlRootElement
 class Group {
 
-    @XmlElementWrapper(name = "students", nillable = true)
-    @XmlElement(name = "student")
+//    @XmlElementWrapper(name = "students", nillable = true)
+//    @XmlElement(name = "student")
+//    private List<Student> student;
+
+
+    @XmlElements
+            ({@XmlElement(name = "student", type = Student.class)})
     private List<Student> student;
 
     public Group() {
@@ -23,11 +28,7 @@ class Group {
         this.student = students;
     }
 
-    public List<Student> getStudent(String kostil) {
+    public List<Student> getStudent() {
         return student;
-    }
-
-    public void setStudent(List<Student> student, String kostil) {
-        this.student = student;
     }
 }

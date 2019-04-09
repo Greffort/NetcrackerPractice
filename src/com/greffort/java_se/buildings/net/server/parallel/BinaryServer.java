@@ -6,7 +6,7 @@ import com.greffort.java_se.factory.DwellingFactory;
 import com.greffort.java_se.factory.HotelFactory;
 import com.greffort.java_se.factory.OfficeFactory;
 import com.greffort.java_se.interfaces.Building;
-import org.jetbrains.annotations.NotNull;
+import com.sun.istack.internal.NotNull;
 
 import java.io.DataInputStream;
 import java.io.DataOutputStream;

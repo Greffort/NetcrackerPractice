@@ -3,11 +3,11 @@
     <students>
         <student firstname="Иванов" lastname="Иван" groupnumber="1">
             <subjects>
-                <subject title="math" mark="1"/>
+                <subject title="math" mark="0"/>
                 <subject title="math" mark="2"/>
                 <subject title="math" mark="4"/>
             </subjects>
-            <average>2.3333333333333335</average>
+            <average>100</average>
         </student>
         <student firstname="Петров" lastname="Иван" groupnumber="2">
             <subjects>
@@ -15,7 +15,7 @@
                 <subject title="math" mark="2"/>
                 <subject title="math" mark="4"/>
             </subjects>
-            <average>2.3333333333333335</average>
+            <average>100</average>
         </student>
         <student firstname="Смирнов" lastname="Иван" groupnumber="3">
             <subjects>
@@ -23,7 +23,6 @@
                 <subject title="math" mark="1"/>
                 <subject title="math" mark="1"/>
             </subjects>
-            <average>1.0</average>
         </student>
         <student firstname="Леонтьев" lastname="Никитич" groupnumber="7">
             <subjects>

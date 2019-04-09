@@ -3,9 +3,9 @@ package com.greffort.java_se.factory;
 import com.greffort.java_se.buildings.dwelling.Dwelling;
 import com.greffort.java_se.buildings.dwelling.DwellingFloor;
 import com.greffort.java_se.buildings.dwelling.Flat;
+import com.sun.istack.internal.NotNull;
 import com.greffort.java_se.interfaces.Floor;
 import com.greffort.java_se.interfaces.Space;
-import org.jetbrains.annotations.NotNull;
 
 public class DwellingFactory implements BuildingFactory {
 

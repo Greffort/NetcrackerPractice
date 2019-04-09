@@ -53,7 +53,7 @@ public class BinaryClient {
 //        try (
 //                Socket socket = new Socket(InetAddress.getLocalHost(), 6666);
 //                FileWriter fileWriter = new FileWriter("OUTPUT");
-//                BufferedReader bufferedReaderDescription = new BufferedReader(new FileReader("buildings.txt"));
+//                BufferedReader bufferedReaderDescription = new BufferedReader(new FileReader("com.greffort.buildings.txt"));
 //                BufferedReader bufferedReaderType = new BufferedReader(new FileReader("InputTypeBuilding"));
 //                DataInputStream inD = new DataInputStream(socket.getInputStream());
 //                DataOutputStream outD = new DataOutputStream(socket.getOutputStream())) {

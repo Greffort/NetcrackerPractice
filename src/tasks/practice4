@@ -39,7 +39,7 @@ public static Building readBuilding (Reader in).
 public static void serializeBuilding (Building building, OutputStream out);
 •	десериализации здания из байтового потока
 public static Building deserializeBuilding (InputStream in);
-Продемонстрировать возможности сериализации в методе main(), записав в файл объект, затем считав и сравнив его с исходным.
+Продемонстрировать возможности сериализации в методе com.greffort.main(), записав в файл объект, затем считав и сравнив его с исходным.
 
 Задание 5
 Добавьте метод текстовой записи
@@ -49,6 +49,6 @@ public static void writeBuildingFormat (Building building, Writer out)
 ввода и вывода и имел аргумент типа Scanner.
 
 
-Примечание: При проверке работы методов в методе main() используйте блок try с ресурсом.
+Примечание: При проверке работы методов в методе com.greffort.main() используйте блок try с ресурсом.
 
 

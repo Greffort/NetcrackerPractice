@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<group>
+    <student firstname="Иванов" lastname="Иван" groupnumber="1">
+        <subject title="math" mark="1"/>
+        <subject title="math" mark="1"/>
+        <subject title="math" mark="1"/>
+        <average>1.0</average>
+    </student>
+    <student firstname="Петров" lastname="Иван" groupnumber="2">
+        <subject title="math" mark="2"/>
+        <subject title="math" mark="2"/>
+        <subject title="math" mark="2"/>
+        <average>2.0</average>
+    </student>
+    <student firstname="Смирнов" lastname="Иван" groupnumber="3">
+        <subject title="math" mark="3"/>
+        <subject title="math" mark="3"/>
+        <subject title="math" mark="3"/>
+        <average>3.0</average>
+    </student>
+    <student firstname="Леонтьев" lastname="Никитич" groupnumber="7">
+        <subject title="math" mark="4"/>
+        <subject title="math" mark="4"/>
+        <subject title="math" mark="4"/>
+        <average>4.0</average>
+    </student>
+</group>

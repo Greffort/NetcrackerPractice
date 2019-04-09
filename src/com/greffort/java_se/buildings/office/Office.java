@@ -1,9 +1,10 @@
 package com.greffort.java_se.buildings.office;
 
-import com.greffort.java_se.interfaces.Space;
 import com.greffort.java_se.exception.InvalidRoomsCountException;
 import com.greffort.java_se.exception.InvalidSpaceAreaException;
-import org.jetbrains.annotations.NotNull;
+import com.greffort.java_se.interfaces.Space;
+import com.sun.istack.internal.NotNull;
+
 import java.io.Serializable;
 
 public final class Office implements Space, Serializable {

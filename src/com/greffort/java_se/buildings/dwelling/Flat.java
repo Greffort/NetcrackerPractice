@@ -2,7 +2,7 @@ package com.greffort.java_se.buildings.dwelling;
 
 import com.greffort.java_se.exception.InvalidRoomsCountException;
 import com.greffort.java_se.interfaces.Space;
-import org.jetbrains.annotations.NotNull;
+import com.sun.istack.internal.NotNull;
 
 import java.io.Serializable;
 

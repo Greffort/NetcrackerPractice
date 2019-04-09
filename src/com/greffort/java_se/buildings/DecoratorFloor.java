@@ -1,8 +1,8 @@
 package com.greffort.java_se.buildings;
 
+import com.sun.istack.internal.NotNull;
 import com.greffort.java_se.interfaces.Floor;
 import com.greffort.java_se.interfaces.Space;
-import org.jetbrains.annotations.NotNull;
 
 import java.util.Iterator;
 

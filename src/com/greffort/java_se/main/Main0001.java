@@ -3,20 +3,22 @@ package com.greffort.java_se.main;
 import com.greffort.java_se.buildings.Buildings;
 import com.greffort.java_se.buildings.dwelling.Dwelling;
 import com.greffort.java_se.buildings.dwelling.DwellingFloor;
+import com.greffort.java_se.buildings.dwelling.Flat;
 import com.greffort.java_se.buildings.dwelling.HotelFloor;
 import com.greffort.java_se.buildings.office.Office;
 import com.greffort.java_se.buildings.office.OfficeBuilding;
 import com.greffort.java_se.buildings.office.OfficeFloor;
 import com.greffort.java_se.comparators.ComparatorSpace;
 import com.greffort.java_se.factory.HotelFactory;
-import com.greffort.java_se.buildings.dwelling.Flat;
 import com.greffort.java_se.interfaces.Building;
 import com.greffort.java_se.interfaces.Floor;
 import com.greffort.java_se.interfaces.Space;
-//import java.lang.*;
+
 import java.io.*;
 
 import static java.lang.Double.NaN;
+
+//import java.lang.*;
 
 
 public class Main0001 {
@@ -245,8 +247,8 @@ public class Main0001 {
 //            System.out.println(space.getSquare() +"2");
 //        }
 
-        OfficeBuilding floors = new OfficeBuilding(new Floor[]{OfficeFloor1, OfficeFloor2,OfficeFloor3});
-        Building building =  new OfficeBuilding(new Floor[]{OfficeFloor1, OfficeFloor2,OfficeFloor3});
+        OfficeBuilding floors = new OfficeBuilding(new Floor[]{OfficeFloor1, OfficeFloor2, OfficeFloor3});
+        Building building = new OfficeBuilding(new Floor[]{OfficeFloor1, OfficeFloor2, OfficeFloor3});
         Floor floor1 = new OfficeFloor(1);
         for (Floor floor :
                 building) {
@@ -260,14 +262,14 @@ public class Main0001 {
         floors.addSpace(new Office(), 1);
         Floor floor = floors.getFloor(0);
 
-Space[] spaces2 = new Space[]{new Office(1,4),new Flat(3434,12), new Office(2,2)};
+        Space[] spaces2 = new Space[]{new Office(1, 4), new Flat(3434, 12), new Office(2, 2)};
         Buildings.sort(spaces2);
         //Buildings.sort(spaces2,new ComparatorSpace());
 //Floor floor1 = Buildings.sort(floor);
 
-        Space space = new Flat(NaN,1);
-        Space[] spaces3 = new Space[]{new Flat(2,1),new Flat(3434,12), new Office(2,2)};
-        Buildings.sort(spaces3,new ComparatorSpace());
+        Space space = new Flat(NaN, 1);
+        Space[] spaces3 = new Space[]{new Flat(2, 1), new Flat(3434, 12), new Office(2, 2)};
+        Buildings.sort(spaces3, new ComparatorSpace());
 
         Buildings.sort(spaces3, Comparable::compareTo);
 
@@ -364,7 +366,7 @@ Space[] spaces2 = new Space[]{new Office(1,4),new Flat(3434,12), new Office(2,2)
         }
 
         try (FileReader fileReader = new FileReader("D:/workWrite.txt")) {
-           // Scanner scanner = new Scanner(fileReader);
+            // Scanner scanner = new Scanner(fileReader);
             //Buildings.writeBuildingFormat(scanner);
         } catch (IOException e) {
             System.out.println("error1");

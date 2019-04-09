@@ -1,9 +1,8 @@
 package com.greffort.java_ee.xml_lab.model;
 
-import javax.xml.bind.annotation.XmlAttribute;
-import javax.xml.bind.annotation.XmlElement;
-import javax.xml.bind.annotation.XmlElementWrapper;
-import javax.xml.bind.annotation.XmlType;
+import com.greffort.java_ee.xml_lab.model.MySubject;
+
+import javax.xml.bind.annotation.*;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.stream.IntStream;
@@ -17,10 +16,12 @@ public class Student {
     @XmlAttribute(name = "groupnumber")
     private String groupnumber;
 
-    @XmlElementWrapper(nillable = true)
-    @XmlElement(name = "subject")
-    private List<MySubject> subjects;
+//    @XmlElementWrapper(nillable = true)
+//    @XmlElement(name = "subject")
+//    private List<MySubject> subjects;
 
+@XmlElements({@XmlElement (name = "subject", type = MySubject.class)})
+private List<MySubject> subjects;
     @XmlElement(name = "average")
     private double average;
 
@@ -49,7 +50,7 @@ public class Student {
         this.average = average;
     }
 
-    public double countAverage(String kostil) {
+    public double countAverage() {
         int[] arr = new int[this.subjects.size()];
         final double average;
         if (arr != null) {
@@ -63,14 +64,19 @@ public class Student {
         return average;
     }
 
-    public double getAverage(String kostil) {
+    public double getAverage() {
         return average;
     }
 
-    public void setAverage(double average, String kostil) {
+    public void setAverage(double average, String s) {
         this.average = average;
     }
-//добавить список предметов, и средний балл
+
+    public List<MySubject> getSubjects() {
+        return subjects;
+    }
+
+    //добавить список предметов, и средний балл
 
 }
 

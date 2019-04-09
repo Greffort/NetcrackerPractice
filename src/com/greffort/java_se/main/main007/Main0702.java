@@ -2,11 +2,11 @@ package com.greffort.java_se.main.main007;
 
 import com.greffort.java_se.buildings.office.Office;
 import com.greffort.java_se.buildings.office.OfficeFloor;
+import com.greffort.java_se.buildings.threads.MySemaphore;
+import com.greffort.java_se.buildings.threads.SequentalCleaner;
 import com.greffort.java_se.buildings.threads.SequentalRepairer;
 import com.greffort.java_se.interfaces.Floor;
 import com.greffort.java_se.interfaces.Space;
-import com.greffort.java_se.buildings.threads.MySemaphore;
-import com.greffort.java_se.buildings.threads.SequentalCleaner;
 
 /**
  * @author Main0702
@@ -14,7 +14,7 @@ import com.greffort.java_se.buildings.threads.SequentalCleaner;
  * Класс Main для практики номер 7
  * <p>
  * Задание:
- * В методе main () следует создать 3 участвующих в процессе объекта (две нити и объект этажа)
+ * В методе com.greffort.main () следует создать 3 участвующих в процессе объекта (две нити и объект этажа)
  * и запустить нити на выполнение.
  * Запустите программу несколько раз. Попробуйте варьировать приоритеты нитей.
  * Проверьте поведение нитей в случае их прерывания вызовом метода interrupt ().

@@ -5,7 +5,7 @@ import com.greffort.java_se.exception.SpaceIndexOutOfBoundsException;
 import com.greffort.java_se.interfaces.Building;
 import com.greffort.java_se.interfaces.Floor;
 import com.greffort.java_se.interfaces.Space;
-import org.jetbrains.annotations.NotNull;
+import com.sun.istack.internal.NotNull;
 
 import java.io.Serializable;
 import java.util.Arrays;

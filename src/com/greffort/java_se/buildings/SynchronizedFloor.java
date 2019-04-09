@@ -2,12 +2,12 @@ package com.greffort.java_se.buildings;
 
 import com.greffort.java_se.interfaces.Floor;
 import com.greffort.java_se.interfaces.Space;
-import org.jetbrains.annotations.NotNull;
+import com.sun.istack.internal.NotNull;
 
 /**
  * @author SynchronizedFloor
  * <p>
- * Для этого потребуется в пакете buildings описать новый класс декоратора SynchronizedFloor, реализующий
+ * Для этого потребуется в пакете com.greffort.buildings описать новый класс декоратора SynchronizedFloor, реализующий
  * с обеспечением синхронизации методы интерфейса Floor, а также перегружающий ряд методов класса Object.
  * Создание специальных итераторов и их синхронизация не требуются
  */

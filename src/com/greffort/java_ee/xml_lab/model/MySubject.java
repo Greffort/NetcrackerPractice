@@ -25,5 +25,7 @@ public class MySubject {
         return mark;
     }
 
-
+    public void setMark(int mark,String s) {
+        this.mark = mark;
+    }
 }

@@ -1,11 +1,11 @@
 package com.greffort.java_se.buildings.office;
 
-import com.greffort.java_se.exception.SpaceIndexOutOfBoundsException;
-import com.greffort.java_se.linkedList.DoubleLinkedList;
 import com.greffort.java_se.exception.FloorIndexOutOfBoundsException;
+import com.greffort.java_se.exception.SpaceIndexOutOfBoundsException;
 import com.greffort.java_se.interfaces.Building;
 import com.greffort.java_se.interfaces.Floor;
 import com.greffort.java_se.interfaces.Space;
+import com.greffort.java_se.linkedList.DoubleLinkedList;
 import org.jetbrains.annotations.Contract;
 
 import java.io.Serializable;

@@ -7,7 +7,7 @@ import com.greffort.java_se.interfaces.Floor;
  * <p>
  * Практика 7. Задание 2
  * <p>
- * В пакете buildings.threads создайте два новых класса SequentalRepairer и SequentalCleaner, реализующих интерфейс Runnable,
+ * В пакете com.greffort.buildings.threads создайте два новых класса SequentalRepairer и SequentalCleaner, реализующих интерфейс Runnable,
  * с инструкциями для нитей.
  * <p>
  * Нити должны обеспечивать поочередность операций ремонта-уборки помещений (т.е. в консоль сообщения выводятся в порядке

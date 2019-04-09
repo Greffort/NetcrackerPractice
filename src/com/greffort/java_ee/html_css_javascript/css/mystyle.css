@@ -1,0 +1,24 @@
+p{
+
+}
+
+a {
+    color: #AAA000;
+}
+
+table{
+    clear: both;
+    width: 500px;
+}
+
+field {clear:both; text-align:right; line-height:25px; margin-top: 5px; font-size: 100px;}
+
+td, th {
+    padding: 3px; /* Поля вокруг содержимого ячеек */
+    text-align: center;
+}
+th {
+    text-align: center; /* Выравнивание по левому краю */
+    background: white; /* Цвет фона */
+    color: black; /* Цвет текста */
+}

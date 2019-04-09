@@ -1,11 +1,11 @@
 package com.greffort.java_se.buildings;
 
+import com.sun.istack.internal.NotNull;
 import com.greffort.java_se.factory.BuildingFactory;
 import com.greffort.java_se.factory.DwellingFactory;
 import com.greffort.java_se.interfaces.Building;
 import com.greffort.java_se.interfaces.Floor;
 import com.greffort.java_se.interfaces.Space;
-import org.jetbrains.annotations.NotNull;
 
 import java.io.*;
 import java.lang.reflect.Constructor;
@@ -337,7 +337,7 @@ public class Buildings implements Serializable {
      * Floor synchronizedFloor (Floor floor),
      * возвращающего ссылку на оболочку указанного объекта этажа, безопасную с точки зрения многопоточности.
      *
-     * Для этого потребуется в пакете buildings описать новый класс декоратора SynchronizedFloor, реализующий
+     * Для этого потребуется в пакете com.greffort.buildings описать новый класс декоратора SynchronizedFloor, реализующий
      * с обеспечением синхронизации методы интерфейса Floor, а также перегружающий ряд методов класса Object.
      * Создание специальных итераторов и их синхронизация не требуются
      */
